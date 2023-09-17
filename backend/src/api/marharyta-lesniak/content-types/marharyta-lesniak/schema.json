@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marharyta_lesniaks",
+  "info": {
+    "singularName": "marharyta-lesniak",
+    "pluralName": "marharyta-lesniaks",
+    "displayName": "Marharyta Lesniak"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "t4waags": {
+      "type": "string"
+    }
+  }
+}
