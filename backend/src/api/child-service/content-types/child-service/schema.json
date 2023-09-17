@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "child_services",
+  "info": {
+    "singularName": "child-service",
+    "pluralName": "child-services",
+    "displayName": "Child Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "childServiceId": {
+      "type": "uid",
+      "required": false
+    },
+    "price": {
+      "type": "integer"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
