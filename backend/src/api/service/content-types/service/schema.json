@@ -22,6 +22,10 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::child-service.child-service"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }

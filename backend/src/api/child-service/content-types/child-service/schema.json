@@ -18,22 +18,24 @@
     "description": {
       "type": "text"
     },
-    "childServiceId": {
+    "slug": {
       "type": "uid",
-      "required": false
+      "required": false,
+      "targetField": "name"
     },
     "price": {
       "type": "integer"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
