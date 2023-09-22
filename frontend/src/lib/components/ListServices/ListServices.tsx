@@ -1,6 +1,6 @@
 "use client";
-import { getServices } from "@lib/data";
-import { useState, useEffect } from "react";
+import { getCategories } from "@lib/data";
+import { useState, useEffect, use } from "react";
 import { Service } from "types/types";
 import {
   Tabs,
@@ -12,17 +12,17 @@ import {
 
 export type ServiceList = Service[];
 
-export async function ListServices() {
-  const services = await getServices();
-  if (!services) return <p>No profile data</p>;
-  console.log(services);
+export function ListServices() {
+  const categories = use(getCategories());
+  if (!categories) return <p>No profile data</p>;
+  console.log(categories);
 
   return (
     <Tabs value="services">
       <TabsHeader>
-        {services.map((service, idx) => (
-          <Tab key={idx} value={service.name}>
-            {service.name}
+        {categories.map((categories, idx) => (
+          <Tab key={idx} value={categories.name}>
+            {categories.name}
           </Tab>
         ))}
       </TabsHeader>

@@ -51,10 +51,10 @@ export async function getStrapiMediaUrl(url: string | null) {
   return `${await getStrapiURL()}${url}`;
 }
 
-export async function getServices() {
-  return await fetchMany<Service>("services?populate=*");
+export async function getCategories() {
+  return await fetchMany<Service>("categories?populate=*");
 }
 
-export async function getService(id: string) {
-  return await fetchOne<Service>(`services/${id}?populate=*`);
-}
+// export async function getService(id: string) {
+//   return await fetchOne<Service>(`categor/${id}?populate=*`);
+// }

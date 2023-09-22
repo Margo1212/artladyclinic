@@ -6,7 +6,6 @@ export default async function Home() {
   return (
     <>
       <div>Artladyclinic</div>
-      {/* @ts-expect-error Server Component */}
       <ListServices />
     </>
   );

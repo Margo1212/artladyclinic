@@ -4,8 +4,7 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "service",
-    "description": ""
+    "displayName": "service"
   },
   "options": {
     "draftAndPublish": true
@@ -18,10 +17,18 @@
     "description": {
       "type": "text"
     },
-    "child_services": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::child-service.child-service"
+    "price": {
+      "type": "decimal"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     },
     "slug": {
       "type": "uid",
