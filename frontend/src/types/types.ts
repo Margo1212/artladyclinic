@@ -1,10 +1,10 @@
-export type Service = {
+export type Category = {
   description?: string;
   name: string;
-  childService: ChildService[];
+  services: Service[];
 };
 
-export type ChildService = {
+export type Service = {
   name: string;
   description: string;
   price: number;

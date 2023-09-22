@@ -1,4 +1,4 @@
-import { Service, ServiceList } from "types/types";
+import { Category, Service, ServiceList } from "types/types";
 
 async function getStrapiURL(path = "") {
   return `${
@@ -52,7 +52,7 @@ export async function getStrapiMediaUrl(url: string | null) {
 }
 
 export async function getCategories() {
-  return await fetchMany<Service>("categories?populate=*");
+  return await fetchMany<Category>("categories?populate=*");
 }
 
 // export async function getService(id: string) {

@@ -16,6 +16,10 @@ export function ListServices() {
   const categories = use(getCategories());
   if (!categories) return <p>No profile data</p>;
   console.log(categories);
+  // const services = categories.map((category) =>
+  //   category.services.data.map((service) => service.attributes)
+  // );
+  // console.log(services);
 
   return (
     <Tabs value="services">
@@ -26,13 +30,13 @@ export function ListServices() {
           </Tab>
         ))}
       </TabsHeader>
-      <TabsBody>
-        {/* {services.map(({ childService }) => (
-          <TabPanel key={idx} value={}>
-            {desc}
+      {/* <TabsBody>
+        {services.map((service) => (
+          <TabPanel key={service.slug} value={service.name}>
+            {service.name}
           </TabPanel>
-        ))} */}
-      </TabsBody>
+        ))}
+      </TabsBody> */}
     </Tabs>
   );
 }
