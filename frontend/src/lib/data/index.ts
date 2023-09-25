@@ -1,4 +1,7 @@
+import axios from "axios";
+import qs from "qs";
 import { Category, Service, ServiceList } from "types/types";
+import { categoryReducer, serviceReducer } from "../utils";
 
 async function getStrapiURL(path = "") {
   return `${
@@ -50,10 +53,7 @@ export async function getStrapiMediaUrl(url: string | null) {
 
   return `${await getStrapiURL()}${url}`;
 }
-
-export async function getCategories() {
-  return await fetchMany<Category>("categories?populate=*");
-}
+const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
 // export async function getService(id: string) {
 //   return await fetchOne<Service>(`categor/${id}?populate=*`);
