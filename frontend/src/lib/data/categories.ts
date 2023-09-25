@@ -1,6 +1,7 @@
 import { categoryReducer } from "@lib/utils";
 import axios from "axios";
 import qs from "qs";
+import { cache } from "react";
 import { Category } from "types/types";
 
 const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
@@ -23,7 +24,7 @@ export const getCategoriesSlugs = async () => {
   return slugs;
 };
 
-export async function getCategories() {
+export const getCategories = cache(async () => {
   const query = qs.stringify(
     {
       populate: ["name", "description", "services"],
@@ -38,7 +39,7 @@ export async function getCategories() {
     categoryReducer(category)
   );
   return categories;
-}
+});
 
 export const getCategoryBySlug = async ({ slug }: any) => {
   const query = qs.stringify(

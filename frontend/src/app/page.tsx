@@ -5,6 +5,8 @@ import { ListServices } from "@components/ListServices/ListServices";
 import { getServices } from "@lib/data/services";
 import { Suspense } from "react";
 
+export const revalidate = 10;
+
 export default async function Home() {
   const categoriesData = getCategories();
   const servicesData = getServices();
