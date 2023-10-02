@@ -24,11 +24,11 @@
       "targetField": "name",
       "required": true
     },
-    "services": {
+    "service": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::service.service",
-      "mappedBy": "categories"
+      "inversedBy": "categories"
     }
   }
 }

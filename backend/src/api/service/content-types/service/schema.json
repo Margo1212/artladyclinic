@@ -40,9 +40,9 @@
     },
     "categories": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::category.category",
-      "inversedBy": "services"
+      "mappedBy": "service"
     }
   }
 }
