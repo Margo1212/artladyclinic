@@ -3,6 +3,7 @@
 import { Category, Service } from "types/types";
 
 import { Tab } from "@headlessui/react";
+import Link from "next/link";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -58,16 +59,17 @@ export function ListServices(props: ListServicesProps) {
                       key={service.id}
                       className="relative rounded-md p-3 hover:bg-gray-100"
                     >
-                      <h3 className="text-sm font-medium leading-5">
-                        {service.name}
-                      </h3>
-                      <a
-                        href="#"
+                      <Link
                         className={classNames(
                           "absolute inset-0 rounded-md",
                           "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
                         )}
-                      />
+                        href={`/services/${service.slug}`}
+                      >
+                        <h3 className="text-sm font-medium leading-5">
+                          {service.name}
+                        </h3>
+                      </Link>
                     </li>
                   ))}
               </ul>
