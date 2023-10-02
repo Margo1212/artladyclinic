@@ -26,9 +26,9 @@
     },
     "services": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::service.service",
-      "mappedBy": "category"
+      "mappedBy": "categories"
     }
   }
 }
