@@ -1,5 +1,3 @@
-import "./../styles/globals.css";
-
 import { getCategories } from "@lib/data/categories";
 import { ListServices } from "@components/ListServices/ListServices";
 import { getServices } from "@lib/data/services";
@@ -15,11 +13,9 @@ export default async function Home() {
     categoriesData,
     servicesData,
   ]);
-  console.log(services);
 
   return (
     <>
-      <div>Artladyclinic</div>
       <Suspense fallback={<div>Loading...</div>}>
         <ListServices categories={categories} services={services} />
       </Suspense>
