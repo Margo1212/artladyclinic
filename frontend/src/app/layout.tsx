@@ -1,3 +1,5 @@
+import "./../styles/globals.css";
+
 import Navigation from "@lib/components/Navigation/Navigation";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
