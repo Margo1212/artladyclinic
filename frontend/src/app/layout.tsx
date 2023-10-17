@@ -2,10 +2,10 @@ import "./../styles/globals.css";
 
 import Navigation from "@lib/components/Navigation/Navigation";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Serif } from "next/font/google";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto_Serif({ weight: ["500", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Navigation />
         {children}
       </body>

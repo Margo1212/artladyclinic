@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const withSVGR = require("@newhighsco/next-plugin-svgr");
 const nextConfig = {
   experimental: {
     // appDir: true,
@@ -17,6 +18,14 @@ const nextConfig = {
       },
     ],
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
 };
 
-module.exports = nextConfig;
+module.exports = withSVGR(nextConfig);
