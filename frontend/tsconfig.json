@@ -22,9 +22,16 @@
     "paths": {
       "@lib/*": ["lib/*"],
       "@components/*": ["lib/components/*"],
-      "@pages/*": ["app/pages/*"]
+      "@pages/*": ["app/pages/*"],
+      "@svg/*": ["lib/assets/svg/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "globals.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

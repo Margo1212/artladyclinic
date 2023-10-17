@@ -17,6 +17,11 @@ export default async function Home() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
+        <div className="container bg-[#f8f8f8] px-14">
+          <div className="w-full h-[536px] bg-gradient-to-b from-[#0E0045] to-[#36357E]">
+            <h1></h1>
+          </div>
+        </div>
         <ListServices categories={categories} services={services} />
       </Suspense>
     </>
