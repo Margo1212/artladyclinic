@@ -15,3 +15,10 @@ export const serviceReducer = (rawService: any) => {
 
   return service;
 };
+
+export const homepageReducer = (rawHomepage: any) => {
+  let homepage = { ...rawHomepage.attributes };
+  homepage.id = rawHomepage.id;
+
+  return homepage;
+};

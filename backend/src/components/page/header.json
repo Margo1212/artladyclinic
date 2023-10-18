@@ -19,10 +19,10 @@
       "minLength": 150,
       "required": true
     },
-    "buttons": {
+    "button": {
       "displayName": "button",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "page.button"
     },
     "images": {
