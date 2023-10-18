@@ -5,16 +5,9 @@ import { Suspense } from "react";
 import { getHomepage } from "@lib/data/homepage";
 import Image from "next/image";
 
-export type ImageProps = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-};
-
 export const revalidate = 10;
 
-export default async function Home({ src, alt, width, height }: ImageProps) {
+export default async function Home() {
   const categoriesData = getCategories();
   const servicesData = getServices();
   const homepageData = getHomepage();
