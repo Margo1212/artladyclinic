@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_services",
+  "info": {
+    "displayName": "services",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

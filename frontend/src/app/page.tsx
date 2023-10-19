@@ -33,7 +33,7 @@ export default async function Home() {
     "col-span-2 row-span-2 col-start-4 row-start-4",
   ];
 
-  console.log(imageAbout);
+  // console.log(imageAbout);
 
   return (
     <>
@@ -95,7 +95,11 @@ export default async function Home() {
             </div>
           </Card>
         </section>
-        <ListServices categories={categories} services={services} />
+        <section className="w-full h-screen flex flex-col justify-center items-center">
+          <Card>
+            <ListServices categories={categories} services={services} />
+          </Card>
+        </section>
       </Suspense>
     </>
   );

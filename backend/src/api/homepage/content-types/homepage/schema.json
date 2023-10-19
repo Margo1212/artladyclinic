@@ -23,6 +23,12 @@
       "type": "component",
       "repeatable": false,
       "component": "page.about-section"
+    },
+    "services": {
+      "displayName": "services",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.services"
     }
   }
 }
