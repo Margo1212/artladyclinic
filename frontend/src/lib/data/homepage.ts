@@ -9,7 +9,14 @@ const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 export const getHomepage = cache(async () => {
   const query = qs.stringify(
     {
-      populate: ["header", "header.images", "header.button"],
+      populate: [
+        "header",
+        "header.images",
+        "header.button",
+        "aboutSection",
+        "aboutSection.buttonAboutSection",
+        "aboutSection.imageAboutSection",
+      ],
     },
     {
       encodeValuesOnly: true,

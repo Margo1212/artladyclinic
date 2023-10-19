@@ -8,7 +8,9 @@ const Navigation = () => {
   return (
     <nav className="w-full flex justify-between items-center bg-[#f8f8f8] text-[#001965] px-14">
       <div>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </div>
       <ul className="px-24 space-x-8 align-middle py-6 flex flex-row justify-between">
         <li>

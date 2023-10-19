@@ -4,6 +4,8 @@ import { getServices } from "@lib/data/services";
 import { Suspense } from "react";
 import { getHomepage } from "@lib/data/homepage";
 import Image from "next/image";
+import { Card } from "@lib/components/Card/Card";
+import { Title } from "@lib/components/Title/Title";
 
 export const revalidate = 10;
 
@@ -22,6 +24,8 @@ export default async function Home() {
   );
 
   const button = homepage.header.button;
+  const buttonAbout = homepage.aboutSection.buttonAboutSection;
+  const imageAbout = homepage.aboutSection.imageAboutSection.data.attributes;
 
   const sizes = [
     "col-span-3 row-span-5",
@@ -29,7 +33,7 @@ export default async function Home() {
     "col-span-2 row-span-2 col-start-4 row-start-4",
   ];
 
-  console.log(homepage);
+  console.log(imageAbout);
 
   return (
     <>
@@ -67,11 +71,29 @@ export default async function Home() {
             ))}
           </div>
         </section>
-        <section>
-          <div>
-            <div></div>
-            <div></div>
-          </div>
+        <section className="my-10 py-14 h-[475px]">
+          <Card>
+            <div className="flex h-full">
+              <div className="w-1/3 object-cover h-full">
+                <Image
+                  className="w-full h-full object-cover"
+                  src={imageAbout.url}
+                  alt={imageAbout.alternativeText}
+                  width={imageAbout.width}
+                  height={imageAbout.height}
+                />
+              </div>
+              <div className="w-2/3 flex flex-col items-start justify-center py-10 px-24 space-y-6">
+                <Title>{homepage.aboutSection.title}</Title>
+                <p className="text-xs font-light leading-normal tracking-wide">
+                  {homepage.aboutSection.textBlock}
+                </p>
+                <button className="bg-gradient-to-b from-[#0E0045] to-[#36357E] rounded-md font-medium text-white py-3 px-6">
+                  {buttonAbout.title}
+                </button>
+              </div>
+            </div>
+          </Card>
         </section>
         <ListServices categories={categories} services={services} />
       </Suspense>
