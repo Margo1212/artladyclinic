@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_page_button_about_sections",
+  "info": {
+    "displayName": "button-about-section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

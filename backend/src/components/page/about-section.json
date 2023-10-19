@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_page_about_sections",
+  "info": {
+    "displayName": "about-section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "textBlock": {
+      "type": "richtext"
+    },
+    "buttonAboutSection": {
+      "displayName": "button-about-section",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.button-about-section"
+    },
+    "imageAboutSection": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
