@@ -29,6 +29,16 @@
       "relation": "oneToMany",
       "target": "api::service.service",
       "mappedBy": "category"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
