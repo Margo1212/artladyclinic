@@ -4,6 +4,15 @@ export type Category = {
   name: string;
   services: Service[];
   slug: string;
+  icon: Icon;
+};
+
+export type Icon = {
+  data: any;
+  url: string;
+  alternativeText: string;
+  width: number;
+  height: number;
 };
 
 export type Service = {

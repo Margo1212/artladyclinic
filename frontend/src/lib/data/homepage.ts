@@ -16,6 +16,7 @@ export const getHomepage = cache(async () => {
         "aboutSection",
         "aboutSection.buttonAboutSection",
         "aboutSection.imageAboutSection",
+        "services",
       ],
     },
     {

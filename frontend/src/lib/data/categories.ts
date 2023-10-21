@@ -27,7 +27,7 @@ export const getCategoriesSlugs = async () => {
 export const getCategories = cache(async () => {
   const query = qs.stringify(
     {
-      populate: ["name", "description", "services"],
+      populate: ["name", "description", "services", "icon"],
     },
     {
       encodeValuesOnly: true,

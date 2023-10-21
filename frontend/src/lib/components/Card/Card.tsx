@@ -5,5 +5,9 @@ type Props = ComponentProps<"div"> & {
 };
 
 export const Card = ({ children }: Props) => {
-  return <div className="bg-white w-full shadow-md h-full">{children}</div>;
+  return (
+    <div className="bg-white w-full shadow-md h-full rounded-sm">
+      {children}
+    </div>
+  );
 };
