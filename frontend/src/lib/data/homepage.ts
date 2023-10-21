@@ -17,6 +17,10 @@ export const getHomepage = cache(async () => {
         "aboutSection.buttonAboutSection",
         "aboutSection.imageAboutSection",
         "services",
+        "newsSection.newsArray",
+        "newsSection",
+        "newsSection.newsArray.image",
+        "reviewsSection",
       ],
     },
     {

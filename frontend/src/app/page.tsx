@@ -33,7 +33,7 @@ export default async function Home() {
     "col-span-2 row-span-2 col-start-4 row-start-4",
   ];
 
-  // console.log(imageAbout);
+  console.log(homepage.newsSection);
 
   return (
     <>
@@ -108,10 +108,34 @@ export default async function Home() {
         </section>
         <section>
           <div className="flex flex-col space-y-10 mb-14">
-            <Title>{homepage.services.title}</Title>
+            <Title>{homepage.newsSection.title}</Title>
             <p className="text-center italic font-light text-[13px]">
-              {homepage.services.description}
+              {homepage.newsSection.description}
             </p>
+            <div className="px-20 flex gap-8 justify-center ">
+              {homepage.newsSection.newsArray.map((news: any) => (
+                <div
+                  key={news.id}
+                  style={{
+                    backgroundImage: `url(${news.image.data?.attributes.url})`,
+                    backgroundSize: "cover",
+                  }}
+                  className={`w-[260px] h-[380px] shadow-md rounded-sm flex justify-center items-end p-5`}
+                >
+                  <div className="w-[220px] h-[180px] bg-[#fff]/75 rounded-md p-4">
+                    <h3 className="text-base font-medium text-[#303030]">
+                      {news.title}
+                    </h3>
+                    <p className="text-[10px] font-light text-[#777676]">
+                      {news.date}
+                    </p>
+                    <p className="text-[11px] font-normal text-[#434343]">
+                      {news.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </Suspense>
