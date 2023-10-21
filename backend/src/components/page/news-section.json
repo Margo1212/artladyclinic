@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_news_sections",
+  "info": {
+    "displayName": "newsSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "newsArray": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.news-array"
+    }
+  }
+}

@@ -95,7 +95,7 @@ export default async function Home() {
             </div>
           </Card>
         </section>
-        <section className="w-full py-20 px-44 h-screen flex flex-col justify-center items-center">
+        <section className="w-full py-20 px-44 h-auto flex flex-col justify-center items-center">
           <div className="flex flex-col space-y-10 mb-14">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -105,6 +105,14 @@ export default async function Home() {
           <Card>
             <ListServices categories={categories} services={services} />
           </Card>
+        </section>
+        <section>
+          <div className="flex flex-col space-y-10 mb-14">
+            <Title>{homepage.services.title}</Title>
+            <p className="text-center italic font-light text-[13px]">
+              {homepage.services.description}
+            </p>
+          </div>
         </section>
       </Suspense>
     </>
