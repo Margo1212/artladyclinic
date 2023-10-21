@@ -20,6 +20,7 @@ type ListServicesProps = {
 export function ListServices(props: ListServicesProps) {
   const { categories, services } = props;
   const [isHovering, setIsHovered] = useState(false);
+
   const onMouseEnter = () => setIsHovered(true);
   const onMouseLeave = () => setIsHovered(false);
 
@@ -42,22 +43,17 @@ export function ListServices(props: ListServicesProps) {
                     )} focus:bg-gradient-to-b focus:from-[#0E0045] focus:to-[#36357E] focus:text-white border-b-2 flex items-center gap-5 w-56 h-14 rounded-sm px-6 py-3 text-sm font-medium leading-5 hover:bg-gradient-to-b from-[#0E0045] to-[#36357E] hover:text-white`}
                 >
                   <span className="w-12 h-12 text-[#001965]">
-                    {/* {isHovering ? (
-                      <Image
-                        src={category.icon.data?.attributes.url}
-                        alt={category.icon.data?.attributes.alternativeText}
-                        width={category.icon.data?.attributes.width}
-                        height={category.icon.data?.attributes.height}
-                      />
-                    ) : (
-                      <Image
-                        src={category.icon.data?.attributes.url}
-                        alt={category.icon.data?.attributes.alternativeText}
-                        width={category.icon.data?.attributes.width}
-                        height={category.icon.data?.attributes.height}
-                      />
-                    )} */}
+                    {/* <Image
+                      className={`${
+                        isHovering ? "fill-[#001965]" : "fill-white"
+                      } `}
+                      src={category.icon.data?.[1].attributes.url}
+                      alt={category.icon.data?.[1].attributes.alternativeText}
+                      width={category.icon.data?.[1].attributes.width}
+                      height={category.icon.data?.[1].attributes.height}
+                    /> */}
                   </span>
+
                   {category.name}
                 </button>
               </Tab>
