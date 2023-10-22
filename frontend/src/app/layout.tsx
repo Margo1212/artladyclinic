@@ -1,3 +1,4 @@
+import { Footer } from "@lib/components/Footer/Footer";
 import "./../styles/globals.css";
 
 import Navigation from "@lib/components/Navigation/Navigation";
@@ -6,7 +7,7 @@ import { Inter, Roboto_Serif } from "next/font/google";
 import Link from "next/link";
 
 const roboto = Roboto_Serif({
-  weight: ["500", "700", "300"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -22,9 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} w-full bg-[#f8f8f8] px-14`}>
+      <body className={`${roboto.className} w-full `}>
         <Navigation />
-        {children}
+        <div className="w-full bg-light-gray px-14">{children}</div>
+        <Footer />
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ import { Logo } from "@svg/Logo";
 
 const Navigation = () => {
   return (
-    <nav className="w-full flex justify-between items-center bg-[#f8f8f8] text-[#001965] px-14">
+    <nav className="w-full flex justify-between items-center bg-[#f8f8f8] text-dark-blue font-medium px-14">
       <div>
         <Link href="/">
           <Logo />
