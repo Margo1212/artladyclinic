@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "about_uses",
+  "collectionName": "about_pages",
   "info": {
-    "singularName": "about-us",
-    "pluralName": "about-uses",
-    "displayName": "About us",
-    "description": ""
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About page"
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +15,6 @@
       "type": "string"
     },
     "employees": {
-      "displayName": "employees",
       "type": "component",
       "repeatable": true,
       "component": "page.employees"
