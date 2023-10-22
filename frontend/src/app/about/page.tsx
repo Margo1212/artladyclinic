@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "...",
+  title: "Art Lady Clinic | About Us",
   description: "...",
 };
 
