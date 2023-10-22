@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_services",
+  "info": {
+    "singularName": "about-service",
+    "pluralName": "about-services",
+    "displayName": "About service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ourService": {
+      "displayName": "our-service",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.our-service"
+    }
+  }
+}
