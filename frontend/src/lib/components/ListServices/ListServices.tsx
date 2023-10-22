@@ -44,7 +44,7 @@ export function ListServices(props: ListServicesProps) {
                 >
                   <span className="w-12 h-12 flex items-center ">
                     <Image
-                      className={` object-cover`}
+                      className={`object-cover`}
                       src={category.icon.data?.attributes.url}
                       alt={category.icon.data?.attributes.alternativeText}
                       width={category.icon.data?.attributes.width}

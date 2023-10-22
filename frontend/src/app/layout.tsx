@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.className} w-full `}>
         <Navigation />
-        <div className="w-full bg-light-gray px-14">{children}</div>
+        <div className="w-full bg-light-gray px-14 pb-10">{children}</div>
         <Footer />
       </body>
     </html>

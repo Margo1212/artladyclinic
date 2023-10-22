@@ -22,3 +22,10 @@ export const homepageReducer = (rawHomepage: any) => {
 
   return homepage;
 };
+
+export const aboutUsReducer = (rawAboutUs: any) => {
+  let aboutUs = { ...rawAboutUs.attributes };
+  aboutUs.id = rawAboutUs.id;
+
+  return aboutUs;
+};
