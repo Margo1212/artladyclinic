@@ -57,11 +57,10 @@ export const ContactForm = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit} className="py-0">
+    <form onSubmit={formik.handleSubmit} className="py-0 w-full space-y-3 mt-7">
       <Input
         onChange={formik.handleChange}
         type="text"
-        label={"Name"}
         name="name"
         placeholder="Enter your name"
         value={formik.values.name}
@@ -73,7 +72,6 @@ export const ContactForm = () => {
         name="email"
         placeholder="Enter your email"
         type="email"
-        label="Email"
         onChange={formik.handleChange}
         value={formik.values.email}
       />
@@ -86,7 +84,6 @@ export const ContactForm = () => {
         onChange={formik.handleChange}
         value={formik.values.phone}
         name="phone"
-        label="Phone"
         placeholder="Enter your phone"
         type="tel"
       />
@@ -100,16 +97,12 @@ export const ContactForm = () => {
         value={formik.values.message}
         name="message"
         placeholder="Type something..."
-        label={"Message"}
       />
       {formik.touched.message && formik.errors.message && (
         <span className="text-alert text-xs p-0 m-0">
           {formik.errors.message}
         </span>
       )}
-      {/* <Button variant="filled" width="sm">
-        Send me a message
-      </Button> */}
     </form>
   );
 };

@@ -1,22 +1,15 @@
 import { forwardRef, useId } from "react";
 import type { ComponentPropsWithRef, Ref } from "react";
-import { Label } from "@components/Label/Label";
 
-type Props = ComponentPropsWithRef<"input"> & {
-  label: string;
-};
+type Props = ComponentPropsWithRef<"input">;
 
 export const Input = forwardRef(
-  (
-    { value, type, label, onChange, ...props }: Props,
-    ref: Ref<HTMLInputElement>
-  ) => {
+  ({ value, type, onChange, ...props }: Props, ref: Ref<HTMLInputElement>) => {
     const id = useId();
     return (
       <div className=" w-full mt-1">
-        <Label id={id}>{label}</Label>
         <input
-          className={`shadow-md appearance-none rounded w-full py-2 px-3 text-gray-700 mt-2 leading-tight focus:outline-none focus:shadow-outline`}
+          className={`shadow-md appearance-none bg-[#F2F2F2] rounded-sm w-full border-b-2 border-b-dark-blue py-3 px-4 text-xs text-dark-gray mt-2 leading-tight focus:outline-none focus:shadow-outline`}
           id={id}
           type={type}
           ref={ref}

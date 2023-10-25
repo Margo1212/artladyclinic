@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_opening_hours",
+  "info": {
+    "displayName": "opening-hours"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "hours": {
+      "displayName": "hours",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.hours"
+    }
+  }
+}

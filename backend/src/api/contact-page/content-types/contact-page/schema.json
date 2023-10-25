@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "openingHours": {
+      "displayName": "opening-hours",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.opening-hours"
+    }
+  }
+}
