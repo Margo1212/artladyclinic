@@ -1,19 +1,21 @@
 {
   "collectionName": "components_page_reviews",
   "info": {
-    "displayName": "review"
+    "displayName": "review",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "name": {
       "type": "string"
@@ -25,14 +27,7 @@
       "type": "text"
     },
     "star": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      "type": "integer"
     }
   }
 }
