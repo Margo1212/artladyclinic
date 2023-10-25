@@ -20,6 +20,12 @@
       "type": "component",
       "repeatable": false,
       "component": "page.opening-hours"
+    },
+    "contactInfo": {
+      "displayName": "contact-info",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.contact-info"
     }
   }
 }
