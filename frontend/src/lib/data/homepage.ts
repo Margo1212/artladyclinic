@@ -21,6 +21,8 @@ export const getHomepage = cache(async () => {
         "newsSection",
         "newsSection.newsArray.image",
         "reviewsSection",
+        "reviewsSection.review.image",
+        "reviewsSection.review",
         "faq",
         "faq.questions",
       ],

@@ -11,6 +11,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
+import { Star } from "@svg/Star";
 
 export const revalidate = 10;
 
@@ -100,7 +101,7 @@ export default async function Home() {
             </div>
           </Card>
         </section>
-        <section className="w-full py-20 px-56 h-calc(100vh+5vh) flex flex-col justify-center items-center">
+        <section className="w-full py-14 px-56 h-calc(100vh+5vh) flex flex-col justify-center items-center">
           <div className="flex flex-col space-y-6 mb-14">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -112,7 +113,7 @@ export default async function Home() {
             <ListServices categories={categories} services={services} />
           </Card>
         </section>
-        <section className="h-screen overflow-y-hidden">
+        <section className="h-screen overflow-y-hidden py-14">
           <div className="flex flex-col items-center space-y-10 mb-14">
             <Title>{homepage.newsSection.title}</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -147,7 +148,43 @@ export default async function Home() {
             </button>
           </div>
         </section>
-        <section className="h-screen flex flex-col items-center">
+        <section className="px-20 py-14 space-y-16">
+          <Title>{homepage.reviewsSection.title}</Title>
+          <div className="flex gap-x-14">
+            {homepage.reviewsSection.review.map((r: any) => (
+              <div key={r.id} className="bg-white px-6 py-3 space-y-2">
+                <div className="flex gap-4">
+                  <div>
+                    <Image
+                      className="w-full h-full object-cover"
+                      src={r.image.data?.attributes.url}
+                      alt={r.image.data?.attributes.alternativeText}
+                      width={r.image.data?.attributes.width}
+                      height={r.image.data?.attributes.height}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm text-dark-gray/85">
+                      {r.name}
+                    </h3>
+                    <p className="font-normal	text-xs text-dark-gray/75">
+                      {r.who}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex">
+                  {[...Array(r.star).keys()].map((s: any) => (
+                    <Star />
+                  ))}
+                </div>
+                <p className="font-light text-xs text-dark-gray/85">
+                  {r.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="h-screen flex flex-col items-center py-14">
           <Title>{homepage.faq.title}</Title>
           <div className="w-[800px] mt-14">
             {homepage.faq.questions.map((question: any) => (
