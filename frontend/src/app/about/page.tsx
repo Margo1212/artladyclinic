@@ -13,8 +13,6 @@ export default async function Page() {
 
   const aboutUs = await Promise.resolve(aboutUsData);
 
-  console.log(aboutUs);
-
   return (
     <div className="w-full bg-white px-52 py-14 space-y-10">
       <Title>{aboutUs.title}</Title>

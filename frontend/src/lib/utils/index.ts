@@ -29,3 +29,10 @@ export const aboutUsReducer = (rawAboutUs: any) => {
 
   return aboutUs;
 };
+
+export const aboutServices = (rawAboutService: any) => {
+  let aboutService = { ...rawAboutService.attributes };
+  aboutService.id = rawAboutService.id;
+
+  return aboutService;
+};
