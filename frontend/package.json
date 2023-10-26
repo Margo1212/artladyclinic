@@ -25,7 +25,7 @@
     "eslint": "8.49.0",
     "eslint-config-next": "^13.5.2",
     "formik": "^2.4.5",
-    "next": "^13.5.6",
+    "next": "^13.5.7-canary.37",
     "next-plugin-svgr": "^1.1.8",
     "postcss": "8.4.29",
     "qs": "^6.11.2",
