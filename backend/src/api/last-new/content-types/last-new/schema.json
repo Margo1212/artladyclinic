@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "last_news",
+  "info": {
+    "singularName": "last-new",
+    "pluralName": "last-news",
+    "displayName": "LastNew",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

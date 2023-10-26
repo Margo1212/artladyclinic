@@ -24,7 +24,8 @@
       "@lib/*": ["lib/*"],
       "@components/*": ["lib/components/*"],
       "@pages/*": ["app/pages/*"],
-      "@svg/*": ["lib/assets/svg/*"]
+      "@svg/*": ["lib/assets/svg/*"],
+      "@views": ["lib/views/*"]
     }
   },
   "include": [
