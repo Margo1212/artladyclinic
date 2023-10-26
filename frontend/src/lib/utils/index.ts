@@ -36,3 +36,10 @@ export const aboutServices = (rawAboutService: any) => {
 
   return aboutService;
 };
+
+export const contactReducer = (rawContact: any) => {
+  let contact = { ...rawContact.attributes };
+  contact.id = rawContact.id;
+
+  return contact;
+};

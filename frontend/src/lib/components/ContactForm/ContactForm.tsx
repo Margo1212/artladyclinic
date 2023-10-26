@@ -5,11 +5,13 @@ import { FormikHelpers, useFormik } from "formik";
 import * as Yup from "yup";
 import { Input } from "@components/Input/Input";
 import { TextArea } from "@components/TextArea/TextArea";
+import { Checkbox, FormControlLabel } from "@mui/material";
+import { indigo, pink } from "@mui/material/colors";
 
 type UserSubmitForm = {
   name: string;
   email: string;
-  phone: string;
+  title: string;
   message: string;
 };
 
@@ -18,18 +20,18 @@ export const ContactForm = () => {
     initialValues: {
       name: "",
       email: "",
-      phone: "",
+      title: "",
       message: "",
     },
     validationSchema: Yup.object({
       name: Yup.string()
         .required("Username is required")
-        .min(6, "Username must be at least 6 characters")
+        .min(3, "Username must be at least 6 characters")
         .max(20, "Username must not exceed 20 characters"),
       email: Yup.string()
         .required("Email is required")
         .email("Email is invalid"),
-      phone: Yup.string().required("Phone is required"),
+      title: Yup.string().required("Title is required"),
       message: Yup.string()
         .required("Message is required")
         .min(10, "Message must be at least 10 characters"),
@@ -57,12 +59,12 @@ export const ContactForm = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit} className="py-0 w-full space-y-3 mt-7">
+    <form onSubmit={formik.handleSubmit} className="py-0 w-full space-y-5 mt-7">
       <Input
         onChange={formik.handleChange}
         type="text"
         name="name"
-        placeholder="Enter your name"
+        placeholder="Imię i nazwisko"
         value={formik.values.name}
       />
       {formik.touched.name && formik.errors.name && (
@@ -70,7 +72,7 @@ export const ContactForm = () => {
       )}
       <Input
         name="email"
-        placeholder="Enter your email"
+        placeholder="Adres email"
         type="email"
         onChange={formik.handleChange}
         value={formik.values.email}
@@ -82,27 +84,51 @@ export const ContactForm = () => {
       )}
       <Input
         onChange={formik.handleChange}
-        value={formik.values.phone}
-        name="phone"
-        placeholder="Enter your phone"
+        value={formik.values.title}
+        name="title"
+        placeholder="Tytul"
         type="tel"
       />
-      {formik.touched.phone && formik.errors.phone && (
+      {formik.touched.title && formik.errors.title && (
         <span className="text-alert text-xs p-0 m-0">
-          {formik.errors.phone}
+          {formik.errors.title}
         </span>
       )}
       <TextArea
         onChange={formik.handleChange}
         value={formik.values.message}
         name="message"
-        placeholder="Type something..."
+        placeholder="Wiadomość"
       />
       {formik.touched.message && formik.errors.message && (
-        <span className="text-alert text-xs p-0 m-0">
-          {formik.errors.message}
-        </span>
+        <span className="text-alert text-xs p-0 ">{formik.errors.message}</span>
       )}
+      <p className="text-xs">
+        Wyrażam zgodę na przetwarzanie danych osobowych podanych w formularzu
+        zgodnie z ogólnym rozporządzeniem o ochronie danych (RODO) w celu:
+      </p>
+      <FormControlLabel
+        required
+        control={
+          <Checkbox
+            sx={{
+              color: indigo[900],
+              "&.Mui-checked": {
+                color: indigo[900],
+              },
+            }}
+          />
+        }
+        label={
+          <p className="text-xs">
+            udzielenia odpowiedzi na wpisane w formularzu kontaktowym zapytanie
+          </p>
+        }
+      />
+
+      <button className="bg-gradient-to-b from-dark-blue to-light-blue rounded-md font-medium text-white py-3 px-6 w-full">
+        Wyślij
+      </button>
     </form>
   );
 };
