@@ -24,7 +24,7 @@ export default async function Page() {
     servicesData,
   ]);
   return (
-    <section className="h-full flex flex-col items-center py-14 px-20 ">
+    <section className="h-full flex flex-col items-center py-14 px-20 bg-white">
       <Title>Cennik</Title>
       <div className="w-full mt-14">
         {categories.map((category: Category) => (
@@ -38,19 +38,17 @@ export default async function Page() {
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#0E0045" }} />}
+              expandIcon={<ExpandMoreIcon sx={{ color: "#001965" }} />}
               aria-controls="panel2a-content"
               id="panel2a-header"
               sx={{
                 marginBottom: "10px",
                 backgroundColor: "#fff",
-                borderBottom: "solid 2px #0E0045",
+                borderBottom: "solid 2px #001965",
                 boxShadow: "none",
               }}
             >
-              <p className="font-medium text-2xl text-dark-blue">
-                {category.name}
-              </p>
+              <p className="font-medium text-2xl text-blue">{category.name}</p>
             </AccordionSummary>
             {services
               .filter(

@@ -12,6 +12,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
 import { Star } from "@svg/Star";
+import Link from "next/link";
 
 export const revalidate = 10;
 
@@ -120,7 +121,7 @@ export default async function Home() {
               {homepage.newsSection.description}
             </p>
             <div className="px-20 flex gap-8 justify-center ">
-              {homepage.newsSection.newsArray.map((news: any) => (
+              {homepage.newsSection.newsArray.slice(-4).map((news: any) => (
                 <div
                   key={news.id}
                   style={{
@@ -143,9 +144,11 @@ export default async function Home() {
                 </div>
               ))}
             </div>
-            <button className="bg-gradient-to-b from-dark-blue to-light-blue rounded-md font-medium text-white py-3 px-6 w-[250px]">
-              {buttonAbout.title}
-            </button>
+            <Link href="/news">
+              <button className="bg-gradient-to-b from-dark-blue to-light-blue rounded-md font-medium text-white py-3 px-6 w-[250px]">
+                {buttonAbout.title}
+              </button>
+            </Link>
           </div>
         </section>
         <section className="px-20 py-14 space-y-16">
