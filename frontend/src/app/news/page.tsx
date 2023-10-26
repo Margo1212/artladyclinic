@@ -1,5 +1,5 @@
 import { getNews } from "@lib/data/news";
-import { Title } from "@mui/icons-material";
+import { Title } from "@components/Title/Title";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -12,17 +12,15 @@ export default async function Page() {
   const newsData = getNews();
 
   const news = await Promise.resolve(newsData);
-
   console.log(news);
+
   return (
     <section className="h-screen overflow-y-hidden py-14">
       <div className="flex flex-col items-center space-y-10 mb-14">
-        <Title>{news.title}</Title>
-        <p className="text-center italic font-light text-[13px]">
-          {news.description}
-        </p>
+        <Title>Nowośći</Title>
+
         <div className="px-20 flex gap-8 justify-center ">
-          {news.newsArray.slice(-4).map((news: any) => (
+          {news.map((news: any) => (
             <div
               key={news.id}
               style={{

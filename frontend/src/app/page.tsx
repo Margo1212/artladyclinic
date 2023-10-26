@@ -53,12 +53,12 @@ export default async function Home() {
         </section>
         <section className="h-screen overflow-y-hidden py-14">
           <div className="flex flex-col items-center space-y-10 mb-14">
-            <Title>{news.title}</Title>
+            <Title>Nowośći</Title>
             <p className="text-center italic font-light text-[13px]">
               {news.description}
             </p>
             <div className="px-20 flex gap-8 justify-center ">
-              {news.newsArray.slice(-4).map((news: any) => (
+              {news.map((news: any) => (
                 <div
                   key={news.id}
                   style={{

@@ -50,3 +50,19 @@ export const newsReducer = (rawNews: any) => {
 
   return news;
 };
+
+export const productsCategoryReducer = (rawProductsCategory: any) => {
+  let productsCategory = { ...rawProductsCategory.attributes };
+  productsCategory.id = rawProductsCategory.id;
+
+  return productsCategory;
+};
+
+export const productsReducer = (rawProducts: any) => {
+  let products = { ...rawProducts.attributes };
+  products.id = rawProducts.id;
+  products.productsCategory = productsCategoryReducer(
+    products.productsCategory.data
+  );
+  return products;
+};

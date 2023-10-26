@@ -16,7 +16,7 @@ export const getNews = cache(async () => {
   );
   const res = await axios.get(`${url}/api/last-news?${query}`);
   const rawNews = res.data.data;
+  const news = rawNews.map((news: any) => newsReducer(news));
 
-  const news = newsReducer(rawNews);
   return news;
 });

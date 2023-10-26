@@ -16,7 +16,6 @@ export default async function Page() {
 
   const contact = await Promise.resolve(contactData);
 
-  console.log(contact.openingHours);
   return (
     <div className="w-full h-full px-20 bg-white py-14 space-y-10">
       <Title>{contact.title}</Title>
