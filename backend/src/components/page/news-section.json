@@ -9,9 +9,6 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
-    },
     "newsArray": {
       "type": "component",
       "repeatable": true,
