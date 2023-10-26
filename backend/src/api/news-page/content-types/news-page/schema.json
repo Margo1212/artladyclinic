@@ -4,7 +4,8 @@
   "info": {
     "singularName": "news-page",
     "pluralName": "news-pages",
-    "displayName": "News Page"
+    "displayName": "News Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,11 +15,10 @@
     "title": {
       "type": "string"
     },
-    "newsPage": {
-      "type": "dynamiczone",
-      "components": [
-        "page.news-array"
-      ]
+    "newsArray": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.news-array"
     }
   }
 }

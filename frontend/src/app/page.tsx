@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
 import { Star } from "@svg/Star";
 import Link from "next/link";
+import { getNews } from "@lib/data/news";
 
 export const revalidate = 10;
 
@@ -20,11 +21,13 @@ export default async function Home() {
   const categoriesData = getCategories();
   const servicesData = getServices();
   const homepageData = getHomepage();
+  const newsData = getNews();
 
-  const [categories, services, homepage] = await Promise.all([
+  const [categories, services, homepage, news] = await Promise.all([
     categoriesData,
     servicesData,
     homepageData,
+    newsData,
   ]);
   const images = homepage.header.images.data.map(
     (image: any) => image.attributes
@@ -121,7 +124,7 @@ export default async function Home() {
               {homepage.newsSection.description}
             </p>
             <div className="px-20 flex gap-8 justify-center ">
-              {homepage.newsSection.newsArray.slice(-4).map((news: any) => (
+              {news.newsArray.slice(-4).map((news: any) => (
                 <div
                   key={news.id}
                   style={{

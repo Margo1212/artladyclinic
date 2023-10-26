@@ -43,3 +43,10 @@ export const contactReducer = (rawContact: any) => {
 
   return contact;
 };
+
+export const newsReducer = (rawNews: any) => {
+  let news = { ...rawNews.attributes };
+  news.id = rawNews.id;
+
+  return news;
+};

@@ -8,11 +8,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "newsArray": {
-      "type": "component",
-      "repeatable": true,
-      "component": "page.news-array"
     }
   }
 }
