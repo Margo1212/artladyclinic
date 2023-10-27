@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const withSVGR = require("@newhighsco/next-plugin-svgr");
 const nextConfig = {
   experimental: {
     // appDir: true,
@@ -28,4 +27,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withSVGR(nextConfig);
+module.exports = nextConfig;
