@@ -43,7 +43,7 @@ export default async function Home() {
           <div className="flex flex-col space-y-6 mb-14">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
-              {homepage.services.description}vm
+              {homepage.services.description}
             </p>
           </div>
 

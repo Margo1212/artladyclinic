@@ -28,6 +28,13 @@ export const contactReducer = (rawContact: any) => {
   return contact;
 };
 
+export const galleryReducer = (rawGallery: any) => {
+  let gallery = { ...rawGallery.attributes };
+  gallery.id = rawGallery.id;
+
+  return gallery;
+};
+
 export const newsReducer = (rawNews: any) => {
   let news = { ...rawNews.attributes };
   news.id = rawNews.id;
