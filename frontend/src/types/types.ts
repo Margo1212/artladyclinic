@@ -6,6 +6,24 @@ export type Category = {
   slug: string;
   icon: Icon;
 };
+export type ProductCategory = {
+  id: string;
+  description?: string;
+  name: string;
+  products: Product[];
+  slug: string;
+};
+
+export type Product = {
+  id: string;
+  description?: string;
+  name: string;
+  product_category: ProductCategory;
+  image: any;
+  price: string;
+  slug: string;
+  applicationRequirement: string;
+};
 
 export type Icon = {
   data: any;
