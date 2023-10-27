@@ -1,21 +1,5 @@
 import { Category } from "types/types";
 
-export const categoryReducer = (rawCategory: any) => {
-  let category = { ...rawCategory.attributes };
-  category.id = rawCategory.id;
-
-  return category;
-};
-
-export const serviceReducer = (rawService: any) => {
-  let service = { ...rawService.attributes };
-  service.id = rawService.id;
-
-  service.category = categoryReducer(service.category.data);
-
-  return service;
-};
-
 export const homepageReducer = (rawHomepage: any) => {
   let homepage = { ...rawHomepage.attributes };
   homepage.id = rawHomepage.id;
@@ -51,6 +35,13 @@ export const newsReducer = (rawNews: any) => {
   return news;
 };
 
+export const categoryReducer = (rawCategory: any) => {
+  let category = { ...rawCategory.attributes };
+  category.id = rawCategory.id;
+
+  return category;
+};
+
 export const productsCategoryReducer = (rawProductsCategory: any) => {
   let productsCategory = { ...rawProductsCategory.attributes };
   productsCategory.id = rawProductsCategory.id;
@@ -58,11 +49,22 @@ export const productsCategoryReducer = (rawProductsCategory: any) => {
   return productsCategory;
 };
 
+export const serviceReducer = (rawService: any) => {
+  let service = { ...rawService.attributes };
+  service.id = rawService.id;
+
+  service.category = categoryReducer(service.category.data);
+
+  return service;
+};
+
 export const productsReducer = (rawProducts: any) => {
   let products = { ...rawProducts.attributes };
   products.id = rawProducts.id;
-  products.productsCategory = productsCategoryReducer(
-    products.productsCategory.data
+
+  products.product_category = productsCategoryReducer(
+    products.product_category.data
   );
+
   return products;
 };
