@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "navigations",
+  "collectionName": "nav_bars",
   "info": {
-    "singularName": "navigation",
-    "pluralName": "navigations",
-    "displayName": "Navigation"
+    "singularName": "nav-bar",
+    "pluralName": "nav-bars",
+    "displayName": "NavBar"
   },
   "options": {
     "draftAndPublish": true
