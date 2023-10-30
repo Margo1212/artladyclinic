@@ -12,10 +12,6 @@ const config: Config = {
     screens: {
       tablet: "640px",
       // => @media (min-width: 640px) { ... }
-
-      laptop: "1024px",
-      // => @media (min-width: 1024px) { ... }
-
       desktop: "1280px",
       // => @media (min-width: 1280px) { ... }
     },
@@ -34,6 +30,13 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        gallery: "1fr 1fr 1fr",
+
+        // Complex site-specific column configuration
+        footer: "200px minmax(900px, 1fr) 100px",
       },
     },
   },

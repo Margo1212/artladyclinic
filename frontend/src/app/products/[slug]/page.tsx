@@ -4,6 +4,7 @@ import { Product } from "types/types";
 export default async function Page({ params }: { params: { slug: string } }) {
   const productData = getProductBySlug({ slug: params.slug });
   const product: Product = await Promise.resolve(productData);
+  console.log(product);
 
   return (
     <div>

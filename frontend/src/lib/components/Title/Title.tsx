@@ -7,7 +7,7 @@ type Props = ComponentProps<"h2"> & {
 
 export const Title = ({ children }: Props) => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center -z-0">
       <h2 className="text-[#001965] text-4xl font-light italic">{children}</h2>
       <span className="mt-2">
         <Line />
