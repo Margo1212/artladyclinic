@@ -17,12 +17,12 @@ export const Header = ({ homepage }: HeaderProps) => {
     "col-span-2 row-span-2 col-start-4 row-start-4",
   ];
   return (
-    <section className="flex justify-between w-full px-20 h-[75.28089887640449vh] bg-gradient-to-b from-dark-blue to-light-blue">
-      <div className="w-2/4 flex flex-col space-y-10 justify-center ">
-        <h1 className="text-white w-4/5 font-medium text-[2.9947916666666665vw] ">
+    <header className="flex flex-col-reverse mb-10 px-3 py-6 gap-5 justify-around  items-center w-full h-full bg-gradient-to-b from-dark-blue to-light-blue laptop:flex-row laptop:justify-between laptop:h-screen  desktop:py-0 desktop:px-20  desktop:h-[75.28089887640449vh]">
+      <div className="laptop:w-2/4 w-full items-center laptop:items-start flex flex-col space-y-10 justify-center ">
+        <h1 className="text-white text-center laptop:text-left w-4/5 font-medium tablet:text-4xl laptop:text-5xl text-2xl ">
           {homepage.header.title}
         </h1>
-        <p className=" text-white text-left font-light text-[0.813rem] tracking-[8%]">
+        <p className=" text-white text-center laptop:text-left font-light text-[0.813rem] tracking-[8%]">
           {homepage.header.description}
         </p>
         <button className="bg-white rounded-md font-semibold text-dark-blue py-2 px-4 w-[14.438rem]">
@@ -30,13 +30,13 @@ export const Header = ({ homepage }: HeaderProps) => {
         </button>
       </div>
 
-      <div className="w-[37.063rem] h-[35.313rem] mt-3 grid grid-cols-5 grid-rows-5 gap-5 overflow-clip">
+      <div className=" mt-3 grid grid-cols-5 grid-rows-5 gap-2 tablet:gap-5 overflow-clip desktop:w-[35rem] desktop:h-[105%] desktop:mt-12 tablet:w-[30rem] tablet:h-[28rem] w-[279px] h-[267px]">
         {images.map((image: any, idx: number) => (
           <div
             key={idx}
             className={`${sizes.filter(
               (size, i) => i === idx
-            )}  object-cover w-full max-h-full`}
+            )} w-full max-h-full`}
           >
             <Image
               className="w-full object-cover h-full"
@@ -49,6 +49,6 @@ export const Header = ({ homepage }: HeaderProps) => {
           </div>
         ))}
       </div>
-    </section>
+    </header>
   );
 };

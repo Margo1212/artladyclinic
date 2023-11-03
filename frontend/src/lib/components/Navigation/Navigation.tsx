@@ -1,18 +1,32 @@
+"use server";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram } from "@svg/Instagram";
 import { Booksy } from "@svg/Booksy";
-import { Logo } from "@svg/Logo";
+import { getNavbar } from "@lib/data/navbar";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
-const Navigation = () => {
+const Navigation = async () => {
+  const navData = getNavbar();
+  const nav = await Promise.resolve(navData);
   return (
-    <nav className="w-full flex justify-between items-center bg-[#f8f8f8] text-dark-blue font-medium desktop:px-14">
-      <div className="w-5 h-5 object-cover">
+    <nav className="w-full flex px-10 justify-between items-center bg-[#f8f8f8] text-dark-blue tablet:text-xs desktop:text-sm font-medium desktop:px-14">
+      <div className="tablet:h-20 tablet:w-24 w-14 h-12">
         <Link href="/">
-          <Logo />
+          <Image
+            className="w-full h-full object-cover"
+            src={nav.logo.data?.attributes.url}
+            alt={nav.logo.data?.attributes.alternativeText}
+            width={nav.logo.data?.attributes.width}
+            height={nav.logo.data?.attributes.height}
+          />
         </Link>
       </div>
-      <ul className="px-24 space-x-8 align-middle py-6 flex flex-row justify-between">
+
+      <HamburgerMenu />
+
+      <ul className="hidden tablet:px-10 desktop:px-24 space-x-8 align-middle py-6 laptop:flex flex-row justify-between">
         <li>
           <Link href="/about">O nas</Link>
         </li>
@@ -40,7 +54,7 @@ const Navigation = () => {
           <Link href="/contact">Kontakt</Link>
         </li>
       </ul>
-      <ul className="flex space-x-2.5">
+      <ul className="laptop:flex hidden space-x-2.5">
         <li>
           <Link
             href={

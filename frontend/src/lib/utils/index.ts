@@ -21,6 +21,13 @@ export const aboutServices = (rawAboutService: any) => {
   return aboutService;
 };
 
+export const navBarReducer = (rawNavbar: any) => {
+  let nav = { ...rawNavbar.attributes };
+  nav.id = rawNavbar.id;
+
+  return nav;
+};
+
 export const contactReducer = (rawContact: any) => {
   let contact = { ...rawContact.attributes };
   contact.id = rawContact.id;

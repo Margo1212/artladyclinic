@@ -14,8 +14,12 @@ export const getNews = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/last-news?${query}`);
-  const rawNews = res.data.data;
+  const res = await axios
+    .get(`${url}/api/last-news?${query}`)
+    .catch((error) => {
+      console.log(error.toJSON());
+    });
+  const rawNews = res?.data.data;
   const news = rawNews.map((news: any) => newsReducer(news));
 
   return news;

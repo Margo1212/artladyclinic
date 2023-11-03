@@ -39,7 +39,7 @@ export default async function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Header homepage={homepage} />
         <AboutUsSection homepage={homepage} />
-        <section className="w-full py-14 px-56 h-calc(100vh+5vh) flex flex-col justify-center items-center">
+        <section className="w-full desktop:py-14 desktop:px-56 h-full laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
           <div className="flex flex-col space-y-6 mb-14">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -51,7 +51,7 @@ export default async function Home() {
             <ListServices categories={categories} services={services} />
           </Card>
         </section>
-        <section className="h-screen overflow-y-hidden py-14">
+        <section className="h-full overflow-y-hidden py-14">
           <div className="flex flex-col items-center space-y-10 mb-14">
             <Title>Nowośći</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -88,9 +88,9 @@ export default async function Home() {
             </Link>
           </div>
         </section>
-        <section className="px-20 py-14 space-y-16">
+        <section className="px-3 py-4 laptop:px-52 laptop:py-14 space-y-16">
           <Title>{homepage.reviewsSection.title}</Title>
-          <div className="flex gap-x-14">
+          <div className="flex flex-col laptop:flex-row gap-x-14">
             {homepage.reviewsSection.review.map((r: any) => (
               <div key={r.id} className="bg-white px-6 py-3 space-y-2">
                 <div className="flex gap-4">
@@ -126,7 +126,7 @@ export default async function Home() {
         </section>
         <section className="h-screen flex flex-col items-center py-14">
           <Title>{homepage.faq.title}</Title>
-          <div className="w-[800px] mt-14">
+          <div className=" w-full desktop:w-[800px] mt-14">
             {homepage.faq.questions.map((question: any) => (
               <Accordion
                 key={question.id}

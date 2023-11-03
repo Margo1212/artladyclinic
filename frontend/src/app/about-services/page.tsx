@@ -14,10 +14,10 @@ export default async function Page() {
   const aboutServices = await Promise.resolve(aboutServicesData);
 
   return (
-    <div className="w-full bg-white px-52 py-14 space-y-10">
+    <div className="w-full bg-white px-3 py-4 laptop:px-52 laptop:py-14 space-y-10">
       <Title>{aboutServices.title}</Title>
-      <div className="flex">
-        <div className="w-1/4">
+      <div className="flex flex-col laptop:flex-row">
+        <div className="laptop:w-1/4 w-full">
           <Image
             className="w-full object-cover h-full"
             key={aboutServices.image.id}
@@ -27,7 +27,7 @@ export default async function Page() {
             height={aboutServices.image.data?.attributes.height}
           />
         </div>
-        <div className="w-3/4 px-16 flex items-center">
+        <div className="laptop:w-3/4 px-16 flex items-center">
           <p>{aboutServices.description}</p>
         </div>
       </div>

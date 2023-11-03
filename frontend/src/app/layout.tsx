@@ -23,9 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} w-full `}>
-        <Navigation />
-        <div className="w-full bg-light-gray px-10 desktop:px-14 pb-10">
+      <body className={`${roboto.className} w-screen`}>
+        {/* @ts-expect-error Async Server Component */}
+        <Navigation suppressHydrationWarning={true} />
+        <div className="w-full bg-light-gray p-0 laptop:px-10 desktop:px-14 pb-10">
           {children}
         </div>
         <Footer />

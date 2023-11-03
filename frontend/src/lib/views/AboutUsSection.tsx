@@ -7,10 +7,10 @@ export const AboutUsSection = ({ homepage }: HeaderProps) => {
   const imageAbout = homepage.aboutSection.imageAboutSection.data.attributes;
   const buttonAbout = homepage.aboutSection.buttonAboutSection;
   return (
-    <section className="my-10 py-14 h-[66.71348314606742vh]">
+    <section className="mb-10 laptop:py-14 laptop:h-[66.71348314606742vh]">
       <Card>
-        <div className="flex h-full">
-          <div className="w-1/3 object-cover h-full">
+        <div className="flex h-full ">
+          <div className="w-1/3 hidden laptop:block object-cover h-full">
             <Image
               className="w-full h-full object-cover"
               src={imageAbout.url}
@@ -19,12 +19,12 @@ export const AboutUsSection = ({ homepage }: HeaderProps) => {
               height={imageAbout.height}
             />
           </div>
-          <div className="w-2/3 flex flex-col items-start justify-center py-10 px-24 space-y-6">
+          <div className="laptop:w-2/3 flex flex-col laptop:items-start justify-center py-10 px-12 laptop:px-24 space-y-6">
             <Title>{homepage.aboutSection.title}</Title>
-            <p className="text-xs font-light leading-normal tracking-wide">
+            <p className="text-xs text-center laptop:text-left font-light leading-normal tracking-wide">
               {homepage.aboutSection.textBlock}
             </p>
-            <button className="bg-gradient-to-b from-dark-blue to-light-blue rounded-md font-medium text-white py-3 px-6">
+            <button className="bg-gradient-to-b from-dark-blue to-light-blue rounded-md text-sm font-medium text-white py-2 px-4">
               {buttonAbout.title}
             </button>
           </div>

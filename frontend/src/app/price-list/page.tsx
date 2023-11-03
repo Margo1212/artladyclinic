@@ -24,7 +24,7 @@ export default async function Page() {
     servicesData,
   ]);
   return (
-    <section className="h-full flex flex-col items-center py-14 px-20 bg-white">
+    <section className="h-full flex flex-col items-center px-3 py-4 laptop:py-14 laptop:px-20 bg-white">
       <Title>Cennik</Title>
       <div className="w-full mt-14">
         {categories.map((category: Category) => (

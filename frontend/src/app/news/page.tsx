@@ -2,6 +2,7 @@ import { getNews } from "@lib/data/news";
 import { Title } from "@components/Title/Title";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { error } from "console";
 
 export const metadata: Metadata = {
   title: "...",
@@ -11,15 +12,16 @@ export const metadata: Metadata = {
 export default async function Page() {
   const newsData = getNews();
 
-  const news = await Promise.resolve(newsData);
-  console.log(news);
+  const news = await Promise.resolve(newsData).catch((err) =>
+    console.error(err)
+  );
 
   return (
-    <section className="h-screen overflow-y-hidden py-14">
+    <section className="h-full w-full px-3 py-4 laptop:py-14 laptop:px-20">
       <div className="flex flex-col items-center space-y-10 mb-14">
         <Title>Nowośći</Title>
 
-        <div className="px-20 flex gap-8 justify-center ">
+        <div className="laptop:px-20 flex laptop:flex-row flex-wrap gap-8 justify-center ">
           {news.map((news: any) => (
             <div
               key={news.id}

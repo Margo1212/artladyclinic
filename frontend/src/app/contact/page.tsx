@@ -17,10 +17,10 @@ export default async function Page() {
   const contact = await Promise.resolve(contactData);
 
   return (
-    <div className="w-full h-full px-20 bg-white py-14 space-y-10">
+    <div className="w-full h-full px-3 py-4 items-center laptop:px-20 bg-white laptop:py-14 space-y-10">
       <Title>{contact.title}</Title>
-      <div className="grid grid-cols-2 grid-rows-6">
-        <div className="row-span-3 w-full h-full flex gap-x-9 pb-20">
+      <div className="grid grid-cols-1 laptop:grid-cols-2 laptop:grid-rows-6">
+        <div className="laptop:row-span-3 w-full h-full flex gap-x-9 pb-20">
           <div className="bg-white shadow-md py-6 px-10 w-full h-full flex flex-col justify-center gap-y-7">
             <div className="flex items-center gap-x-6">
               <span>
@@ -53,7 +53,7 @@ export default async function Page() {
             ))}
           </div>
         </div>
-        <div className="row-span-3 col-start-1 row-start-4 w-50% bg-dark-blue h-full shadow-md">
+        <div className="laptop:row-span-3 col-start-1 row-start-4 w-50% bg-dark-blue h-full shadow-md">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d320.03474255739303!2d19.950578447024753!3d50.08108288360342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716433a1ecd7999%3A0xa9af4399fb8f0374!2sArt-Lady%20Clinic!5e0!3m2!1spl!2spl!4v1698313160559!5m2!1spl!2spl"
             // width="600"
@@ -64,7 +64,7 @@ export default async function Page() {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="flex flex-col justify-center items-center row-span-6 col-start-2 row-start-1 w-50% h-full px-28 space-y-8">
+        <div className="flex flex-col justify-center items-center laptop:row-span-6 laptop:col-start-2 laptop:row-start-1 w-50% h-full laptop:px-28 space-y-8">
           <h3 className="font-light text-2xl">Wyślij nam wiadomość</h3>
           <ContactForm />
         </div>

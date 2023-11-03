@@ -14,12 +14,12 @@ export default async function Page() {
   const aboutUs = await Promise.resolve(aboutUsData);
 
   return (
-    <div className="w-full bg-white px-52 py-14 space-y-10">
+    <div className="w-full bg-white px-3 py-4 laptop:px-52 laptop:py-14 space-y-10">
       <Title>{aboutUs.title}</Title>
       <div className="space-y-12">
         {aboutUs.employees.map((employee: any) => (
-          <div className="flex flex-row even:flex-row-reverse ">
-            <div className="w-1/4 shadow-md">
+          <div className="flex flex-col space-y-3 laptop:flex-row laptop:even:flex-row-reverse ">
+            <div className="laptop:w-1/4 shadow-md">
               <Image
                 className="w-full object-cover h-full"
                 key={employee.id}
@@ -29,11 +29,11 @@ export default async function Page() {
                 height={employee.image.data?.attributes.height}
               />
             </div>
-            <div className="w-3/4 flex flex-col justify-center px-6 space-y-3">
-              <h2 className="text-4xl font-normal text-dark-gray">
+            <div className="laptop:w-3/4 flex flex-col space-y-1 laptop:justify-center laptop:px-6 laptop:space-y-3">
+              <h2 className="text-4xl text-center laptop:text-left font-normal text-dark-gray">
                 {employee.name}
               </h2>
-              <p className="text-base font-normal text-dark-gray/80">
+              <p className="text-base text-center laptop:text-left font-normal text-dark-gray/80">
                 {employee.description}
               </p>
             </div>
