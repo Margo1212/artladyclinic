@@ -49,6 +49,13 @@ export const newsReducer = (rawNews: any) => {
   return news;
 };
 
+export const vouchersReducer = (rawVouchers: any) => {
+  let vouchers = { ...rawVouchers.attributes };
+  vouchers.id = rawVouchers.id;
+
+  return vouchers;
+};
+
 export const categoryReducer = (rawCategory: any) => {
   let category = { ...rawCategory.attributes };
   category.id = rawCategory.id;
