@@ -43,6 +43,12 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "services"
+    },
+    "application": {
+      "displayName": "application",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.application"
     }
   }
 }
