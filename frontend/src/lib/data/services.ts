@@ -47,7 +47,7 @@ export const getServiceBySlug = async ({ slug }: any) => {
           $eq: slug,
         },
       },
-      populate: ["category", "category.name", "application"],
+      populate: ["category", "category.name", "application", "image"],
     },
     {
       encodeValuesOnly: true,
