@@ -4,7 +4,8 @@
   "info": {
     "singularName": "vouchers-page",
     "pluralName": "vouchers-pages",
-    "displayName": "Vouchers Page"
+    "displayName": "Bony podarunkowe",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

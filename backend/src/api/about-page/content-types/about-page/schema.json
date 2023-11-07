@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-page",
     "pluralName": "about-pages",
-    "displayName": "About page"
+    "displayName": "O nas",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
