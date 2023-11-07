@@ -6,7 +6,10 @@ type Props = ComponentProps<"div"> & {
 
 export const Card = ({ children }: Props) => {
   return (
-    <div className="bg-white w-full shadow-md h-full rounded-sm">
+    <div
+      data-aos="zoom-in"
+      className="bg-white w-full shadow-md h-full rounded-sm"
+    >
       {children}
     </div>
   );

@@ -18,7 +18,10 @@ export default async function Page() {
       <Title>{aboutUs.title}</Title>
       <div className="space-y-12">
         {aboutUs.employees.map((employee: any) => (
-          <div className="flex flex-col space-y-3 laptop:flex-row laptop:even:flex-row-reverse ">
+          <div
+            data-aos="zoom-in"
+            className="flex flex-col space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
+          >
             <div className="laptop:w-1/4 shadow-md">
               <Image
                 className="w-full object-cover h-full"

@@ -1,6 +1,8 @@
 import { Footer } from "@lib/components/Footer/Footer";
 import "./../styles/globals.css";
 
+import { AOSInit } from "@lib/components/aos";
+
 import Navigation from "@lib/components/Navigation/Navigation";
 import type { Metadata } from "next";
 import { Inter, Roboto_Serif } from "next/font/google";
@@ -23,6 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <AOSInit />
       <body className={`${roboto.className} w-screen`}>
         {/* @ts-expect-error Async Server Component */}
         <Navigation suppressHydrationWarning={true} />

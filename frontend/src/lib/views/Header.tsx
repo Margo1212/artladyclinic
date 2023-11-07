@@ -5,7 +5,6 @@ export type HeaderProps = {
 };
 
 export const Header = ({ homepage }: HeaderProps) => {
-  console.log(homepage);
   const images = homepage.header.images.data.map(
     (image: any) => image.attributes
   );
@@ -33,6 +32,7 @@ export const Header = ({ homepage }: HeaderProps) => {
       <div className=" mt-3 grid grid-cols-5 grid-rows-5 gap-2 tablet:gap-5 overflow-clip desktop:w-[35rem] desktop:h-[105%] desktop:mt-12 tablet:w-[30rem] tablet:h-[28rem] w-[279px] h-[267px]">
         {images.map((image: any, idx: number) => (
           <div
+            data-aos="zoom-in"
             key={idx}
             className={`${sizes.filter(
               (size, i) => i === idx

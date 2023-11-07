@@ -6,7 +6,11 @@ export type ImageContainerProps = {
 
 export const ImageContainer = ({ photo }: ImageContainerProps) => {
   return (
-    <div className="w-full h-full shadow-sm" key={photo.image.id}>
+    <div
+      data-aos="zoom-in"
+      className="w-full h-full shadow-sm"
+      key={photo.image.id}
+    >
       <Image
         className="w-full object-cover h-full"
         src={photo.image.data?.attributes.url}

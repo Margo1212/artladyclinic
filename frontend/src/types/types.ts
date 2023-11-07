@@ -38,9 +38,10 @@ export type Service = {
   name: string;
   description: string;
   price: number;
-  image: string;
+  image: any;
   slug: string;
   category?: Category;
+  application: any;
 };
 
 export type ServiceList = Service[];
