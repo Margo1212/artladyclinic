@@ -17,23 +17,26 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <div>
           <h4 className="text-dark-blue font-medium text-lg">Opis</h4>
-          <p>{service.description}</p>
+          <p className="laptop:text-base text-sm">{service.description}</p>
         </div>
 
         {service.application.map((appl: any) => (
           <div key={appl.id}>
             <h4 className="text-blue font-medium text-lg">{appl.title}</h4>
-            <p className="text-base">{appl.description}</p>
+            <p className="laptop:text-base text-sm">{appl.description}</p>
           </div>
         ))}
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <h4 className="text-blue font-medium text-lg mb-4">Cena:</h4>
-          <div>
+          <div className="flex flex-col">
+            <p className="text-l text-[#777676] line-through">
+              {service.oldPrice} zł
+            </p>
             <p className="text-2xl text-[#777676]">{service.price} zł</p>
           </div>
         </div>
       </div>
-      <div className="laptop:w-1/2 flex laptop:justify-end ">
+      <div className="laptop:w-1/2 flex justify-center laptop:justify-end ">
         <Image
           className="w-3/4 laptop:h-3/4 h-full object-cover shadow-md"
           src={service.image.data[0].attributes.url}

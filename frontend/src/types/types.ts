@@ -22,7 +22,7 @@ export type Product = {
   image: any;
   price: string;
   slug: string;
-  applicationRequirement: string;
+  applicationRequirements: any;
 };
 
 export type Icon = {
@@ -42,6 +42,7 @@ export type Service = {
   slug: string;
   category?: Category;
   application: any;
+  oldPrice: number;
 };
 
 export type ServiceList = Service[];
