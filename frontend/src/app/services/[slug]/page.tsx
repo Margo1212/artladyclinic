@@ -8,7 +8,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   console.log(service);
 
   return (
-    <div className="flex flex-col-reverse gap-4 laptop:flex-row px-6 py-4 bg-white">
+    <div className="flex flex-col-reverse gap-4 laptop:flex-row px-6 py-4 laptop:py-16 laptop:px-20 bg-white">
       <div className="laptop:w-1/2 space-y-8">
         <div className="border-b-2 mb-3 pb-2 border-b-blue">
           <h2 className="text-2xl text-blue font-normal text-center laptop:text-4xl laptop:text-left ">
@@ -29,13 +29,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="flex justify-between">
           <h4 className="text-blue font-medium text-lg mb-4">Cena:</h4>
           <div>
-            <p>{service.price} zł</p>
+            <p className="text-2xl text-[#777676]">{service.price} zł</p>
           </div>
         </div>
       </div>
-      <div className="laptop:w-1/2 flex justify-center ">
+      <div className="laptop:w-1/2 flex laptop:justify-end ">
         <Image
-          className="w-3/4 h-full object-cover shadow-md"
+          className="w-3/4 laptop:h-3/4 h-full object-cover shadow-md"
           src={service.image.data[0].attributes.url}
           alt={service.image.data[0].attributes.alternativeText}
           width={service.image.data[0].attributes.width}
