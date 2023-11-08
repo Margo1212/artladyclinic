@@ -49,6 +49,9 @@
       "type": "component",
       "repeatable": true,
       "component": "page.application"
+    },
+    "oldPrice": {
+      "type": "decimal"
     }
   }
 }
