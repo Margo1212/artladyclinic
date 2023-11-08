@@ -26,9 +26,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="flex justify-between items-center">
           <h4 className="text-blue font-medium text-lg mb-4">Cena:</h4>
           <div className="flex flex-col">
-            {/* <p className="text-l text-[#777676] line-through">
-              {service.oldPrice} zł
-            </p> */}
+            <p className="text-l text-[#777676] line-through">
+              {product.oldPrice} zł
+            </p>
             <p className="text-2xl text-[#777676]">{product.price} zł</p>
           </div>
         </div>

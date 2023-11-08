@@ -23,7 +23,7 @@ export function ListServices(props: ListServicesProps) {
   if (!categories) return <p>No profile data</p>;
 
   return (
-    <div className="w-full h-[33.438rem]">
+    <div className="w-full h-full tablet:h-[33.438rem]">
       <Tab.Group vertical>
         <div className="flex h-full tablet:flex-row flex-col w-full">
           <Tab.List className="flex tablet:flex-col w-full flex-wrap tablet:flex-nowrap laptop:w-1/4 h-full tablet:space-y-1 rounded-sm text-dark-blue p-1">
@@ -31,7 +31,7 @@ export function ListServices(props: ListServicesProps) {
               <Tab as={Fragment} key={category.id}>
                 <button
                   className={`
-                   group hover:bg-dark-blue w-full border-b-2 text-center tablet:text-left border-dark-gray/20 flex tablet:justify-start justify-center items-center gap-5 tablet:w-56 h-14 rounded-sm px-4 py-2 text-sm font-normal leading-5`}
+                   group hover:bg-dark-blue w-1/2 border-b-2 text-center tablet:text-left border-dark-gray/20 flex tablet:justify-start justify-center items-center gap-5 tablet:w-full outline-none h-14 rounded-sm px-4 py-2 text-sm font-normal leading-5`}
                 >
                   <span className="hidden group-hover:invert group-hover:brightness-0  w-1/5 h-full tablet:flex  justify-center items-center ">
                     <Image
@@ -50,7 +50,7 @@ export function ListServices(props: ListServicesProps) {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels className="h-full laptop:w-3/4 ">
+          <Tab.Panels className="h-full laptop:w-3/4 overflow-auto">
             {categories.map((category) => (
               <Tab.Panel
                 key={category.id}

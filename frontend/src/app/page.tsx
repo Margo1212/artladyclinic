@@ -39,7 +39,7 @@ export default async function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Header homepage={homepage} />
         <AboutUsSection homepage={homepage} />
-        <section className="w-full desktop:py-14 desktop:px-56 h-full laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
+        <section className="w-full desktop:py-14 h-auto desktop:px-56 laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
           <div className="flex flex-col space-y-6 mb-14">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -51,8 +51,8 @@ export default async function Home() {
             <ListServices categories={categories} services={services} />
           </Card>
         </section>
-        <section className="h-full overflow-y-hidden py-14">
-          <div className="flex flex-col items-center space-y-10 mb-14">
+        <section className=" py-14">
+          <div className="flex flex-col items-center space-y-8 mb-14">
             <Title>Nowośći</Title>
             <p className="text-center italic font-light text-[13px]">
               {news.description}

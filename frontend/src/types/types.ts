@@ -23,6 +23,7 @@ export type Product = {
   price: string;
   slug: string;
   applicationRequirements: any;
+  oldPrice: number;
 };
 
 export type Icon = {
