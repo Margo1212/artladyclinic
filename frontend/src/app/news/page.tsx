@@ -17,7 +17,7 @@ export default async function Page() {
   );
 
   return (
-    <section className="h-full w-full px-3 py-4 laptop:py-14 laptop:px-20">
+    <section className="h-full w-full px-3 py-4 laptop:py-14 laptop:px-20 bg-white">
       <div className="flex flex-col items-center space-y-10 mb-14">
         <Title>Nowośći</Title>
 

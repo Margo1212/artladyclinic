@@ -90,7 +90,7 @@ export default async function Home() {
         </section>
         <section className="px-3 py-4 laptop:px-52 laptop:py-14 space-y-16">
           <Title>{homepage.reviewsSection.title}</Title>
-          <div className="flex flex-col laptop:flex-row gap-x-14">
+          <div className="flex flex-col laptop:flex-row gap-x-14 gap-y-6">
             {homepage.reviewsSection.review.map((r: any) => (
               <div key={r.id} className="bg-white px-6 py-3 space-y-2">
                 <div className="flex gap-4">
