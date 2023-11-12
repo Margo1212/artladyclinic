@@ -31,7 +31,7 @@ export function ListServices(props: ListServicesProps) {
               <Tab as={Fragment} key={category.id}>
                 <button
                   className={`
-                   group hover:bg-dark-blue w-1/2 border-b-2 text-center tablet:text-left border-dark-gray/20 flex tablet:justify-start justify-center items-center gap-5 tablet:w-full outline-none h-14 rounded-sm px-4 py-2 text-sm font-normal leading-5`}
+                   group transition ease-in-out duration-200 hover:bg-dark-blue w-full border-b-2 text-center tablet:text-left border-dark-gray/20 flex tablet:justify-start justify-center items-center gap-5 tablet:w-full outline-none h-14 rounded-sm px-4 py-2 text-sm font-normal leading-5`}
                 >
                   <span className="hidden group-hover:invert group-hover:brightness-0  w-1/5 h-full tablet:flex  justify-center items-center ">
                     <Image

@@ -126,7 +126,7 @@ export const ContactForm = () => {
         }
       />
 
-      <button className="bg-gradient-to-b from-dark-blue to-light-blue rounded-md font-medium text-white py-3 px-6 w-full">
+      <button className="transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md font-medium text-white py-3 px-6 w-full">
         Wyślij
       </button>
     </form>

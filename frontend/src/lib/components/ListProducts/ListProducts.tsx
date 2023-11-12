@@ -26,13 +26,13 @@ export function ListProducts(props: ListProductsProps) {
   return (
     <div className="w-full min-h-[33.438rem] shadow-md pb-5">
       <Tab.Group vertical>
-        <div className="flex w-full justify-around">
-          <Tab.List className="flex flex-col w-1/4 h-full space-y-1 rounded-sm text-dark-blue   p-1">
+        <div className="flex flex-col laptop:flex-row w-full justify-around gap-5 laptop:gap-0">
+          <Tab.List className="flex flex-col w-full laptop:w-1/4 h-full space-y-1 rounded-sm text-dark-blue   p-1">
             {productCategories.map((category) => (
               <Tab as={Fragment} key={category.id}>
                 <button
                   className={`outline-none
-                     border-b-2 group border-dark-gray/20 hover:bg-dark-blue flex items-center gap-5 w-56 h-14 rounded-sm px-6 py-3 text-sm font-medium leading-5 hover:text-white`}
+                     border-b-2 group border-dark-gray/20 transition ease-in-out duration-200 hover:bg-dark-blue flex items-center gap-5 w-full h-14 rounded-sm px-6 py-3 text-sm font-medium leading-5 hover:text-white`}
                 >
                   <h3 className="text-dark-blue group-hover:text-white font-normal text-sm">
                     {category.name}
@@ -41,7 +41,7 @@ export function ListProducts(props: ListProductsProps) {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels className="h-full w-3/4 px-16">
+          <Tab.Panels className="h-full w-full laptop:w-3/4 px-8 tablet:px-20 laptop:px-16">
             {productCategories.map((category) => (
               <Tab.Panel key={category.id}>
                 <div className="flex flex-col items-center">
@@ -64,7 +64,7 @@ export function ListProducts(props: ListProductsProps) {
                         key={product.id}
                         className="px-4 py-2 my-3 border-[0.5px] border-dark-gray/10 shadow-sm h-72 rounded-md hover:bg-gray-100"
                       >
-                        <div className="w-full h-full space-y-2">
+                        <div className="w-full h-full flex flex-col justify-between gap-y-2">
                           <div className="h-1/2">
                             <Image
                               className="h-full w-full rounded-md object-cover"
@@ -84,7 +84,7 @@ export function ListProducts(props: ListProductsProps) {
                               {product.description?.slice(0, 100) + "..."}
                             </p>
                             <Link
-                              className="self-end w-1/2 px-2 py-2 bg-blue rounded-md text-center text-white text-[8px]"
+                              className="self-end w-24 tablet:w-28 px-2 py-2 transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md text-center text-white text-[8px]"
                               href={`/products/${product.slug}`}
                             >
                               Zobacz więcej

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export type HeaderProps = {
   homepage: any;
@@ -24,8 +25,9 @@ export const Header = ({ homepage }: HeaderProps) => {
         <p className=" text-white text-center laptop:text-left font-light text-[0.813rem] tracking-[8%]">
           {homepage.header.description}
         </p>
-        <button className="bg-white rounded-md font-semibold text-dark-blue py-2 px-4 w-[14.438rem]">
+        <button className="bg-white flex justify-between transition ease-in-out duration-300 hover:bg-white/90 shadow-md rounded-md font-semibold text-dark-blue py-2 px-4 w-[14.438rem]">
           {button.title}
+          <ArrowForwardIcon />
         </button>
       </div>
 

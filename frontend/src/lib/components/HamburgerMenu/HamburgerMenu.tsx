@@ -72,6 +72,9 @@ export default function HamburgerMenu() {
           <Box sx={{ mb: 2, px: "10px" }}>
             <ul className=" space-y-2 align-middle py-6 flex flex-col justify-between">
               <li>
+                <Link href="/">Strona główna</Link>
+              </li>
+              <li>
                 <Link href="/about">O nas</Link>
               </li>
               <li>
