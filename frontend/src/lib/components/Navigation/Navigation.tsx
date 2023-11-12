@@ -1,15 +1,15 @@
-"use server";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram } from "@svg/Instagram";
 import { Booksy } from "@svg/Booksy";
-import { getNavbar } from "@lib/data/navbar";
+
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
-const Navigation = async () => {
-  const navData = getNavbar();
-  const nav = await Promise.resolve(navData);
+export type NavProps = {
+  nav: any;
+};
+
+const Navigation = ({ nav }: NavProps) => {
   return (
     <nav className="w-full flex px-10 justify-between items-center bg-[#f8f8f8] text-dark-blue tablet:text-xs desktop:text-sm font-medium desktop:px-14">
       <div className="tablet:h-20 tablet:w-24 w-14 h-12">
