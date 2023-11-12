@@ -1,11 +1,9 @@
 import { getNews } from "@lib/data/news";
 import { Title } from "@components/Title/Title";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { error } from "console";
 
 export const metadata: Metadata = {
-  title: "...",
+  title: "Art Lady Clinic |  Nowośći",
   description: "...",
 };
 
@@ -24,6 +22,7 @@ export default async function Page() {
         <div className="laptop:px-20 flex laptop:flex-row flex-wrap gap-8 justify-center ">
           {news.map((news: any) => (
             <div
+              data-aos="zoom-in"
               key={news.id}
               style={{
                 backgroundImage: `url(${news.image.data?.attributes.url})`,

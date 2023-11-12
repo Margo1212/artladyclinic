@@ -11,7 +11,7 @@ import { Category } from "types/types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const metadata: Metadata = {
-  title: "...",
+  title: "Art Lady Clinic | Cennik",
   description: "...",
 };
 

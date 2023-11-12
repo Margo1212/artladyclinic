@@ -39,7 +39,7 @@ export default async function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Header homepage={homepage} />
         <AboutUsSection homepage={homepage} />
-        <section className="w-full desktop:py-14 h-auto desktop:px-56 laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
+        <section className="w-full px-3 py-4 desktop:py-14 h-auto desktop:px-56 laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
           <div className="flex flex-col space-y-6 mb-14">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -51,30 +51,31 @@ export default async function Home() {
             <ListServices categories={categories} services={services} />
           </Card>
         </section>
-        <section className=" py-14">
-          <div className="flex flex-col items-center space-y-8 mb-14">
+        <section className="px-3 py-4 tablet:px-28 laptop:px-24 desktop:px-48 desktop:py-14">
+          <div className="flex flex-col items-center space-y-5 mb-14">
             <Title>Nowośći</Title>
             <p className="text-center italic font-light text-[13px]">
               {news.description}
             </p>
-            <div className="px-20 flex gap-8 justify-center ">
-              {news.map((news: any) => (
+            <div className="grid  laptop:grid-cols-4 tablet:grid-cols-2 gap-4 justify-center ">
+              {news.slice(-4).map((news: any) => (
                 <div
+                  data-aos="zoom-in"
                   key={news.id}
                   style={{
                     backgroundImage: `url(${news.image.data?.attributes.url})`,
                     backgroundSize: "cover",
                   }}
-                  className={`w-[260px] h-[380px] shadow-md rounded-sm flex justify-center items-end p-5`}
+                  className={`w-full h-[360px] shadow-md rounded-sm flex justify-center items-end p-3`}
                 >
-                  <div className="w-full h-1/2 bg-white/75 space-y-2 rounded-md p-4">
-                    <h3 className="text-base font-medium text-dark-gray">
+                  <div className="w-full h-1/2 bg-white/75 laptop:space-y-2 space-y-4 flex flex-col rounded-md p-3">
+                    <h3 className="text-sm font-medium text-dark-gray">
                       {news.title}
                     </h3>
                     <p className="text-[10px] font-light text-dark-gray/50">
                       {news.date}
                     </p>
-                    <p className="text-[10px] font-normal text-dark-gray/80">
+                    <p className="text-[9px] desktop:text-[10px] break-all font-normal text-dark-gray/80">
                       {news.description}
                     </p>
                   </div>
@@ -82,17 +83,21 @@ export default async function Home() {
               ))}
             </div>
             <Link href="/news">
-              <button className="bg-gradient-to-b from-dark-blue to-light-blue rounded-md font-medium text-white py-3 px-6 w-[250px]">
+              <button className="transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md font-medium text-white py-3 px-6 w-[250px]">
                 {buttonAbout.title}
               </button>
             </Link>
           </div>
         </section>
-        <section className="px-3 py-4 laptop:px-52 laptop:py-14 space-y-16">
+        <section className="px-3 py-4 desktop:px-52 desktop:py-14 space-y-16">
           <Title>{homepage.reviewsSection.title}</Title>
           <div className="flex flex-col laptop:flex-row gap-x-14 gap-y-6">
             {homepage.reviewsSection.review.map((r: any) => (
-              <div key={r.id} className="bg-white px-6 py-3 space-y-2">
+              <div
+                data-aos="zoom-in"
+                key={r.id}
+                className="bg-white px-6 py-3 space-y-2"
+              >
                 <div className="flex gap-4">
                   <div>
                     <Image

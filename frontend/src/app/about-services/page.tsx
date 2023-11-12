@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Art Lady Clinic | About Services",
+  title: "Art Lady Clinic | O Usługach",
   description: "...",
 };
 
@@ -14,9 +14,12 @@ export default async function Page() {
   const aboutServices = await Promise.resolve(aboutServicesData);
 
   return (
-    <div className="w-full bg-white px-3 py-4 laptop:px-52 laptop:py-14 space-y-10">
+    <div className="w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52 desktop:py-14 space-y-10">
       <Title>{aboutServices.title}</Title>
-      <div className="flex flex-col laptop:flex-row space-y-5">
+      <div
+        data-aos="zoom-in"
+        className="flex flex-col laptop:flex-row space-y-5"
+      >
         <div className="laptop:w-1/4 w-full">
           <Image
             className="w-full object-cover h-full"
@@ -27,22 +30,25 @@ export default async function Page() {
             height={aboutServices.image.data?.attributes.height}
           />
         </div>
-        <div className="laptop:w-3/4 laptop:text-left text-center laptop:px-16 flex items-center">
+        <div className="laptop:w-3/4 laptop:text-left text-center text-sm laptop:px-10 break-all flex items-center">
           <p>{aboutServices.description}</p>
         </div>
       </div>
       <div className="space-y-12">
         {aboutServices.ourService.map((service: any) => (
-          <div className="flex laptop:flex-row flex-col-reverse even:flex-col  laptop:even:flex-row-reverse ">
-            <div className="w-3/4 flex flex-col justify-center pr-6 even:pl-6 even:pr-0 space-y-3">
-              <h2 className="text-2xl font-normal text-dark-blue">
+          <div
+            data-aos="zoom-in"
+            className="flex laptop:flex-row gap-y-5 laptop:gap-y-0 gap-x-5 flex-col-reverse  laptop:even:flex-row-reverse "
+          >
+            <div className="laptop:w-3/4 w-full flex flex-col justify-center  space-y-3">
+              <h2 className="text-2xl font-normal laptop:text-left text-center text-dark-blue">
                 {service.title}
               </h2>
-              <p className="text-base font-normal text-dark-gray/80">
+              <p className="text-sm break-all font-normal laptop:text-left text-center text-dark-gray/80">
                 {service.description}
               </p>
             </div>
-            <div className="w-1/4 shadow-md">
+            <div className="laptop:w-1/4 w-full shadow-md">
               <Image
                 className="w-full object-cover h-full"
                 key={service.id}

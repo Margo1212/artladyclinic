@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Circle } from "@lib/assets/svg/Circle";
 
 export const metadata: Metadata = {
-  title: "...",
+  title: "Art Lady Clinic | Galeria",
   description: "...",
 };
 

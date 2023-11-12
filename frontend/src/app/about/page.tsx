@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Art Lady Clinic | About Us",
+  title: "Art Lady Clinic | O Nas",
   description: "...",
 };
 
@@ -14,13 +14,13 @@ export default async function Page() {
   const aboutUs = await Promise.resolve(aboutUsData);
 
   return (
-    <div className="w-full bg-white px-3 py-4 laptop:px-52 laptop:py-14 space-y-10">
+    <div className="w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 space-y-10">
       <Title>{aboutUs.title}</Title>
       <div className="space-y-12">
         {aboutUs.employees.map((employee: any) => (
           <div
             data-aos="zoom-in"
-            className="flex flex-col space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
+            className="flex flex-col gap-x-5 space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
           >
             <div className="laptop:w-1/4 shadow-md">
               <Image
@@ -32,11 +32,11 @@ export default async function Page() {
                 height={employee.image.data?.attributes.height}
               />
             </div>
-            <div className="laptop:w-3/4 flex flex-col space-y-1 laptop:justify-center laptop:px-6 laptop:space-y-3">
+            <div className="laptop:w-3/4 flex flex-col space-y-1 laptop:justify-center laptop:space-y-3">
               <h2 className="text-4xl text-center laptop:text-left font-normal text-dark-gray">
                 {employee.name}
               </h2>
-              <p className="text-base text-center laptop:text-left font-normal text-dark-gray/80">
+              <p className="text-base text-center break-all laptop:text-left font-normal text-dark-gray/80">
                 {employee.description}
               </p>
             </div>

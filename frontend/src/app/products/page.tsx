@@ -5,7 +5,7 @@ import { ListProducts } from "@components/ListProducts/ListProducts";
 import { Title } from "@lib/components/Title/Title";
 
 export const metadata: Metadata = {
-  title: "...",
+  title: "Art Lady Clinic | Produkty",
   description: "...",
 };
 
@@ -19,7 +19,7 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="w-full h-full bg-white px-36 py-14 space-y-10">
+    <div className="w-full h-full bg-white desktop:px-32 py-14 space-y-10">
       <Title>Produkty</Title>
       <ListProducts
         products={products}
