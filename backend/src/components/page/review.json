@@ -18,16 +18,25 @@
       ]
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 30,
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "maxLength": 300,
+      "required": true,
+      "minLength": 1
     },
     "who": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 45
     },
     "star": {
-      "type": "integer"
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": 1
     }
   }
 }

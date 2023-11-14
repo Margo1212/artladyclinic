@@ -33,6 +33,8 @@ export default async function Home() {
   ]);
 
   const buttonAbout = homepage.aboutSection?.buttonAboutSection;
+  const color = Math.floor(Math.random() * 16777215).toString(16);
+  console.log(color);
 
   return (
     <>
@@ -91,7 +93,7 @@ export default async function Home() {
         </section>
         <section className="px-3 py-4 desktop:px-52 desktop:py-14 space-y-16">
           <Title>{homepage.reviewsSection.title}</Title>
-          <div className="flex flex-col laptop:flex-row gap-x-14 gap-y-6">
+          <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-x-14 gap-y-6">
             {homepage.reviewsSection.review.map((r: any) => (
               <div
                 data-aos="zoom-in"
@@ -100,19 +102,27 @@ export default async function Home() {
               >
                 <div className="flex gap-4">
                   <div>
-                    <Image
-                      className="w-full h-full object-cover"
-                      src={r.image.data?.attributes.url}
-                      alt={r.image.data?.attributes.alternativeText}
-                      width={r.image.data?.attributes.width}
-                      height={r.image.data?.attributes.height}
-                    />
+                    {r.image.data !== null ? (
+                      <Image
+                        className="w-full h-full object-cover"
+                        src={r.image.data?.attributes.url}
+                        alt={r.image.data?.attributes.alternativeText}
+                        width={r.image.data?.attributes.width}
+                        height={r.image.data?.attributes.height}
+                      />
+                    ) : (
+                      <div
+                        className={`w-[44px] h-[44px] flex justify-center items-center rounded-full bg-dark-blue`}
+                      >
+                        <p className="text-white">{r.name.charAt(0)}</p>
+                      </div>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-sm text-dark-gray/85">
+                  <div className="flex flex-col justify-center">
+                    <h3 className="font-semibold break-words  text-sm text-dark-gray/85">
                       {r.name}
                     </h3>
-                    <p className="font-normal	text-xs text-dark-gray/75">
+                    <p className="font-normal break-words	text-xs text-dark-gray/75">
                       {r.who}
                     </p>
                   </div>
@@ -144,7 +154,9 @@ export default async function Home() {
                 }}
               >
                 <AccordionSummary
-                  expandIcon={<AddIcon />}
+                  expandIcon={
+                    <AddIcon sx={{ color: "#0E0045", marginLeft: "2px" }} />
+                  }
                   aria-controls="panel2a-content"
                   id="panel2a-header"
                 >
@@ -154,7 +166,7 @@ export default async function Home() {
                   <Typography
                     sx={{
                       paddingLeft: "20px",
-                      borderLeft: "solid 2px #0E0045",
+                      borderLeft: "solid 4px #0E0045",
                     }}
                   >
                     {question.answer}

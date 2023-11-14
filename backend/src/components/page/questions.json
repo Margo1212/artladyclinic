@@ -1,15 +1,20 @@
 {
   "collectionName": "components_page_questions",
   "info": {
-    "displayName": "questions"
+    "displayName": "questions",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "question": {
-      "type": "richtext"
+      "type": "richtext",
+      "maxLength": 500,
+      "required": true
     },
     "answer": {
-      "type": "richtext"
+      "type": "richtext",
+      "maxLength": 1000,
+      "required": true
     }
   }
 }
