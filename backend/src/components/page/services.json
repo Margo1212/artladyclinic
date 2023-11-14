@@ -2,15 +2,19 @@
   "collectionName": "components_page_services",
   "info": {
     "displayName": "services",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 20,
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "maxLength": 260
     }
   }
 }

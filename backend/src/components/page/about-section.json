@@ -1,15 +1,21 @@
 {
   "collectionName": "components_page_about_sections",
   "info": {
-    "displayName": "about-section"
+    "displayName": "about-section",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 20
     },
     "textBlock": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true,
+      "maxLength": 910,
+      "minLength": 300
     },
     "buttonAboutSection": {
       "displayName": "button-about-section",
@@ -18,14 +24,15 @@
       "component": "page.button-about-section"
     },
     "imageAboutSection": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
