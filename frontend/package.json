@@ -27,6 +27,7 @@
     "eslint-config-next": "^13.5.2",
     "formik": "^2.4.5",
     "next": "^14.0.1",
+    "next-images": "^1.8.5",
     "next-plugin-svgr": "^1.1.8",
     "postcss": "8.4.29",
     "qs": "^6.11.2",

@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const withImages = require("next-images");
+
 const nextConfig = {
   experimental: {
     // appDir: true,
@@ -27,4 +30,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withImages(nextConfig);
