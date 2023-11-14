@@ -4,7 +4,7 @@ import { Instagram } from "@svg/Instagram";
 import { Booksy } from "@svg/Booksy";
 
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
-
+export const revalidate = 10;
 export type NavProps = {
   nav: any;
 };
@@ -14,13 +14,15 @@ const Navigation = ({ nav }: NavProps) => {
     <nav className="w-full flex px-10 justify-between items-center bg-[#f8f8f8] text-dark-blue tablet:text-xs desktop:text-sm font-medium desktop:px-14">
       <div className="tablet:h-20 tablet:w-24 w-14 h-12">
         <Link href="/">
-          <Image
-            className="w-full h-full object-cover"
-            src={nav.logo.data?.attributes.url}
-            alt={nav.logo.data?.attributes.alternativeText}
-            width={nav.logo.data?.attributes.width}
-            height={nav.logo.data?.attributes.height}
-          />
+          {nav.logo?.data !== null ? (
+            <Image
+              className="w-full h-full object-cover"
+              src={nav.logo?.data?.attributes.url}
+              alt={nav.logo?.data?.attributes.alternativeText}
+              width={nav.logo?.data?.attributes.width}
+              height={nav.logo?.data?.attributes.height}
+            />
+          ) : null}
         </Link>
       </div>
 

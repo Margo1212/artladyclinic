@@ -46,24 +46,24 @@ export const Footer = ({ categories, contact }: FooterProps) => {
           <span className="invert brightness-0">
             <Email />
           </span>
-          <p className="text-xs text-white">{contact.contactInfo.email}</p>
+          <p className="text-xs text-white">{contact.contactInfo?.email}</p>
         </div>
         <div className="flex items-center gap-x-6">
           <span className="invert brightness-0">
             <Phone />
           </span>
-          <p className="text-xs text-white">{contact.contactInfo.phone}</p>
+          <p className="text-xs text-white">{contact.contactInfo?.phone}</p>
         </div>
         <div className="flex items-center gap-x-6">
           <span className="invert brightness-0">
             <Local />
           </span>
-          <p className="text-xs text-white">{contact.contactInfo.address}</p>
+          <p className="text-xs text-white">{contact.contactInfo?.address}</p>
         </div>
       </div>
       <div className="hidden py-6 px-10 w-full laptop:flex flex-col gap-y-2">
         <p className="text-base font-medium text-white">Usługi</p>
-        {categories.map((category: Category) => (
+        {categories?.map((category: Category) => (
           <Link key={category.id} href="/price-list">
             <p className="text-white text-xs">{category.name}</p>
           </Link>
@@ -102,7 +102,7 @@ export const Footer = ({ categories, contact }: FooterProps) => {
       </div>
       <div className="hidden laptop:flex py-6 px-10 w-full flex-col gap-y-2">
         <p className="text-base font-medium text-white">Godziny otwarcia</p>
-        {contact.openingHours.hours.map((hour: any) => (
+        {contact.openingHours?.hours.map((hour: any) => (
           <p key={hour.id} className="flex text-xs text-white">
             <span className="text-white mr-2 text-xs font-medium">{`${hour.day}: `}</span>
             {!hour.from && !hour.to
