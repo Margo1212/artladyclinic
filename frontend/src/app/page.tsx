@@ -16,6 +16,10 @@ import Link from "next/link";
 import { getNews } from "@lib/data/news";
 import { Header } from "@lib/views/Header";
 import { AboutUsSection } from "@lib/views/AboutUsSection";
+import { ServiceImage } from "@lib/assets/svg/ServiceImage";
+import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
+import { ReviewsSectionImage } from "@lib/assets/svg/ReviewsSectionImage";
+import { FaqSectionImage } from "@lib/assets/svg/FaqSectionImage";
 
 export const revalidate = 10;
 
@@ -41,7 +45,9 @@ export default async function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Header homepage={homepage} />
         <AboutUsSection homepage={homepage} />
-        <section className="w-full px-3 py-4 desktop:py-14 h-auto desktop:px-56 laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
+        <section className="relative w-full px-3 py-4 desktop:py-14 h-auto desktop:px-56 laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
+          <ServiceImage position="up" />
+          <ServiceImage position="down" />
           <div className="flex flex-col space-y-6 mb-14">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
@@ -53,13 +59,15 @@ export default async function Home() {
             <ListServices categories={categories} services={services} />
           </Card>
         </section>
-        <section className="px-3 py-4 tablet:px-28 laptop:px-24 desktop:px-48 desktop:py-14">
-          <div className="flex flex-col items-center space-y-5 mb-14">
+        <section className="relative px-3 py-4 tablet:px-28 laptop:px-24 desktop:px-48 desktop:py-14">
+          <NewsSectionImage position="up" />
+          <NewsSectionImage position="down" />
+          <div className="flex flex-col items-center justify-center gap-y-5 mb-14">
             <Title>Nowośći</Title>
             <p className="text-center italic font-light text-[13px]">
               {news.description}
             </p>
-            <div className="grid  laptop:grid-cols-4 tablet:grid-cols-2 gap-4 justify-center ">
+            <div className="grid grid-cols-1  laptop:grid-cols-4 tablet:grid-cols-2 gap-4 justify-center mb-7 bg-opacity-0">
               {news.slice(-4).map((news: any) => (
                 <div
                   data-aos="zoom-in"
@@ -91,14 +99,16 @@ export default async function Home() {
             </Link>
           </div>
         </section>
-        <section className="px-3 py-4 desktop:px-52 desktop:py-14 space-y-16">
+        <section className="relative px-3 py-4 desktop:px-52 desktop:py-0 space-y-10">
+          <ReviewsSectionImage position="up" />
+          <ReviewsSectionImage position="down" />
           <Title>{homepage.reviewsSection.title}</Title>
           <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-x-14 gap-y-6">
             {homepage.reviewsSection.review.map((r: any) => (
               <div
                 data-aos="zoom-in"
                 key={r.id}
-                className="bg-white px-6 py-3 space-y-2"
+                className="bg-white px-6 py-3 space-y-2 shadow-md"
               >
                 <div className="flex gap-4">
                   <div>
@@ -139,7 +149,9 @@ export default async function Home() {
             ))}
           </div>
         </section>
-        <section className="h-screen flex flex-col items-center py-14">
+        <section className="relative flex flex-col items-center py-14">
+          <FaqSectionImage position="up" />
+          <FaqSectionImage position="down" />
           <Title>{homepage.faq.title}</Title>
           <div className=" w-full desktop:w-[800px] mt-14">
             {homepage.faq.questions.map((question: any) => (
@@ -167,6 +179,7 @@ export default async function Home() {
                     sx={{
                       paddingLeft: "20px",
                       borderLeft: "solid 4px #0E0045",
+                      fontSize: "12px",
                     }}
                   >
                     {question.answer}
