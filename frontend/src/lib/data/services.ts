@@ -53,8 +53,12 @@ export const getServiceBySlug = async ({ slug }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/services?${query}`);
-  const rawService = res.data.data[0];
+  const res = await axios
+    .get(`${url}/api/services?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawService = res?.data.data[0];
   return serviceReducer(rawService);
 };
 

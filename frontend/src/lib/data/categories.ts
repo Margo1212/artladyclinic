@@ -33,9 +33,13 @@ export const getCategories = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/categories?${query}`);
-  const rawCategories = res.data.data;
-  const categories = rawCategories.map((category: Category) =>
+  const res = await axios
+    .get(`${url}/api/categories?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawCategories = res?.data.data;
+  const categories = rawCategories?.map((category: Category) =>
     categoryReducer(category)
   );
   return categories;

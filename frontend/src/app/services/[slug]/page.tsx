@@ -37,13 +37,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <div className="laptop:w-1/2 flex justify-center laptop:justify-end ">
-        <Image
-          className="w-3/4 laptop:h-3/4 h-full object-cover shadow-md"
-          src={service.image.data[0].attributes.url}
-          alt={service.image.data[0].attributes.alternativeText}
-          width={service.image.data[0].attributes.width}
-          height={service.image.data[0].attributes.height}
-        />
+        {service.image.data !== null ? (
+          <Image
+            className="w-3/4 laptop:h-3/4 h-full object-cover shadow-md"
+            src={service.image.data[0].attributes.url}
+            alt={service.image.data[0].attributes.alternativeText}
+            width={service.image.data[0].attributes.width}
+            height={service.image.data[0].attributes.height}
+          />
+        ) : null}
       </div>
     </div>
   );

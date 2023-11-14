@@ -15,8 +15,12 @@ export const getProductCategories = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/product-categories?${query}`);
-  const rawProductCategories = res.data.data;
+  const res = await axios
+    .get(`${url}/api/product-categories?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawProductCategories = res?.data.data;
   const productCategory = rawProductCategories.map((productC: any) =>
     productsCategoryReducer(productC)
   );

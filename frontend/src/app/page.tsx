@@ -32,7 +32,7 @@ export default async function Home() {
     newsData,
   ]);
 
-  const buttonAbout = homepage.aboutSection.buttonAboutSection;
+  const buttonAbout = homepage.aboutSection?.buttonAboutSection;
 
   return (
     <>
@@ -118,8 +118,8 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="flex">
-                  {[...Array(r.star).keys()].map((s: any) => (
-                    <Star />
+                  {[...Array(r.star).keys()].map((s: any, idx) => (
+                    <Star key={idx} />
                   ))}
                 </div>
                 <p className="font-light text-xs text-dark-gray/85">

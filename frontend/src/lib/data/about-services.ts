@@ -14,8 +14,16 @@ export const getAboutServices = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/about-service?${query}`);
-  const rawAboutServices = res.data.data;
+  const res = await axios
+    .get(`${url}/api/about-service?${query}`, {
+      validateStatus: function (status) {
+        return status < 500; // Resolve only if the status code is less than 500
+      },
+    })
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawAboutServices = res?.data.data;
 
   const aboutService = aboutServices(rawAboutServices);
   return aboutService;

@@ -35,7 +35,11 @@ export const getProductBySlug = async ({ slug }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/products?${query}`);
-  const rawProducts = res.data.data[0];
+  const res = await axios
+    .get(`${url}/api/products?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawProducts = res?.data.data[0];
   return productsReducer(rawProducts);
 };

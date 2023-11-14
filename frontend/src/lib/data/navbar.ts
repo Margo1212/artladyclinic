@@ -1,4 +1,4 @@
-import { aboutServices } from "@lib/utils";
+import { navBarReducer } from "@lib/utils";
 import axios from "axios";
 import qs from "qs";
 import { cache } from "react";
@@ -14,9 +14,13 @@ export const getNavbar = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/nav-bar?${query}`);
-  const rawNavbar = res.data.data;
+  const res = await axios
+    .get(`${url}/api/nav-bar?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawNavbar = res?.data.data;
 
-  const nav = aboutServices(rawNavbar);
+  const nav = navBarReducer(rawNavbar);
   return nav;
 });

@@ -15,8 +15,12 @@ export const getAboutUs = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/about-page?${query}`);
-  const rawAboutUs = res.data.data;
+  const res = await axios
+    .get(`${url}/api/about-page?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawAboutUs = res?.data.data;
 
   const aboutUs = aboutUsReducer(rawAboutUs);
   return aboutUs;

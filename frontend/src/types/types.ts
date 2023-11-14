@@ -34,6 +34,14 @@ export type Icon = {
   height: number;
 };
 
+export type Img = {
+  attributes: any;
+  url: string;
+  alternativeText: string;
+  width: number;
+  height: number;
+};
+
 export type Service = {
   id: string;
   name: string;

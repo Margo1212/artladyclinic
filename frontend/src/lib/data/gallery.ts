@@ -14,8 +14,12 @@ export const getGallery = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/gallery?${query}`);
-  const rawGallery = res.data.data;
+  const res = await axios
+    .get(`${url}/api/gallery?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawGallery = res?.data.data;
 
   const gallery = galleryReducer(rawGallery);
   return gallery;

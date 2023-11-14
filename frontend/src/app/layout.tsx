@@ -37,7 +37,7 @@ export default async function RootLayout({
       <head>
         <link
           rel="icon"
-          href={nav.logo.data?.attributes.url}
+          href={nav?.logo?.data?.attributes.url ?? null}
           type="image/x-icon"
         />
       </head>

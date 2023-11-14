@@ -29,7 +29,7 @@ export default async function Page() {
               <span>
                 <Email />
               </span>
-              <p className="text-xs">{contact.contactInfo.email}</p>
+              <p className="text-xs">{contact?.contactInfo?.email}</p>
             </div>
             <div className="flex items-center gap-x-6">
               <span>

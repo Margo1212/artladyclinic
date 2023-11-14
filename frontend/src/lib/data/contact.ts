@@ -14,8 +14,12 @@ export const getContact = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/contact-page?${query}`);
-  const rawContact = res.data.data;
+  const res = await axios
+    .get(`${url}/api/contact-page?${query}`)
+    .catch(function (error) {
+      console.log(error.toJSON());
+    });
+  const rawContact = res?.data.data;
 
   const contact = contactReducer(rawContact);
   return contact;

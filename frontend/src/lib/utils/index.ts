@@ -1,36 +1,36 @@
 import { Category } from "types/types";
 
 export const homepageReducer = (rawHomepage: any) => {
-  let homepage = { ...rawHomepage.attributes };
-  homepage.id = rawHomepage.id;
+  let homepage = { ...rawHomepage?.attributes };
+  homepage.id = rawHomepage?.id;
 
   return homepage;
 };
 
 export const aboutUsReducer = (rawAboutUs: any) => {
-  let aboutUs = { ...rawAboutUs.attributes };
+  let aboutUs = { ...rawAboutUs?.attributes };
   aboutUs.id = rawAboutUs.id;
 
   return aboutUs;
 };
 
 export const aboutServices = (rawAboutService: any) => {
-  let aboutService = { ...rawAboutService.attributes };
-  aboutService.id = rawAboutService.id;
+  let aboutService = { ...rawAboutService?.attributes };
+  aboutService.id = rawAboutService?.id;
 
   return aboutService;
 };
 
 export const navBarReducer = (rawNavbar: any) => {
-  let nav = { ...rawNavbar.attributes };
-  nav.id = rawNavbar.id;
+  let nav = { ...rawNavbar?.attributes };
+  nav.id = rawNavbar?.id;
 
   return nav;
 };
 
 export const contactReducer = (rawContact: any) => {
-  let contact = { ...rawContact.attributes };
-  contact.id = rawContact.id;
+  let contact = { ...rawContact?.attributes };
+  contact.id = rawContact?.id;
 
   return contact;
 };
@@ -57,8 +57,8 @@ export const vouchersReducer = (rawVouchers: any) => {
 };
 
 export const categoryReducer = (rawCategory: any) => {
-  let category = { ...rawCategory.attributes };
-  category.id = rawCategory.id;
+  let category = { ...rawCategory?.attributes };
+  category.id = rawCategory?.id;
 
   return category;
 };

@@ -20,9 +20,9 @@ export const AboutUsSection = ({ homepage }: HeaderProps) => {
               height={imageAbout.height}
             />
           </div>
-          <div className="laptop:w-2/3 flex flex-col laptop:items-start justify-center py-10 px-12 laptop:px-20 space-y-4">
+          <div className="laptop:w-2/3 w-full flex flex-col laptop:items-start items-center justify-center laptop:justify-between py-10 px-12 laptop:px-20 space-y-4">
             <Title>{homepage.aboutSection.title}</Title>
-            <p className="text-xs text-center laptop:text-left break-all font-light leading-normal tracking-wide">
+            <p className="text-xs text-center laptop:text-left break-words font-light leading-normal tracking-wide">
               {homepage.aboutSection.textBlock}
             </p>
             <Link href="/about">
