@@ -14,13 +14,19 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 70,
+      "minLength": 3
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true,
+      "maxLength": 1000,
+      "minLength": 3
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "image": {
       "type": "media",

@@ -13,10 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 40
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "maxLength": 200
     },
     "image": {
       "type": "media",

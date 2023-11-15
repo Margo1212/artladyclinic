@@ -1,25 +1,31 @@
 {
   "collectionName": "components_page_vouchers",
   "info": {
-    "displayName": "voucher"
+    "displayName": "voucher",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 30
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true,
+      "maxLength": 240
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

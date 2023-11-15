@@ -13,17 +13,24 @@
   "pluginOptions": {},
   "attributes": {
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true,
+      "maxLength": 1000
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 70,
+      "minLength": 3
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "image": {
       "type": "media",

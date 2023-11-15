@@ -44,7 +44,7 @@ export default async function RootLayout({
       <AOSInit />
       <body className={`${roboto.className} w-screen overflow-x-hidden`}>
         <Navigation nav={nav} />
-        <div className="w-full bg-light-gray p-0 laptop:px-10 desktop:px-14 pb-10">
+        <div className="w-full bg-light-gray p-0 laptop:px-10 desktop:px-14 pb-10 overflow-x-clip">
           {children}
         </div>
         <Footer categories={categories} contact={contact} />

@@ -18,11 +18,11 @@ export default async function Page() {
   const vouchers = await Promise.resolve(vouchersData);
 
   return (
-    <section className="h-full w-full px-3 py-4 desktop:py-14 desktop:px-20 bg-white">
-      <div className="flex flex-col items-center space-y-10 mb-14 tablet:px-10 laptop:px-10">
+    <section className="h-full w-full px-2 py-4 desktop:py-14 desktop:px-20 bg-white">
+      <div className="flex flex-col items-center space-y-10 mb-14 tablet:px-2 laptop:px-10">
         <Title>{vouchers.title}</Title>
 
-        <div className="w-full grid grid-cols-1 px-10 tablet:px-20 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 laptop:gap-10 ">
+        <div className="w-full grid grid-cols-1 px-5 tablet:px-10 laptop:px-4 desktop:px-10 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 laptop:gap-10 ">
           {vouchers.voucher.map((v: any) => (
             <div
               data-aos="zoom-in"
@@ -40,7 +40,9 @@ export default async function Page() {
               </div>
               <div className="w-full px-4 space-y-1">
                 <p className="text-base font-normal">{v.title}</p>
-                <p className="text-[10px] font-normal">{v.description}</p>
+                <p className="tablet:text-[10px] text-[9px]  break-words font-normal">
+                  {v.description}
+                </p>
               </div>
             </div>
           ))}

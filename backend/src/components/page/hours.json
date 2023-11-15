@@ -8,13 +8,16 @@
   "options": {},
   "attributes": {
     "from": {
-      "type": "time"
+      "type": "time",
+      "required": true
     },
     "day": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "to": {
-      "type": "time"
+      "type": "time",
+      "required": true
     }
   }
 }

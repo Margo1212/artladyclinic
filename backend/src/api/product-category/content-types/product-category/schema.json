@@ -13,14 +13,18 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 40,
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "maxLength": 200
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     },
     "products": {
       "type": "relation",

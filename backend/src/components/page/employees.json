@@ -2,25 +2,31 @@
   "collectionName": "components_page_employees",
   "info": {
     "displayName": "employees",
-    "icon": "walk"
+    "icon": "walk",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 40
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true,
+      "maxLength": 1000
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

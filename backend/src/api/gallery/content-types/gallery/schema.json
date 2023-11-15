@@ -19,7 +19,9 @@
       "component": "page.photos"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 40
     }
   }
 }

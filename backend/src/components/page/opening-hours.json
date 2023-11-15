@@ -1,12 +1,15 @@
 {
   "collectionName": "components_page_opening_hours",
   "info": {
-    "displayName": "opening-hours"
+    "displayName": "opening-hours",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 30
     },
     "hours": {
       "displayName": "hours",

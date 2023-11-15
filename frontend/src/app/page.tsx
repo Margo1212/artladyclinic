@@ -59,7 +59,7 @@ export default async function Home() {
             <ListServices categories={categories} services={services} />
           </Card>
         </section>
-        <section className="relative px-3 py-4 tablet:px-28 laptop:px-24 desktop:px-48 desktop:py-14">
+        <section className="relative px-3 py-4 tablet:px-28 laptop:px-0 desktop:px-40 desktop:py-14">
           <NewsSectionImage position="up" />
           <NewsSectionImage position="down" />
           <div className="flex flex-col items-center justify-center gap-y-5 mb-14">
@@ -75,17 +75,18 @@ export default async function Home() {
                   style={{
                     backgroundImage: `url(${news.image.data?.attributes.url})`,
                     backgroundSize: "cover",
+                    width: "100%",
                   }}
-                  className={`w-full h-[360px] shadow-md rounded-sm flex justify-center items-end p-3`}
+                  className={`w-full h-[380px] shadow-md rounded-sm flex justify-center items-end p-3`}
                 >
-                  <div className="w-full h-1/2 bg-white/75 laptop:space-y-2 space-y-4 flex flex-col rounded-md p-3">
+                  <div className="w-full h-1/2 bg-white/75 laptop:space-y-1 space-y-2 flex flex-col rounded-md p-3">
                     <h3 className="text-sm font-medium text-dark-gray">
                       {news.title}
                     </h3>
                     <p className="text-[10px] font-light text-dark-gray/50">
                       {news.date}
                     </p>
-                    <p className="text-[9px] desktop:text-[10px] break-all font-normal text-dark-gray/80">
+                    <p className="text-[9px] desktop:text-[9px] break-words font-normal text-dark-gray/90">
                       {news.description}
                     </p>
                   </div>
