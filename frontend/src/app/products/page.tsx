@@ -6,7 +6,8 @@ import { Title } from "@lib/components/Title/Title";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Produkty",
-  description: "...",
+  description:
+    "Nasza kolekcja produktów do pielęgnacji skóry to doskonałe uzupełnienie naszych usług. Znajdziesz tutaj tylko najwyższej jakości kosmetyki, które pomogą Ci utrzymać zdrową i promienną cerę.",
 };
 
 export default async function Page() {
@@ -19,7 +20,7 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="w-full h-full bg-white desktop:px-32 py-14 space-y-10">
+    <div className="w-full h-full bg-white py-4 px-3 desktop:px-32 laptop:py-14 space-y-10">
       <Title>Produkty</Title>
       <ListProducts
         products={products}

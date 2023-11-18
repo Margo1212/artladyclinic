@@ -5,7 +5,8 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Nas",
-  description: "...",
+  description:
+    "Poznaj naszych doświadczonych i pasjonatów branży kosmetycznej pracowników. Zaufaj naszemu zespołowi ekspertów, gotowym zadbać o Twój wygląd i dobre samopoczucie. Skorzystaj z usług profesjonalistów, którzy kochają to, co robią.",
 };
 
 export default async function Page() {
@@ -14,7 +15,7 @@ export default async function Page() {
   const aboutUs = await Promise.resolve(aboutUsData);
 
   return (
-    <div className="w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 space-y-10">
+    <section className="w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 space-y-10">
       <Title>{aboutUs.title}</Title>
       <div className="space-y-12">
         {aboutUs.employees.map((employee: any) => (
@@ -43,6 +44,6 @@ export default async function Page() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

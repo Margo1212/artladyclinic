@@ -2,10 +2,12 @@ import { getAboutServices } from "@lib/data/about-services";
 import { Title } from "@lib/components/Title/Title";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Usługach",
-  description: "...",
+  description:
+    "Oferujemy szeroki wachlarz usług kosmetycznych, dopasowanych do Twoich indywidualnych potrzeb. Nasz salon to miejsce, gdzie profesjonalizm spotyka się z nowoczesnym podejściem do urody. Zanurz się w świecie piękna razem z nami.",
 };
 
 export default async function Page() {
@@ -14,7 +16,9 @@ export default async function Page() {
   const aboutServices = await Promise.resolve(aboutServicesData);
 
   return (
-    <div className="w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52 desktop:py-14 space-y-10">
+    <section className="relative w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52  laptop:py-14 space-y-10 overflow-clip">
+      <NewsSectionImage position="up" />
+      <NewsSectionImage position="down" />
       <Title>{aboutServices.title}</Title>
       <div
         data-aos="zoom-in"
@@ -61,6 +65,6 @@ export default async function Page() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

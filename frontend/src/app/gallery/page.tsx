@@ -7,7 +7,8 @@ import { Circle } from "@lib/assets/svg/Circle";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Galeria",
-  description: "...",
+  description:
+    "Przeglądaj naszą galerię, aby zobaczyć rezultaty naszej pracy i atmosferę w naszym salonie. Odkryj, jak dbamy o detale, tworząc unikalne doświadczenia dla naszych klientów. Pozwól zdjęciom mówić więcej niż słowa.",
 };
 
 export default async function Page() {

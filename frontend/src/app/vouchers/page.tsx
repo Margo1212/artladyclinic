@@ -6,10 +6,12 @@ import { error } from "console";
 import { getVouchers } from "@lib/data/vouchers";
 import { Card } from "@lib/components/Card/Card";
 import Image from "next/image";
+import { VouchersImage } from "@lib/assets/svg/VouchersImage";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Bony Podarunkowe",
-  description: "...",
+  description:
+    "Podaruj niezapomniany prezent dzięki naszym eleganckim bonom podarunkowym. Daj swoim bliskim możliwość relaksu i pielęgnacji w naszym luksusowym salonie kosmetycznym. Sprawdź, jak łatwo można sprawić radość.",
 };
 
 export default async function Page() {
@@ -18,7 +20,9 @@ export default async function Page() {
   const vouchers = await Promise.resolve(vouchersData);
 
   return (
-    <section className="h-full w-full px-2 py-4 desktop:py-14 desktop:px-20 bg-white">
+    <section className="relative h-full w-full px-2 py-4 desktop:py-14 desktop:px-20 bg-white">
+      <VouchersImage position="up" />
+      <VouchersImage position="down" />
       <div className="flex flex-col items-center space-y-10 mb-14 tablet:px-2 laptop:px-10">
         <Title>{vouchers.title}</Title>
 

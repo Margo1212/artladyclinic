@@ -5,10 +5,12 @@ import type { Metadata } from "next";
 import { Email } from "@lib/assets/svg/Email";
 import { Phone } from "@lib/assets/svg/Phone";
 import { Local } from "@lib/assets/svg/Local";
+import { ContactPageImage } from "@lib/assets/svg/ContactPageImg";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Kontakt",
-  description: "...",
+  description:
+    "Skontaktuj się z nami, aby umówić się na wizytę lub uzyskać więcej informacji. Jesteśmy gotowi odpowiedzieć na Twoje pytania i zapewnić Ci najlepszą obsługę. Czekamy na Twój telefon lub e-mail!",
 };
 
 export default async function Page() {
@@ -17,7 +19,9 @@ export default async function Page() {
   const contact = await Promise.resolve(contactData);
 
   return (
-    <div className="w-full h-full px-3 py-4 items-center tablet:px-10 desktop:px-20 bg-white laptop:py-14 space-y-10">
+    <div className="relative overflow-clip w-full h-full px-3 py-4 items-center tablet:px-10 desktop:px-20 bg-white laptop:py-14 space-y-10">
+      <ContactPageImage position="up" />
+      <ContactPageImage position="down" />
       <Title>{contact.title}</Title>
       <div className="grid grid-cols-1 laptop:grid-cols-2 laptop:grid-rows-6 gap-y-4">
         <div className="laptop:row-span-3 w-full h-full flex flex-col tablet:flex-row gap-x-9 gap-y-3 pb-20">

@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
 import { Category } from "types/types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Cennik",
@@ -65,14 +66,21 @@ export default async function Page() {
                   }}
                 >
                   <div>
-                    <p className="font-normal text-sm text-dark-gray/90">
-                      {service.name}
+                    <Link href={`/services/${service.slug}`}>
+                      <p className="font-normal text-lg text-dark-gray/90">
+                        {service.name}
+                      </p>
+                    </Link>
+                  </div>
+
+                  <div className="flex flex-col ml-3">
+                    <p className="text-sm text-[#777676] line-through">
+                      {service.oldPrice} zł
                     </p>
-                    <p className="font-light text-sm text-dark-gray/80">
-                      {service.description}
+                    <p className="text-lg text-[#777676]">
+                      {service.price},00 zł
                     </p>
                   </div>
-                  <p>{service.price}zł</p>
                 </AccordionDetails>
               ))}
           </Accordion>

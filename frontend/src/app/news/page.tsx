@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic |  Nowośći",
-  description: "...",
+  description:
+    "Bądź na bieżąco z najnowszymi trendami i ofertami w naszym salonie. Sprawdź nasze nowości, które stale wprowadzamy, aby dostarczyć Ci najnowsze i najbardziej innowacyjne rozwiązania w dziedzinie urody.",
 };
 
 export default async function Page() {
