@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@exfabrica/strapi-plugin-awesome-seo": "^1.0.0-beta.1.2",
     "@strapi/plugin-i18n": "4.13.6",
     "@strapi/plugin-users-permissions": "4.13.6",
     "@strapi/provider-upload-cloudinary": "^4.13.6",
