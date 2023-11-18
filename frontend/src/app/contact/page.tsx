@@ -6,6 +6,7 @@ import { Email } from "@lib/assets/svg/Email";
 import { Phone } from "@lib/assets/svg/Phone";
 import { Local } from "@lib/assets/svg/Local";
 import { ContactPageImage } from "@lib/assets/svg/ContactPageImg";
+import { Hours } from "types/types";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Kontakt",
@@ -53,7 +54,7 @@ export default async function Page() {
             className="bg-white shadow-md py-6 px-2 desktop:px-10  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
           >
             <p className="text-sm font-medium">Godziny otwarcia</p>
-            {contact.openingHours.hours.map((hour: any) => (
+            {contact.openingHours.hours.map((hour: Hours) => (
               <p key={hour.id} className="flex text-xs">
                 <span className="text-dark-blue mr-2 text-xs font-medium">{`${hour.day}: `}</span>
                 {!hour.from && !hour.to

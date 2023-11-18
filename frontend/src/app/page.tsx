@@ -4,7 +4,7 @@ import { getServices } from "@lib/data/services";
 import { Suspense } from "react";
 import { getHomepage } from "@lib/data/homepage";
 import Image from "next/image";
-import { Card } from "@lib/components/Card/Card";
+
 import { Title } from "@lib/components/Title/Title";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -21,6 +21,7 @@ import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 import { ReviewsSectionImage } from "@lib/assets/svg/ReviewsSectionImage";
 import { FaqSectionImage } from "@lib/assets/svg/FaqSectionImage";
 import { ListServicesMobile } from "@lib/components/ListServicesMobile/ListServicesMobile";
+import { Question, Review } from "types/types";
 
 export const revalidate = 10;
 
@@ -106,7 +107,7 @@ export default async function Home() {
           <ReviewsSectionImage position="down" />
           <Title>{homepage.reviewsSection.title}</Title>
           <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-x-14 gap-y-6">
-            {homepage.reviewsSection.review.map((r: any) => (
+            {homepage.reviewsSection.review.map((r: Review) => (
               <div
                 data-aos="zoom-in"
                 key={r.id}
@@ -114,13 +115,13 @@ export default async function Home() {
               >
                 <div className="flex gap-4">
                   <div>
-                    {r.image.data !== null ? (
+                    {r.image?.data !== null ? (
                       <Image
                         className="w-full h-full object-cover"
-                        src={r.image.data?.attributes.url}
-                        alt={r.image.data?.attributes.alternativeText}
-                        width={r.image.data?.attributes.width}
-                        height={r.image.data?.attributes.height}
+                        src={r.image?.data?.attributes.url ?? ""}
+                        alt={r.image?.data?.attributes.alternativeText ?? ""}
+                        width={r.image?.data?.attributes.width ?? 0}
+                        height={r.image?.data?.attributes.height ?? 0}
                       />
                     ) : (
                       <div
@@ -156,7 +157,7 @@ export default async function Home() {
           <FaqSectionImage position="down" />
           <Title>{homepage.faq.title}</Title>
           <div className=" w-full desktop:w-[800px] mt-14">
-            {homepage.faq.questions.map((question: any) => (
+            {homepage.faq.questions.map((question: Question) => (
               <Accordion
                 key={question.id}
                 sx={{

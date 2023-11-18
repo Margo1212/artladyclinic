@@ -33,8 +33,8 @@ export function ListServicesMobile(props: ListServicesProps) {
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon sx={{ color: "#001965" }} />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
+            aria-controls={category.slug}
+            id={category.slug}
             sx={{
               marginBottom: "10px",
               backgroundColor: "#fff",

@@ -55,3 +55,70 @@ export type Service = {
 };
 
 export type ServiceList = Service[];
+
+export type Employee = {
+  id: string;
+  name: string;
+  description: string;
+  image: { data: Media };
+};
+
+export type Question = {
+  id: string;
+  question: string;
+  answer: string;
+};
+
+export type Hours = {
+  id: string;
+  from: string;
+  day: string;
+  to: string;
+};
+
+export type MediaFormat = {
+  name: string;
+  hash: string;
+  ext: string;
+  mime: string;
+  width: number;
+  height: number;
+  size: number;
+  path: string;
+  url: string;
+};
+
+export type Media = {
+  id: number;
+  attributes: {
+    name: string;
+    alternativeText: string;
+    caption: string;
+    width: number;
+    height: number;
+    formats: {
+      thumbnail: MediaFormat;
+      small: MediaFormat;
+      medium: MediaFormat;
+      large: MediaFormat;
+    };
+    hash: string;
+    ext: string;
+    mime: string;
+    size: number;
+    url: string;
+    previewUrl: string;
+    provider: string;
+    createdAt: Date;
+    updatedAt: Date;
+  };
+};
+
+export type Review = {
+  id: string;
+  image?: { data: Media };
+  name: string;
+  description: string;
+  who?: string;
+  star: number;
+};

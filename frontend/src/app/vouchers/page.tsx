@@ -1,12 +1,17 @@
 import { getNews } from "@lib/data/news";
 import { Title } from "@components/Title/Title";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { error } from "console";
 import { getVouchers } from "@lib/data/vouchers";
-import { Card } from "@lib/components/Card/Card";
 import Image from "next/image";
 import { VouchersImage } from "@lib/assets/svg/VouchersImage";
+import { Media } from "types/types";
+
+export type Voucher = {
+  id: string;
+  title: string;
+  description: string;
+  image?: { data: Media };
+};
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Bony Podarunkowe",
@@ -27,7 +32,7 @@ export default async function Page() {
         <Title>{vouchers.title}</Title>
 
         <div className="w-full grid grid-cols-1 px-5 tablet:px-10 laptop:px-4 desktop:px-10 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 laptop:gap-10 ">
-          {vouchers.voucher.map((v: any) => (
+          {vouchers.voucher.map((v: Voucher) => (
             <div
               data-aos="zoom-in"
               className="w-full h-72 bg-white shadow-md rounded-b-md space-y-2"
@@ -36,10 +41,10 @@ export default async function Page() {
               <div className=" h-1/2 rounded-t-md">
                 <Image
                   className="w-full object-cover h-full rounded-t-md"
-                  src={v.image.data?.attributes.url}
-                  alt={v.image.data?.attributes.alternativeText}
-                  width={v.image.data?.attributes.width}
-                  height={v.image.data?.attributes.height}
+                  src={v.image?.data?.attributes.url ?? ""}
+                  alt={v.image?.data?.attributes.alternativeText ?? ""}
+                  width={v.image?.data?.attributes.width}
+                  height={v.image?.data?.attributes.height}
                 />
               </div>
               <div className="w-full px-4 space-y-1">

@@ -2,6 +2,7 @@ import { getAboutUs } from "@lib/data/about-us";
 import { Title } from "@lib/components/Title/Title";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Employee } from "types/types";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Nas",
@@ -18,7 +19,7 @@ export default async function Page() {
     <section className="w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 space-y-10">
       <Title>{aboutUs.title}</Title>
       <div className="space-y-12">
-        {aboutUs.employees.map((employee: any) => (
+        {aboutUs.employees.map((employee: Employee) => (
           <div
             key={employee.id}
             data-aos="zoom-in"
