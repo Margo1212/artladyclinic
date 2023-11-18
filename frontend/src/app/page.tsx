@@ -38,8 +38,6 @@ export default async function Home() {
   ]);
 
   const buttonAbout = homepage.aboutSection?.buttonAboutSection;
-  const color = Math.floor(Math.random() * 16777215).toString(16);
-  console.log(color);
 
   return (
     <>
