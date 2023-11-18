@@ -58,6 +58,7 @@ export const Header = ({ homepage }: HeaderProps) => {
               alt={image.alternativeText}
               width={image.width}
               height={image.height}
+              sizes="(max-width: 1400px) 100vw, 1400px"
             />
           </div>
         ))}
