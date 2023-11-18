@@ -6,8 +6,7 @@ import { getCategories } from "@lib/data/categories";
 import { getContact } from "@lib/data/contact";
 import Navigation from "@lib/components/Navigation/Navigation";
 import type { Metadata } from "next";
-import { Inter, Roboto_Serif } from "next/font/google";
-import Link from "next/link";
+import { Roboto_Serif } from "next/font/google";
 import CookieConsent from "@lib/components/Cookies/Cookies";
 
 const roboto = Roboto_Serif({

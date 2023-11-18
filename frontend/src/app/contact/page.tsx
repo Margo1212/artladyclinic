@@ -69,8 +69,6 @@ export default async function Page() {
         >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d320.03474255739303!2d19.950578447024753!3d50.08108288360342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716433a1ecd7999%3A0xa9af4399fb8f0374!2sArt-Lady%20Clinic!5e0!3m2!1spl!2spl!4v1698313160559!5m2!1spl!2spl"
-            // width="600"
-            // height="450"
             style={{ border: 0, width: "100%", height: "100%" }}
             allowFullScreen={true}
             loading="lazy"

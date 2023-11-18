@@ -27,7 +27,6 @@ export default async function Page() {
         <div className="laptop:w-1/4 w-full">
           <Image
             className="w-full object-cover h-full"
-            key={aboutServices.image.id}
             src={aboutServices.image.data?.attributes.url}
             alt={aboutServices.image.data?.attributes.alternativeText}
             width={aboutServices.image.data?.attributes.width}
@@ -41,6 +40,7 @@ export default async function Page() {
       <div className="space-y-12">
         {aboutServices.ourService.map((service: any) => (
           <div
+            key={service.id}
             data-aos="zoom-in"
             className="flex laptop:flex-row gap-y-5 laptop:gap-y-0 gap-x-5 flex-col-reverse  laptop:even:flex-row-reverse "
           >
@@ -55,7 +55,6 @@ export default async function Page() {
             <div className="laptop:w-1/4 w-full shadow-md">
               <Image
                 className="w-full object-cover h-full"
-                key={service.id}
                 src={service.image.data?.attributes.url}
                 alt={service.image.data?.attributes.alternativeText}
                 width={service.image.data?.attributes.width}

@@ -14,9 +14,9 @@ export type FooterProps = {
 export const Footer = ({ categories, contact }: FooterProps) => {
   return (
     <footer className="w-full flex flex-col tablet:flex-row gap-x-5 laptop:gap-x-0 justify-between laptop:grid laptop:grid-cols-4 px-10 py-10 laptop:px-16 desktop:px-36 bg-gradient-to-b from-dark-blue to-light-blue">
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col gap-y-3 py-6 px-10">
         <h3 className="text-white text-3xl italic">ArtLadyClinic</h3>
-        <ul className="flex space-x-2 gap-y-3">
+        <ul className="flex space-x-2">
           <li>
             <Link
               className="invert brightness-0"

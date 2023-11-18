@@ -38,11 +38,11 @@ export function ListServicesMobile(props: ListServicesProps) {
             sx={{
               marginBottom: "10px",
               backgroundColor: "#fff",
-              borderBottom: "solid 2px #001965",
+              borderBottom: "solid 1px #001965",
               boxShadow: "none",
             }}
           >
-            <p className="font-medium text-lg text-blue">{category.name}</p>
+            <p className="font-semibold text-lg text-blue">{category.name}</p>
           </AccordionSummary>
           <ul className="flex flex-col">
             {services

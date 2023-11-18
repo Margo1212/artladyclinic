@@ -2,6 +2,7 @@ import Image from "next/image";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Img } from "types/types";
 import { HeaderImage } from "@lib/assets/svg/HeaderImg";
+import Link from "next/link";
 
 export type HeaderProps = {
   homepage: any;
@@ -30,10 +31,13 @@ export const Header = ({ homepage }: HeaderProps) => {
         <p className=" text-white text-center laptop:text-left font-light text-[0.813rem] tracking-[8%]">
           {homepage.header.description}
         </p>
-        <button className="bg-white flex justify-between transition ease-in-out duration-300 hover:bg-white/80 shadow-md rounded-md font-semibold text-dark-blue py-2 px-4 w-[14.438rem]">
+        <Link
+          href="/contact"
+          className="bg-white flex justify-between transition ease-in-out duration-300 hover:bg-white/80 shadow-md rounded-md font-semibold text-dark-blue py-2 px-4 w-[14.438rem]"
+        >
           {button.title}
           <ArrowForwardIcon />
-        </button>
+        </Link>
       </div>
 
       <div className="relative mt-3 grid grid-cols-5 overflow-visible grid-rows-5 gap-2 tablet:gap-5  desktop:w-[35rem] desktop:h-[105%] desktop:mt-12 tablet:w-[30rem] tablet:h-[28rem] w-[279px] h-[267px]">
@@ -48,6 +52,7 @@ export const Header = ({ homepage }: HeaderProps) => {
           >
             <Image
               className="w-full object-cover h-full"
+              loading="eager"
               key={idx}
               src={image.url}
               alt={image.alternativeText}

@@ -5,15 +5,14 @@ import { getServices } from "@lib/data/services";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import AddIcon from "@mui/icons-material/Add";
 import { Category } from "types/types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Cennik",
-  description: "...",
+  description:
+    "Sprawdź nasz aktualny cennik usług kosmetycznych. Oferujemy konkurencyjne ceny dla szerokiej gamy zabiegów, dostosowanych do Twoich potrzeb. Jakość bez kompromisów dostępna teraz w przystępnych cenach.",
 };
 
 export default async function Page() {
@@ -40,12 +39,10 @@ export default async function Page() {
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon sx={{ color: "#001965" }} />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
               sx={{
                 marginBottom: "10px",
                 backgroundColor: "#fff",
-                borderBottom: "solid 2px #001965",
+                borderBottom: "solid 1px #001965",
                 boxShadow: "none",
               }}
             >
@@ -57,6 +54,7 @@ export default async function Page() {
               )
               .map((service: any) => (
                 <AccordionDetails
+                  key={service.id}
                   sx={{
                     background: "transparent",
                     border: "none",
@@ -77,9 +75,7 @@ export default async function Page() {
                     <p className="text-sm text-[#777676] line-through">
                       {service.oldPrice} zł
                     </p>
-                    <p className="text-lg text-[#777676]">
-                      {service.price},00 zł
-                    </p>
+                    <p className="text-lg text-[#777676]">{service.price} zł</p>
                   </div>
                 </AccordionDetails>
               ))}

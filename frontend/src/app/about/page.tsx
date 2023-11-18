@@ -20,13 +20,13 @@ export default async function Page() {
       <div className="space-y-12">
         {aboutUs.employees.map((employee: any) => (
           <div
+            key={employee.id}
             data-aos="zoom-in"
             className="flex flex-col gap-x-5 space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
           >
             <div className="laptop:w-1/4 shadow-md">
               <Image
                 className="w-full object-cover h-full"
-                key={employee.id}
                 src={employee.image.data?.attributes.url}
                 alt={employee.image.data?.attributes.alternativeText}
                 width={employee.image.data?.attributes.width}

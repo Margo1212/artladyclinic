@@ -2,8 +2,7 @@ import { ImageContainer } from "@lib/components/ImageContainer/ImageContainer";
 import { Title } from "@lib/components/Title/Title";
 import { getGallery } from "@lib/data/gallery";
 import type { Metadata } from "next";
-import Image from "next/image";
-import { Circle } from "@lib/assets/svg/Circle";
+import { GalleryPageImage } from "@lib/assets/svg/GalleryPageImage";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Galeria",
@@ -19,10 +18,8 @@ export default async function Page() {
   if (!gallery) return <h2>No Images Found</h2>;
   return (
     <div className="relative overflow-clip w-full h-full px-3 py-4 flex flex-col bg-white laptop:px-48 laptop:py-14 space-y-10">
-      {/* <div className="absolute -left-2 -top-2 z-0">
-        <Circle />
-      </div> */}
-
+      <GalleryPageImage position="up" />
+      <GalleryPageImage position="down" />
       <Title>{gallery.title}</Title>
       <div className="w-full h-full grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-12 gap-y-7 z-10">
         {gallery.photo.map((ph: any) => (
