@@ -12,9 +12,9 @@ export const VouchersImage = (props: ImageProps) => {
   return (
     <svg
       className={imagePosition}
-      width="250"
-      height="297"
-      viewBox="0 0 400 297"
+      width="393"
+      height="336"
+      viewBox="0 0 393 336"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
