@@ -9,7 +9,7 @@
     "title": {
       "type": "string",
       "required": true,
-      "maxLength": 20
+      "maxLength": 40
     },
     "review": {
       "displayName": "review",

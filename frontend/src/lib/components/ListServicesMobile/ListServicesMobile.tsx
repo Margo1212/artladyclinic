@@ -60,7 +60,10 @@ export function ListServicesMobile(props: ListServicesProps) {
                   }}
                 >
                   <li className="p-4 border-[0.5px] list-none border-dark-gray/10 shadow-sm h-auto w-full rounded-sm  hover:bg-gray-100">
-                    <Link href={`/services/${service.slug}`}>
+                    <Link
+                      aria-label="Link to services details"
+                      href={`/services/${service.slug}`}
+                    >
                       <div className="">
                         <h3 className="text-sm font-medium leading-5 text-[#383838]">
                           {service.name}

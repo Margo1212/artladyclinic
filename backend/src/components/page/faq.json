@@ -1,12 +1,15 @@
 {
   "collectionName": "components_page_faqs",
   "info": {
-    "displayName": "faq"
+    "displayName": "faq",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 40,
+      "required": true
     },
     "questions": {
       "displayName": "questions",

@@ -64,7 +64,10 @@ export default async function Page() {
                   }}
                 >
                   <div>
-                    <Link href={`/services/${service.slug}`}>
+                    <Link
+                      aria-label="Link to services details"
+                      href={`/services/${service.slug}`}
+                    >
                       <p className="font-normal text-lg text-dark-gray/90">
                         {service.name}
                       </p>

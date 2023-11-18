@@ -84,6 +84,7 @@ export function ListProducts(props: ListProductsProps) {
                               {product.description?.slice(0, 100) + "..."}
                             </p>
                             <Link
+                              aria-label="Link to products details"
                               className="self-end w-24 tablet:w-28 px-2 py-2 transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md text-center text-white text-[8px]"
                               href={`/products/${product.slug}`}
                             >

@@ -19,11 +19,11 @@ export default async function Page() {
   const contact = await Promise.resolve(contactData);
 
   return (
-    <div className="relative overflow-clip w-full h-full px-3 py-4 items-center tablet:px-10 desktop:px-20 bg-white laptop:py-14 space-y-10">
+    <section className="relative overflow-clip w-full h-full px-3 py-4  tablet:px-10 desktop:px-20 bg-white laptop:py-14">
       <ContactPageImage position="up" />
       <ContactPageImage position="down" />
       <Title>{contact.title}</Title>
-      <div className="grid grid-cols-1 laptop:grid-cols-2 laptop:grid-rows-6 gap-y-4">
+      <div className="grid grid-cols-1 laptop:grid-cols-2 mt-10 laptop:grid-rows-6 gap-y-4">
         <div className="laptop:row-span-3 w-full h-full flex flex-col tablet:flex-row gap-x-9 gap-y-3 pb-20">
           <div
             data-aos="zoom-in"
@@ -83,6 +83,6 @@ export default async function Page() {
           <ContactForm />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

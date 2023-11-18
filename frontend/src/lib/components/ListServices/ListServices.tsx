@@ -43,7 +43,7 @@ export function ListServices(props: ListServicesProps) {
                     />
                   </span>
 
-                  <p className="text-dark-blue h-full col-span-3 group-hover:text-white  tablet:text-left font-medium text-[11px]">
+                  <p className="text-dark-blue col-span-3 self-center group-hover:text-white  tablet:text-left font-medium text-[11px]">
                     {category.name}
                   </p>
                 </button>

@@ -9,7 +9,7 @@
   "attributes": {
     "title": {
       "type": "string",
-      "maxLength": 20,
+      "maxLength": 40,
       "required": true
     },
     "description": {

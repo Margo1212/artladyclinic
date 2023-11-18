@@ -16,13 +16,13 @@ export default async function Page() {
   const aboutServices = await Promise.resolve(aboutServicesData);
 
   return (
-    <section className="relative w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52  laptop:py-14 space-y-10 overflow-clip">
+    <section className="relative w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52  laptop:py-14 overflow-clip">
       <NewsSectionImage position="up" />
       <NewsSectionImage position="down" />
       <Title>{aboutServices.title}</Title>
       <div
         data-aos="zoom-in"
-        className="flex flex-col laptop:flex-row space-y-5"
+        className="flex flex-col mt-10 laptop:flex-row space-y-5"
       >
         <div className="laptop:w-1/4 w-full">
           <Image

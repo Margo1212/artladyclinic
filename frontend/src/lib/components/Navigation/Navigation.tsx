@@ -13,7 +13,7 @@ const Navigation = ({ nav }: NavProps) => {
   return (
     <nav className="w-full flex px-10 justify-between items-center bg-[#f8f8f8] text-dark-blue tablet:text-xs desktop:text-sm font-medium desktop:px-14">
       <div className="tablet:h-20 tablet:w-24 w-14 h-12">
-        <Link href="/">
+        <Link aria-label="Link to homepage" href="/">
           {nav.logo?.data !== null ? (
             <Image
               className="w-full h-full object-cover"
@@ -30,35 +30,50 @@ const Navigation = ({ nav }: NavProps) => {
 
       <ul className="hidden tablet:px-10 desktop:px-24 space-x-8 align-middle py-6 laptop:flex flex-row justify-between">
         <li>
-          <Link href="/about">O nas</Link>
+          <Link aria-label="Link to about page" href="/about">
+            O nas
+          </Link>
         </li>
         <li>
-          <Link href="/about-services">O usługach</Link>
+          <Link aria-label="Link to about services page" href="/about-services">
+            O usługach
+          </Link>
         </li>
         <li>
-          <Link href="/gallery">Galeria</Link>
+          <Link aria-label="Link to gallery" href="/gallery">
+            Galeria
+          </Link>
         </li>
         <li>
-          <Link href="/price-list">Cennik</Link>
+          <Link aria-label="Link to price-list" href="/price-list">
+            Cennik
+          </Link>
         </li>
         <li>
-          <Link href="/products">Produkty</Link>
+          <Link aria-label="Link to products page" href="/products">
+            Produkty
+          </Link>
         </li>
         <li>
-          <Link href="/news">Nowośći</Link>
+          <Link aria-label="Link to news page" href="/news">
+            Nowośći
+          </Link>
         </li>
         <li>
-          <Link href="/vouchers">
+          <Link aria-label="Link to vouchers page" href="/vouchers">
             <p className="text-wrapper">Bony podarunkowe</p>
           </Link>
         </li>
         <li>
-          <Link href="/contact">Kontakt</Link>
+          <Link aria-label="Link to contact page" href="/contact">
+            Kontakt
+          </Link>
         </li>
       </ul>
       <ul className="laptop:flex hidden space-x-2.5">
         <li>
           <Link
+            aria-label="Link to instagram"
             href={
               "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
             }
@@ -69,6 +84,7 @@ const Navigation = ({ nav }: NavProps) => {
         </li>
         <li>
           <Link
+            aria-label="Link to booksy"
             href={
               "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
             }

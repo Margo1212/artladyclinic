@@ -19,6 +19,7 @@ export const Footer = ({ categories, contact }: FooterProps) => {
         <ul className="flex space-x-2">
           <li>
             <Link
+              aria-label="Link to instagram"
               className="invert brightness-0"
               href={
                 "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
@@ -30,6 +31,7 @@ export const Footer = ({ categories, contact }: FooterProps) => {
           </li>
           <li>
             <Link
+              aria-label="Link to booksy"
               className="invert brightness-0"
               href={
                 "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
@@ -64,7 +66,11 @@ export const Footer = ({ categories, contact }: FooterProps) => {
       <div className="hidden py-6 px-10 w-full laptop:flex flex-col gap-y-2">
         <p className="text-base font-medium text-white">Usługi</p>
         {categories?.map((category: Category) => (
-          <Link key={category.id} href="/price-list">
+          <Link
+            key={category.id}
+            aria-label="Link to price-list page"
+            href="/price-list"
+          >
             <p className="text-white text-xs">{category.name}</p>
           </Link>
         ))}
