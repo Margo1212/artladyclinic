@@ -8,6 +8,7 @@ import Navigation from "@lib/components/Navigation/Navigation";
 import type { Metadata } from "next";
 import { Inter, Roboto_Serif } from "next/font/google";
 import Link from "next/link";
+import CookieConsent from "@lib/components/Cookies/Cookies";
 
 const roboto = Roboto_Serif({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -43,6 +44,7 @@ export default async function RootLayout({
       </head>
       <AOSInit />
       <body className={`${roboto.className} w-screen overflow-x-hidden`}>
+        <CookieConsent />
         <Navigation nav={nav} />
         <div className="w-full bg-light-gray p-0 laptop:px-10 desktop:px-14 pb-10 overflow-x-clip">
           {children}

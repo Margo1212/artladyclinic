@@ -20,6 +20,7 @@ import { ServiceImage } from "@lib/assets/svg/ServiceImage";
 import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 import { ReviewsSectionImage } from "@lib/assets/svg/ReviewsSectionImage";
 import { FaqSectionImage } from "@lib/assets/svg/FaqSectionImage";
+import { ListServicesMobile } from "@lib/components/ListServicesMobile/ListServicesMobile";
 
 export const revalidate = 10;
 
@@ -45,24 +46,26 @@ export default async function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Header homepage={homepage} />
         <AboutUsSection homepage={homepage} />
-        <section className="relative w-full px-3 py-4 desktop:py-14 h-auto desktop:px-56 laptop:h-calc(100vh+5vh) flex flex-col justify-center items-center">
+        <section className="relative w-full px-3 py-4 mb-10 space-y-5 laptop:py-14 h-auto desktop:px-36 flex flex-col justify-center items-center">
           <ServiceImage position="up" />
           <ServiceImage position="down" />
-          <div className="flex flex-col space-y-6 mb-14">
+          <div className="flex flex-col gap-y-6">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
               {homepage.services.description}
             </p>
           </div>
-
-          <Card>
+          <div className="laptop:block hidden z-10">
             <ListServices categories={categories} services={services} />
-          </Card>
+          </div>
+          <div className="laptop:hidden block">
+            <ListServicesMobile categories={categories} services={services} />
+          </div>
         </section>
-        <section className="relative px-3 py-4 tablet:px-28 laptop:px-0 desktop:px-40 desktop:py-14">
+        <section className="relative px-3 py-4 mb-10 tablet:px-28 laptop:px-0 desktop:px-40 laptop:py-14">
           <NewsSectionImage position="up" />
           <NewsSectionImage position="down" />
-          <div className="flex flex-col items-center justify-center gap-y-5 mb-14">
+          <div className="flex flex-col items-center justify-center gap-y-5">
             <Title>Nowośći</Title>
             <p className="text-center italic font-light text-[13px]">
               {news.description}
@@ -100,7 +103,7 @@ export default async function Home() {
             </Link>
           </div>
         </section>
-        <section className="relative px-3 py-4 desktop:px-52 desktop:py-0 space-y-10">
+        <section className="relative px-3 py-4 mb-10 desktop:px-52 laptop:py-14 space-y-10">
           <ReviewsSectionImage position="up" />
           <ReviewsSectionImage position="down" />
           <Title>{homepage.reviewsSection.title}</Title>
@@ -150,7 +153,7 @@ export default async function Home() {
             ))}
           </div>
         </section>
-        <section className="relative flex flex-col items-center py-14">
+        <section className="relative flex flex-col laptop:py-14 items-center mb-10 px-3">
           <FaqSectionImage position="up" />
           <FaqSectionImage position="down" />
           <Title>{homepage.faq.title}</Title>
