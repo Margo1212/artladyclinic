@@ -17,11 +17,11 @@ export default async function Page() {
 
   if (!gallery) return <h2>No Images Found</h2>;
   return (
-    <div className="relative overflow-clip w-full h-full px-3 py-4 flex flex-col bg-white laptop:px-48 laptop:py-14 space-y-10">
+    <div className="relative overflow-clip w-full h-full px-3 py-4 flex flex-col bg-white laptop:px-48 laptop:py-14">
       <GalleryPageImage position="up" />
       <GalleryPageImage position="down" />
       <Title>{gallery.title}</Title>
-      <div className="w-full h-full grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-12 gap-y-7 z-10">
+      <div className="w-full h-full mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-12 gap-y-7 z-10">
         {gallery.photo.map((ph: any) => (
           <ImageContainer key={ph.id} photo={ph} />
         ))}
