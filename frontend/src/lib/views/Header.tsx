@@ -25,7 +25,7 @@ export const Header = ({ homepage }: HeaderProps) => {
         <HeaderImage position="up" />
         <HeaderImage position="down" />
 
-        <h1 className="text-white text-center break-words laptop:text-left w-4/5 font-medium tablet:text-4xl laptop:text-5xl text-2xl ">
+        <h1 className="text-white text-center break-words laptop:text-left w-4/5 font-medium tablet:text-4xl laptop:text-5xl text-3xl ">
           {homepage.header.title}
         </h1>
         <p className=" text-white text-center laptop:text-left font-light text-[0.813rem] tracking-[8%]">
@@ -40,15 +40,13 @@ export const Header = ({ homepage }: HeaderProps) => {
         </Link>
       </div>
 
-      <div className="relative mt-3 grid grid-cols-5 overflow-visible grid-rows-5 gap-2 tablet:gap-5  desktop:w-[35rem] desktop:h-[105%] desktop:mt-12 tablet:w-[30rem] tablet:h-[28rem] w-[279px] h-[267px]">
+      <div className="relative laptop:mt-3 grid grid-cols-5 overflow-visible grid-rows-5 gap-2 tablet:gap-5  desktop:w-[35rem] desktop:h-[105%] desktop:mt-12 tablet:w-[30rem] tablet:h-[28rem] w-[279px] h-[267px]">
         <div className="desktop:block laptop:hidden visible absolute border-4 border-white/10 w-[110%]  top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[80%]"></div>
         {images?.map((image: any, idx: number) => (
           <div
             data-aos="zoom-in"
             key={idx}
-            className={`${sizes.filter(
-              (size, i) => i === idx
-            )} w-full max-h-full`}
+            className={`${sizes.filter((size, i) => i === idx)} w-full h-full`}
           >
             <Image
               className="w-full object-cover h-full"
@@ -59,6 +57,7 @@ export const Header = ({ homepage }: HeaderProps) => {
               width={image.width}
               height={image.height}
               sizes="(max-width: 1400px) 100vw, 1400px"
+              priority={true}
             />
           </div>
         ))}
