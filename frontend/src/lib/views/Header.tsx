@@ -50,7 +50,7 @@ export const Header = ({ homepage }: HeaderProps) => {
             className={`${sizes.filter((size, i) => i === idx)} w-full h-full`}
           >
             <Image
-              className="w-full object-cover h-full"
+              className="w-full object-cover h-full shadow-md"
               loading="eager"
               key={idx}
               src={image.url}

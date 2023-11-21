@@ -7,8 +7,8 @@ export const ProductsImage = (props: ImageProps) => {
   const { position } = props;
   const imagePosition =
     position === "down"
-      ? "hidden desktop:block scale-x-[-1] desktop:absolute z-0 desktop:top-16 desktop:-right-10"
-      : "hidden  desktop:block desktop:absolute desktop:-top-28 z-0 desktop:-left-28";
+      ? "hidden desktop:block scale-x-[-1] desktop:absolute -z-0 desktop:-top-40 desktop:-right-28"
+      : "hidden  desktop:block desktop:absolute desktop:-top-32 -z-0 desktop:-left-28";
   return (
     <svg
       className={imagePosition}

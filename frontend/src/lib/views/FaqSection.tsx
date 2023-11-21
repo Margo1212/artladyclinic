@@ -26,7 +26,7 @@ export const FaqSection = ({ homepage }: HeaderProps) => {
               backgroundColor: "#F4F4F4",
               borderTop: "solid 1px #C4C4C4",
               borderBottom: "solid 1px #C4C4C4",
-              boxShadow: "none",
+              boxShadow: "5px",
             }}
           >
             <AccordionSummary

@@ -22,9 +22,9 @@ export function ListProducts(props: ListProductsProps) {
   if (!productCategories) return <p>No profile data</p>;
 
   return (
-    <div className="w-full min-h-[33.438rem] shadow-md pb-5 bg-white z-10">
+    <div className="w-full min-h-[33.438rem] bg-white shadow-md pb-5  z-50">
       <Tab.Group vertical>
-        <div className="flex z-50 flex-col laptop:flex-row w-full justify-around gap-5 laptop:gap-0">
+        <div className="flex flex-col laptop:flex-row bg-white w-full justify-around gap-5 laptop:gap-0">
           <Tab.List className="flex z-50  flex-col w-full laptop:w-1/4 h-full space-y-1 rounded-sm text-dark-blue   p-1">
             {productCategories.map((category) => (
               <Tab as={Fragment} key={category.id}>

@@ -31,7 +31,12 @@ export default async function Page() {
       <VouchersImage position="up" />
       <VouchersImage position="down" />
       <div className="flex flex-col items-center space-y-10 mb-14 tablet:px-2 laptop:px-10">
-        <Title>{vouchers.title}</Title>
+        <div className="flex flex-col gap-y-5 ">
+          <Title>{vouchers.title}</Title>
+          <p className="text-center italic font-light text-[13px]">
+            {vouchers.description}
+          </p>
+        </div>
 
         <div className="w-full grid grid-cols-1 px-5 tablet:px-8 laptop:px-0 desktop:px-10 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 laptop:gap-10 ">
           {vouchers.voucher.map((v: Voucher) => (
