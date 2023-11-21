@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 export default async function Page() {
   const aboutServicesData = getAboutServices();
 
-  const aboutServices = await Promise.resolve(aboutServicesData);
+  const aboutServices = await Promise.resolve(aboutServicesData).catch((err) =>
+    console.error(err)
+  );
 
   return (
     <section className="relative w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52  laptop:py-14 overflow-clip">

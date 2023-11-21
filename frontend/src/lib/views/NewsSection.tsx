@@ -1,9 +1,5 @@
-import { HeaderProps } from "./Header";
-import Image from "next/image";
 import { Title } from "@lib/components/Title/Title";
-import { New, NewsList, Review } from "types/types";
-import { ReviewsSectionImage } from "@lib/assets/svg/ReviewsSectionImage";
-import { Star } from "@lib/assets/svg/Star";
+import { New } from "types/types";
 import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 import Link from "next/link";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
@@ -11,7 +7,7 @@ export const revalidate = 10;
 
 export const NewsSection = ({ news }: any) => {
   return (
-    <section className="relative px-10 py-4 mb-10 tablet:px-24 desktop:px-32 laptop:px-5 laptop:py-14">
+    <section className="relative px-10 py-4 mb-10 tablet:px-20 desktop:px-32 laptop:px-5 laptop:py-14">
       <NewsSectionImage position="up" />
       <NewsSectionImage position="down" />
       <div className="flex flex-col items-center justify-center gap-y-5">
@@ -31,7 +27,7 @@ export const NewsSection = ({ news }: any) => {
               }}
               className={`w-full min-h-[380px] shadow-md rounded-sm flex justify-center items-end p-2`}
             >
-              <div className="w-full min-h-1/2 h-auto tablet:h-1/2 bg-white/75  laptop:gap-y-1 gap-y-2 flex flex-col rounded-md p-2">
+              <div className="w-full min-h-1/2 h-auto tablet:h-1/2 bg-white/75 flex flex-col rounded-md p-2">
                 <h3 className="text-sm font-medium text-dark-gray">
                   {news.title}
                 </h3>

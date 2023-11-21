@@ -22,7 +22,9 @@ export const metadata: Metadata = {
 export default async function Page() {
   const vouchersData = getVouchers();
 
-  const vouchers = await Promise.resolve(vouchersData);
+  const vouchers = await Promise.resolve(vouchersData).catch((err) =>
+    console.error(err)
+  );
 
   return (
     <section className="relative h-full w-full px-2 py-4 desktop:py-14 desktop:px-20 bg-white overflow-clip">

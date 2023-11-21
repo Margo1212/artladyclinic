@@ -1,5 +1,4 @@
-import { newsReducer, vouchersReducer } from "@lib/utils";
-import axios from "axios";
+import { vouchersReducer } from "@lib/utils";
 import qs from "qs";
 import { cache } from "react";
 
@@ -14,12 +13,13 @@ export const getVouchers = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios
-    .get(`${url}/api/vouchers-page?${query}`)
-    .catch((error) => {
-      console.log(error.toJSON());
-    });
-  const rawVouchers = res?.data.data;
+  const res = await fetch(`${url}/api/vouchers-page?${query}`, {
+    cache: "no-store",
+  }).catch((error) => {
+    console.log(error.toJSON());
+  });
+  const data = await res?.json();
+  const rawVouchers = data?.data;
   const vouchers = vouchersReducer(rawVouchers);
 
   return vouchers;

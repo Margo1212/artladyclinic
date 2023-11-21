@@ -18,7 +18,9 @@ export const metadata: Metadata = {
 export default async function Page() {
   const contactData = getContact();
 
-  const contact = await Promise.resolve(contactData);
+  const contact = await Promise.resolve(contactData).catch((err) =>
+    console.error(err)
+  );
 
   return (
     <section className="relative overflow-clip w-full h-full px-3 py-4  tablet:px-10 desktop:px-20 bg-white laptop:py-14">

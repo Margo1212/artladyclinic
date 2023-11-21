@@ -14,7 +14,9 @@ export const metadata: Metadata = {
 export default async function Page() {
   const galleryData = getGallery();
 
-  const gallery = await Promise.resolve(galleryData);
+  const gallery = await Promise.resolve(galleryData).catch((err) =>
+    console.error(err)
+  );
 
   if (!gallery) return <h2>No Images Found</h2>;
   return (

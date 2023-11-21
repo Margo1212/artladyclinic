@@ -1,8 +1,10 @@
 import { getNews } from "@lib/data/news";
 import { Title } from "@components/Title/Title";
 import type { Metadata } from "next";
-import { NewsPageImage } from "@lib/assets/svg/newsPageImage";
-export const revalidate = 10;
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
+import Link from "next/link";
+import { New } from "types/types";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic |  Nowośći",
@@ -18,31 +20,43 @@ export default async function Page() {
   );
   if (!news) return <h2>No news Found</h2>;
   return (
-    <section className="relative h-full w-full px-3 py-4 laptop:py-14 laptop:px-20 bg-white overflow-clip">
-      <NewsPageImage position="down" />
-      <NewsPageImage position="up" />
-      <div className="flex flex-col items-center space-y-10 mb-14">
+    <section className="relative px-10 py-4 mb-10 tablet:px-20 desktop:px-32 laptop:px-0 laptop:py-14">
+      <NewsSectionImage position="up" />
+      <NewsSectionImage position="down" />
+      <div className="flex flex-col items-center justify-center gap-y-5">
         <Title>Nowośći</Title>
-
-        <div className="laptop:px-20 flex laptop:flex-row flex-wrap gap-8 justify-center ">
-          {news.map((news: any) => (
+        <p className="text-center italic font-light text-[13px]">
+          {news.description}
+        </p>
+        <div className="grid grid-cols-1 laptop:grid-cols-4 tablet:grid-cols-2 gap-4 tablet:gap-5 laptop:gap-4 justify-center mb-7 bg-opacity-0">
+          {news.map((news: New) => (
             <div
               data-aos="zoom-in"
               key={news.id}
               style={{
                 backgroundImage: `url(${news.image.data?.attributes.url})`,
                 backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
-              className={`w-[260px] h-[380px] shadow-md rounded-sm flex justify-center items-end p-5`}
+              className={`w-full min-h-[380px] shadow-md rounded-sm flex justify-center items-end p-2`}
             >
-              <div className="w-full h-1/2 bg-white/75 space-y-2 rounded-md p-4">
-                <h3 className="text-base font-medium text-dark-gray">
+              <div className="w-full min-h-1/2 h-auto tablet:h-1/2 bg-white/75 flex flex-col rounded-md p-2">
+                <h3 className="text-sm font-medium text-dark-gray">
                   {news.title}
                 </h3>
-                <p className="text-[10px] font-light text-dark-gray/50">
-                  {news.date}
-                </p>
-                <p className="text-[10px] font-normal text-dark-gray/80">
+                <div className="flex items-baseline gap-2">
+                  <span>
+                    <CalendarMonthIcon
+                      fontSize="small"
+                      sx={{ color: "#303030", opacity: "0.3" }}
+                    />
+                  </span>
+                  <p className="text-[11px] font-light text-dark-gray/70">
+                    {news.date}
+                  </p>
+                </div>
+
+                <p className="text-[9px] tablet:text-[10px] break-words font-normal text-dark-gray/90">
                   {news.description}
                 </p>
               </div>
