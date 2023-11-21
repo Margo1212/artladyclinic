@@ -42,7 +42,7 @@ export default async function Page() {
         </div>
       </div>
       <div className="space-y-12">
-        {aboutServices.ourService.map((service: Service) => (
+        {aboutServices.ourService.map((service: any) => (
           <div
             key={service.id}
             data-aos="zoom-in"
@@ -50,7 +50,7 @@ export default async function Page() {
           >
             <div className="laptop:w-3/4 w-full flex flex-col justify-center  space-y-3">
               <h2 className="text-2xl font-normal laptop:text-left text-center text-dark-blue">
-                {service.name}
+                {service.title}
               </h2>
               <p className="text-sm break-all font-normal laptop:text-left text-center text-dark-gray/80">
                 {service.description}

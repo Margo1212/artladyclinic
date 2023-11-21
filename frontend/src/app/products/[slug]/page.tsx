@@ -30,10 +30,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h4 className="text-blue font-medium text-lg mb-4">Cena:</h4>
           <div className="flex flex-col">
             <p className="text-l text-[#777676] line-through">
-              {product.oldPrice?.toFixed(2)} zł
+              {product.oldPrice
+                ? product.oldPrice?.toFixed(2).toString() + "zł"
+                : null}
             </p>
             <p className="text-2xl text-[#777676]">
-              {product.price?.toFixed(2)} zł
+              {product.price
+                ? product.price?.toFixed(2).toString() + "zł"
+                : null}
             </p>
           </div>
         </div>

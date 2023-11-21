@@ -80,10 +80,14 @@ export default async function Page() {
 
                   <div className="flex flex-col ml-3">
                     <p className="text-sm text-[#777676] line-through">
-                      {service.oldPrice?.toFixed(2)}zł
+                      {service.oldPrice
+                        ? service.oldPrice?.toFixed(2).toString() + "zł"
+                        : null}
                     </p>
                     <p className="text-lg text-[#777676]">
-                      {service.price?.toFixed(2)} zł
+                      {service.price
+                        ? service.price?.toFixed(2).toString() + "zł"
+                        : null}
                     </p>
                   </div>
                 </AccordionDetails>
