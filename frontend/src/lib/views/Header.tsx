@@ -4,6 +4,7 @@ import { Img } from "types/types";
 import { HeaderImage } from "@lib/assets/svg/HeaderImg";
 import Link from "next/link";
 
+export const revalidate = 10;
 export type HeaderProps = {
   homepage: any;
 };
