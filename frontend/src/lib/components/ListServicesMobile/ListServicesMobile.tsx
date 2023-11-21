@@ -51,6 +51,7 @@ export function ListServicesMobile(props: ListServicesProps) {
               )
               .map((service: any) => (
                 <AccordionDetails
+                  aria-controls={service.slug}
                   key={service.id}
                   sx={{
                     background: "transparent",
