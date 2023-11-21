@@ -11,9 +11,6 @@
       "minLength": 10,
       "maxLength": 20,
       "required": true
-    },
-    "icon": {
-      "type": "string"
     }
   }
 }

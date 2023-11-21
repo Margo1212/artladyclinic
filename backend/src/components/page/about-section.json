@@ -17,12 +17,6 @@
       "maxLength": 910,
       "minLength": 300
     },
-    "buttonAboutSection": {
-      "displayName": "button-about-section",
-      "type": "component",
-      "repeatable": false,
-      "component": "page.button-about-section"
-    },
     "imageAboutSection": {
       "type": "media",
       "multiple": false,
