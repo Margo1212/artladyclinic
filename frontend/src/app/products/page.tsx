@@ -5,6 +5,8 @@ import { ListProducts } from "@components/ListProducts/ListProducts";
 import { Title } from "@lib/components/Title/Title";
 import { ProductsImage } from "@lib/assets/svg/ProductsImage";
 
+export const revalidate = 10;
+
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Produkty",
   description:

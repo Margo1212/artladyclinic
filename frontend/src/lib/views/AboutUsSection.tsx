@@ -3,6 +3,7 @@ import { HeaderProps } from "./Header";
 import { Card } from "@lib/components/Card/Card";
 import { Title } from "@lib/components/Title/Title";
 import Link from "next/link";
+export const revalidate = 10;
 
 export const AboutUsSection = ({ homepage }: HeaderProps) => {
   const imageAbout = homepage.aboutSection.imageAboutSection.data.attributes;

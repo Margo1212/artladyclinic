@@ -20,7 +20,7 @@ export type Product = {
   name: string;
   product_category: ProductCategory;
   image: any;
-  price: string;
+  price: number;
   slug: string;
   applicationRequirements: any;
   oldPrice: number;

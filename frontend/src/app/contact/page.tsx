@@ -7,6 +7,7 @@ import { Phone } from "@lib/assets/svg/Phone";
 import { Local } from "@lib/assets/svg/Local";
 import { ContactPageImage } from "@lib/assets/svg/ContactPageImg";
 import { Hours } from "types/types";
+export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Kontakt",
@@ -28,7 +29,7 @@ export default async function Page() {
         <div className="laptop:row-span-3 w-full h-full flex flex-col tablet:flex-row gap-x-9 gap-y-3 pb-20">
           <div
             data-aos="zoom-in"
-            className="bg-white shadow-md px-2  laptop:px-3 py-6 desktop:px-10 w-full laptop:w-1/2  h-full flex flex-col justify-center gap-y-7"
+            className="bg-white shadow-md px-2  laptop:px-3 py-6 desktop:px-10 w-full laptop:w-1/2 items-center tablet:items-start  h-full flex flex-col justify-center gap-y-7"
           >
             <div className="flex items-center gap-x-6">
               <span>
@@ -51,7 +52,7 @@ export default async function Page() {
           </div>
           <div
             data-aos="zoom-in"
-            className="bg-white shadow-md py-6 px-2 desktop:px-10  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
+            className="bg-white shadow-md py-6 px-2 desktop:px-10 items-center tablet:items-start  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
           >
             <p className="text-sm font-medium">Godziny otwarcia</p>
             {contact.openingHours.hours.map((hour: Hours) => (

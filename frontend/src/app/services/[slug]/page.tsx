@@ -3,6 +3,8 @@ import { Service } from "types/types";
 import Image from "next/image";
 import { ServiceDetailsImage } from "@lib/assets/svg/ServiceDetailsImage";
 
+export const revalidate = 10;
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const serviceData = getServiceBySlug({ slug: params.slug });
   const service: Service = await Promise.resolve(serviceData);
@@ -32,9 +34,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h4 className="text-blue font-medium text-lg mb-4">Cena:</h4>
           <div className="flex flex-col">
             <p className="text-l text-[#777676] line-through">
-              {service.oldPrice} zł
+              {service.oldPrice?.toFixed(2)} zł
             </p>
-            <p className="text-2xl text-[#777676]">{service.price} zł</p>
+            <p className="text-2xl text-[#777676]">
+              {service.price?.toFixed(2)} zł
+            </p>
           </div>
         </div>
       </div>

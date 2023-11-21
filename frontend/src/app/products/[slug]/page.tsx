@@ -2,6 +2,7 @@ import { getProductBySlug } from "@lib/data/products";
 import { Product } from "types/types";
 import Image from "next/image";
 import { ServiceDetailsImage } from "@lib/assets/svg/ServiceDetailsImage";
+export const revalidate = 10;
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const productData = getProductBySlug({ slug: params.slug });
@@ -29,9 +30,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h4 className="text-blue font-medium text-lg mb-4">Cena:</h4>
           <div className="flex flex-col">
             <p className="text-l text-[#777676] line-through">
-              {product.oldPrice} zł
+              {product.oldPrice?.toFixed(2)} zł
             </p>
-            <p className="text-2xl text-[#777676]">{product.price} zł</p>
+            <p className="text-2xl text-[#777676]">
+              {product.price?.toFixed(2)} zł
+            </p>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { getNews } from "@lib/data/news";
 import { Title } from "@components/Title/Title";
 import type { Metadata } from "next";
 import { NewsPageImage } from "@lib/assets/svg/newsPageImage";
+export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic |  Nowośći",

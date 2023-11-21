@@ -4,10 +4,11 @@ import { Title } from "@lib/components/Title/Title";
 import { Review } from "types/types";
 import { ReviewsSectionImage } from "@lib/assets/svg/ReviewsSectionImage";
 import { Star } from "@lib/assets/svg/Star";
+export const revalidate = 10;
 
 export const ReviewsSection = ({ homepage }: HeaderProps) => {
   return (
-    <section className="relative px-3 py-4 mb-10 desktop:px-52 laptop:py-14">
+    <section className="relative px-3 py-4 mb-10 desktop:px-52 laptop:py-14 flex flex-col gap-y-10">
       <ReviewsSectionImage position="up" />
       <ReviewsSectionImage position="down" />
       <Title>{homepage.reviewsSection.title}</Title>

@@ -9,6 +9,7 @@ import { Category } from "types/types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
 import { PriceListImage } from "@lib/assets/svg/PriceListImage";
+export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Cennik",
@@ -49,7 +50,7 @@ export default async function Page() {
                 boxShadow: "none",
               }}
             >
-              <p className="font-medium text-2xl text-blue">{category.name}</p>
+              <p className="font-medium text-xl text-blue">{category.name}</p>
             </AccordionSummary>
             {services
               .filter(
@@ -79,9 +80,11 @@ export default async function Page() {
 
                   <div className="flex flex-col ml-3">
                     <p className="text-sm text-[#777676] line-through">
-                      {service.oldPrice} zł
+                      {service.oldPrice?.toFixed(2)}zł
                     </p>
-                    <p className="text-lg text-[#777676]">{service.price} zł</p>
+                    <p className="text-lg text-[#777676]">
+                      {service.price?.toFixed(2)} zł
+                    </p>
                   </div>
                 </AccordionDetails>
               ))}

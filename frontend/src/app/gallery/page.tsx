@@ -3,6 +3,7 @@ import { Title } from "@lib/components/Title/Title";
 import { getGallery } from "@lib/data/gallery";
 import type { Metadata } from "next";
 import { GalleryPageImage } from "@lib/assets/svg/GalleryPageImage";
+export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Galeria",

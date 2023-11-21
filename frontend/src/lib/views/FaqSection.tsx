@@ -9,10 +9,11 @@ import {
 } from "@mui/material";
 import { Question } from "types/types";
 import AddIcon from "@mui/icons-material/Add";
+export const revalidate = 10;
 
 export const FaqSection = ({ homepage }: HeaderProps) => {
   return (
-    <section className="relative flex flex-col laptop:py-14 items-center mb-10 px-3">
+    <section className="relative flex flex-col laptop:py-14 items-center mb-10 px-3 gap-y-5">
       <FaqSectionImage position="up" />
       <FaqSectionImage position="down" />
       <Title>{homepage.faq.title}</Title>
@@ -42,7 +43,7 @@ export const FaqSection = ({ homepage }: HeaderProps) => {
                 sx={{
                   paddingLeft: "20px",
                   borderLeft: "solid 4px #0E0045",
-                  fontSize: "12px",
+                  fontSize: "14px",
                 }}
               >
                 {question.answer}

@@ -42,7 +42,7 @@ export function ListServicesMobile(props: ListServicesProps) {
               boxShadow: "none",
             }}
           >
-            <p className="font-semibold text-lg text-blue">{category.name}</p>
+            <p className="font-medium text-md text-blue">{category.name}</p>
           </AccordionSummary>
           <ul className="flex flex-col">
             {services

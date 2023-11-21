@@ -47,7 +47,7 @@ export default async function Page() {
                   height={v.image?.data?.attributes.height}
                 />
               </div>
-              <div className="w-full px-4 space-y-1 flex flex-col justify-between">
+              <div className="w-full px-4 space-y-1">
                 <p className="text-base font-normal">{v.title}</p>
                 <p className="tablet:text-[10px] text-[9px]  break-words font-normal">
                   {v.description}

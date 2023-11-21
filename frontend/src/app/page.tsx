@@ -33,16 +33,16 @@ export default async function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Header homepage={homepage} />
         <AboutUsSection homepage={homepage} />
-        <section className="relative w-full px-3 py-4 mb-10 space-y-5 laptop:py-14 h-auto desktop:px-36 flex flex-col justify-center items-center">
+        <section className="relative w-full px-3 py-4 mb-10 space-y-5 laptop:py-14 desktop:px-36 gap-y-5 flex flex-col justify-between items-center">
           <ServiceImage position="up" />
           <ServiceImage position="down" />
-          <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col gap-y-5 ">
             <Title>{homepage.services.title}</Title>
             <p className="text-center italic font-light text-[13px]">
               {homepage.services.description}
             </p>
           </div>
-          <div className="laptop:block hidden z-10">
+          <div className="laptop:block hidden z-10 ">
             <ListServices categories={categories} services={services} />
           </div>
           <div className="laptop:hidden block">

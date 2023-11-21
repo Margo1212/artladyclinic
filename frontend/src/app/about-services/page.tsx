@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 import { Service } from "types/types";
+export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Usługach",

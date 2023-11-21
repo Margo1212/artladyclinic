@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Employee } from "types/types";
 import { AboutUsPageImage } from "@lib/assets/svg/AboutUs";
 
+export const revalidate = 10;
+
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Nas",
   description:
