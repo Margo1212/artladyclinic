@@ -8,6 +8,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import { Category } from "types/types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
+import { PriceListImage } from "@lib/assets/svg/PriceListImage";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Cennik",
@@ -24,7 +25,9 @@ export default async function Page() {
     servicesData,
   ]);
   return (
-    <section className="h-full flex flex-col items-center px-3 py-4 laptop:py-14 laptop:px-20 bg-white">
+    <section className="relative h-full flex flex-col items-center px-3 py-4 laptop:py-14 laptop:px-20 bg-white overflow-clip">
+      <PriceListImage position="up" />
+      <PriceListImage position="down" />
       <Title>Cennik</Title>
       <div className="w-full mt-14">
         {categories.map((category: Category) => (

@@ -3,6 +3,7 @@ import { Title } from "@lib/components/Title/Title";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Employee } from "types/types";
+import { AboutUsPageImage } from "@lib/assets/svg/AboutUs";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Nas",
@@ -16,7 +17,9 @@ export default async function Page() {
   const aboutUs = await Promise.resolve(aboutUsData);
 
   return (
-    <section className="w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 space-y-10">
+    <section className="relative w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 space-y-10 overflow-clip">
+      <AboutUsPageImage position="up" />
+      <AboutUsPageImage position="down" />
       <Title>{aboutUs.title}</Title>
       <div className="space-y-12">
         {aboutUs.employees.map((employee: Employee) => (

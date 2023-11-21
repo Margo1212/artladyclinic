@@ -3,6 +3,7 @@ import { getProducts } from "@lib/data/products";
 import type { Metadata } from "next";
 import { ListProducts } from "@components/ListProducts/ListProducts";
 import { Title } from "@lib/components/Title/Title";
+import { ProductsImage } from "@lib/assets/svg/ProductsImage";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Produkty",
@@ -20,8 +21,11 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="w-full h-full bg-white py-4 px-3 desktop:px-32 laptop:py-14 space-y-10">
+    <div className="relative w-full h-full bg-white py-4 px-3 desktop:px-32 laptop:py-14 space-y-10 overflow-clip">
+      <ProductsImage position="up" />
+      <ProductsImage position="down" />
       <Title>Produkty</Title>
+
       <ListProducts
         products={products}
         productCategories={productsCategories}

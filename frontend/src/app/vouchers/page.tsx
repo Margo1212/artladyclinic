@@ -25,7 +25,7 @@ export default async function Page() {
   const vouchers = await Promise.resolve(vouchersData);
 
   return (
-    <section className="relative h-full w-full px-2 py-4 desktop:py-14 desktop:px-20 bg-white">
+    <section className="relative h-full w-full px-2 py-4 desktop:py-14 desktop:px-20 bg-white overflow-clip">
       <VouchersImage position="up" />
       <VouchersImage position="down" />
       <div className="flex flex-col items-center space-y-10 mb-14 tablet:px-2 laptop:px-10">
@@ -47,7 +47,7 @@ export default async function Page() {
                   height={v.image?.data?.attributes.height}
                 />
               </div>
-              <div className="w-full px-4 space-y-1">
+              <div className="w-full px-4 space-y-1 flex flex-col justify-between">
                 <p className="text-base font-normal">{v.title}</p>
                 <p className="tablet:text-[10px] text-[9px]  break-words font-normal">
                   {v.description}

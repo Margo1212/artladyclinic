@@ -7,14 +7,15 @@ export const VouchersImage = (props: ImageProps) => {
   const { position } = props;
   const imagePosition =
     position === "down"
-      ? "hidden desktop:block z-0 desktop:absolute desktop:top-28 desktop:-right-10"
-      : "hidden  desktop:block z-0 desktop:absolute desktop:bottom-0 desktop:-left-28";
+      ? "hidden desktop:block z-0 desktop:absolute desktop:top-0 desktop:-right-28 "
+      : "hidden  desktop:block z-0 desktop:absolute desktop:top-0 desktop:left-0";
+
   return (
     <svg
       className={imagePosition}
-      width="393"
+      width="360"
       height="336"
-      viewBox="0 0 393 336"
+      viewBox="0 0 600 336"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

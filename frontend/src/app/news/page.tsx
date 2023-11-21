@@ -1,6 +1,7 @@
 import { getNews } from "@lib/data/news";
 import { Title } from "@components/Title/Title";
 import type { Metadata } from "next";
+import { NewsPageImage } from "@lib/assets/svg/newsPageImage";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic |  Nowośći",
@@ -14,9 +15,11 @@ export default async function Page() {
   const news = await Promise.resolve(newsData).catch((err) =>
     console.error(err)
   );
-
+  if (!news) return <h2>No news Found</h2>;
   return (
-    <section className="h-full w-full px-3 py-4 laptop:py-14 laptop:px-20 bg-white">
+    <section className="relative h-full w-full px-3 py-4 laptop:py-14 laptop:px-20 bg-white overflow-clip">
+      <NewsPageImage position="down" />
+      <NewsPageImage position="up" />
       <div className="flex flex-col items-center space-y-10 mb-14">
         <Title>Nowośći</Title>
 
