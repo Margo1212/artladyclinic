@@ -13,11 +13,11 @@ export const revalidate = 10;
 
 export const FaqSection = ({ homepage }: HeaderProps) => {
   return (
-    <section className="relative flex flex-col laptop:py-14 items-center mb-10 px-3 gap-y-5">
+    <section className="relative flex flex-col laptop:py-14 items-center justify-center mb-10 px-3 gap-y-5">
       <FaqSectionImage position="up" />
       <FaqSectionImage position="down" />
       <Title>{homepage.faq.title}</Title>
-      <div className=" w-full desktop:w-[800px] mt-14">
+      <div className=" w-full desktop:w-[800px] mt-8">
         {homepage.faq.questions.map((question: Question) => (
           <Accordion
             key={question.id}

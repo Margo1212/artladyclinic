@@ -1,10 +1,7 @@
-import { aboutUsReducer, homepageReducer } from "@lib/utils";
-import axios from "axios";
+import { aboutUsReducer } from "@lib/utils";
 import qs from "qs";
 import { cache } from "react";
-import { Category } from "types/types";
-
-const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+import { request } from "./index";
 
 export const getAboutUs = cache(async () => {
   const query = qs.stringify(
@@ -15,12 +12,9 @@ export const getAboutUs = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios
-    .get(`${url}/api/about-page?${query}`)
-    .catch(function (error) {
-      console.log(error.toJSON());
-    });
-  const rawAboutUs = res?.data.data;
+  const res = await request(`about-page?${query}`);
+
+  const rawAboutUs = res.data;
 
   const aboutUs = aboutUsReducer(rawAboutUs);
   return aboutUs;

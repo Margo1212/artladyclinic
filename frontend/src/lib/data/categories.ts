@@ -1,10 +1,8 @@
 import { categoryReducer } from "@lib/utils";
-import axios from "axios";
 import qs from "qs";
 import { cache } from "react";
 import { Category } from "types/types";
-
-const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+import { request } from "./index";
 
 export const getCategoriesSlugs = async () => {
   const query = qs.stringify(
@@ -15,9 +13,8 @@ export const getCategoriesSlugs = async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/categories?${query}`);
-  const rawSlugs = res.data.data;
-
+  const res = await request(`categories?${query}`);
+  const rawSlugs = res.data;
   const slugs = rawSlugs.map((rawSlug: any) => {
     return rawSlug.attributes.slug;
   });
@@ -33,12 +30,8 @@ export const getCategories = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios
-    .get(`${url}/api/categories?${query}`)
-    .catch(function (error) {
-      console.log(error.toJSON());
-    });
-  const rawCategories = res?.data.data;
+  const res = await request(`categories?${query}`);
+  const rawCategories = res.data;
   const categories = rawCategories?.map((category: Category) =>
     categoryReducer(category)
   );
@@ -59,7 +52,7 @@ export const getCategoryBySlug = async ({ slug }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/categories?${query}`);
-  const rawCategory = res.data.data[0];
+  const res = await request(`categories?${query}`);
+  const rawCategory = res.data[0];
   return categoryReducer(rawCategory);
 };

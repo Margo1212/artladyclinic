@@ -1,8 +1,7 @@
 import { vouchersReducer } from "@lib/utils";
 import qs from "qs";
 import { cache } from "react";
-
-const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+import { request } from "./index";
 
 export const getVouchers = cache(async () => {
   const query = qs.stringify(
@@ -13,14 +12,8 @@ export const getVouchers = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await fetch(`${url}/api/vouchers-page?${query}`, {
-    cache: "no-store",
-  }).catch((error) => {
-    console.log(error.toJSON());
-  });
-  const data = await res?.json();
-  const rawVouchers = data?.data;
+  const res = await request(`vouchers-page?${query}`);
+  const rawVouchers = res.data;
   const vouchers = vouchersReducer(rawVouchers);
-
   return vouchers;
 });

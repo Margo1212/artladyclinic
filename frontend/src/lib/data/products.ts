@@ -1,9 +1,7 @@
 import { productsReducer } from "@lib/utils";
-import axios from "axios";
+import { request } from "./index";
 import qs from "qs";
 import { cache } from "react";
-
-const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
 export const getProducts = cache(async () => {
   const query = qs.stringify(
@@ -14,8 +12,8 @@ export const getProducts = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/products?${query}`);
-  const rawProducts = res.data.data;
+  const res = await request(`products?${query}`);
+  const rawProducts = res.data;
 
   const products = rawProducts.map((product: any) => productsReducer(product));
   return products;
@@ -35,11 +33,8 @@ export const getProductBySlug = async ({ slug }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios
-    .get(`${url}/api/products?${query}`)
-    .catch(function (error) {
-      console.log(error.toJSON());
-    });
-  const rawProducts = res?.data.data[0];
+  const res = await request(`products?${query}`);
+
+  const rawProducts = res?.data[0];
   return productsReducer(rawProducts);
 };

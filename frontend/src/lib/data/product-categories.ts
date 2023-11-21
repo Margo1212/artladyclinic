@@ -1,10 +1,7 @@
 import { productsCategoryReducer } from "@lib/utils";
-import axios from "axios";
-
+import { request } from "./index";
 import qs from "qs";
 import { cache } from "react";
-
-const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
 export const getProductCategories = cache(async () => {
   const query = qs.stringify(
@@ -15,12 +12,8 @@ export const getProductCategories = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios
-    .get(`${url}/api/product-categories?${query}`)
-    .catch(function (error) {
-      console.log(error.toJSON());
-    });
-  const rawProductCategories = res?.data.data;
+  const res = await request(`product-categories?${query}`);
+  const rawProductCategories = res.data;
   const productCategory = rawProductCategories.map((productC: any) =>
     productsCategoryReducer(productC)
   );

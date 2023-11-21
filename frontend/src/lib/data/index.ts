@@ -4,14 +4,13 @@ async function getStrapiURL(path = "") {
   }${path}`;
 }
 
-async function request(url: string): Promise<any> {
+export async function request(url: string): Promise<any> {
   const apiToken =
     process.env.STRAPI_API_TOKEN ||
     process.env.NEXT_PUBLIC_STRAPI_API_TOKEN ||
     "";
 
-  const cache =
-    process.env.NODE_ENV == "development" ? "no-store" : "force-cache";
+  const cache = "no-store";
 
   const headers = {
     Accept: "application/json",
@@ -21,7 +20,9 @@ async function request(url: string): Promise<any> {
   const response = fetch(`${await getStrapiURL("/api")}/${url}`, {
     cache,
     headers,
-  }).then((response) => response.json());
+  })
+    .then((response) => response.json())
+    .catch((error) => error.toJSON());
 
   return response;
 }

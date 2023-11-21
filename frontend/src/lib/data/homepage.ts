@@ -1,7 +1,7 @@
 import { homepageReducer } from "@lib/utils";
-import axios from "axios";
 import qs from "qs";
 import { cache } from "react";
+import { request } from "./index";
 
 const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
@@ -30,16 +30,8 @@ export const getHomepage = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios
-    .get(`${url}/api/homepage?${query}`, {
-      validateStatus: function (status) {
-        return status < 500; // Resolve only if the status code is less than 500
-      },
-    })
-    .catch(function (error) {
-      console.log(error.toJSON());
-    });
-  const rawHomepage = res?.data.data;
+  const res = await request(`homepage?${query}`);
+  const rawHomepage = res.data;
 
   const homepage = homepageReducer(rawHomepage);
   return homepage;

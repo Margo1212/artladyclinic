@@ -1,9 +1,7 @@
 import { serviceReducer } from "@lib/utils";
-import axios from "axios";
+import { request } from "./index";
 import qs from "qs";
 import { cache } from "react";
-
-const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
 export const getServices = cache(async () => {
   const query = qs.stringify(
@@ -14,8 +12,8 @@ export const getServices = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/services?${query}`);
-  const rawServices = res.data.data;
+  const res = await request(`services?${query}`);
+  const rawServices = res.data;
 
   const services = rawServices.map((service: any) => serviceReducer(service));
   return services;
@@ -30,8 +28,8 @@ export const getServicesSlugs = async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/services?${query}`);
-  const rawSlugs = res.data.data;
+  const res = await request(`services?${query}`);
+  const rawSlugs = res.data;
 
   const slugs = rawSlugs.map((rawSlug: any) => {
     return rawSlug.attributes.slug;
@@ -53,12 +51,8 @@ export const getServiceBySlug = async ({ slug }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios
-    .get(`${url}/api/services?${query}`)
-    .catch(function (error) {
-      console.log(error.toJSON());
-    });
-  const rawService = res?.data.data[0];
+  const res = await request(`services?${query}`);
+  const rawService = res.data[0];
   return serviceReducer(rawService);
 };
 
@@ -78,8 +72,8 @@ export const getServicesByCategoryId = async ({ id }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await axios.get(`${url}/api/services?${query}`);
-  const rawServices = res.data.data;
+  const res = await request(`services?${query}`);
+  const rawServices = res.data;
   const services = rawServices.map((rawService: any) =>
     serviceReducer(rawService)
   );
