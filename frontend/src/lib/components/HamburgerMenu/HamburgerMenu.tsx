@@ -1,9 +1,15 @@
 "use client";
-
+import dynamic from "next/dynamic";
+const Box = dynamic(() => import("@mui/material/Box"), {
+  loading: () => <p>Loading...</p>,
+});
+const Drawer = dynamic(() => import("@mui/material/Drawer"), {
+  loading: () => <p>Loading...</p>,
+});
+const Divider = dynamic(() => import("@mui/material/Divider"), {
+  loading: () => <p>Loading...</p>,
+});
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import Divider from "@mui/material/Divider";
 
 import { useState } from "react";
 import { IconButton } from "@mui/material";
@@ -42,27 +48,13 @@ export default function HamburgerMenu() {
         <MenuIcon />
       </IconButton>
 
-      {/* The outside of the drawer */}
-      <Drawer
-        //from which side the drawer slides in
-        anchor="right"
-        //if open is true --> drawer is shown
-        open={state}
-        //function that is called when the drawer should close
-        onClose={toggleDrawer(false)}
-        //function that is called when the drawer should open
-      >
-        {/* The inside of the drawer */}
+      <Drawer anchor="right" open={state} onClose={toggleDrawer(false)}>
         <Box
           sx={{
             p: 2,
             height: 1,
           }}
         >
-          {/* 
-                  when clicking the icon it calls the function toggleDrawer 
-                  and closes the drawer by setting the variable open to false
-                  */}
           <IconButton onClick={toggleDrawer(false)} sx={{ mb: 2 }}>
             <CloseIcon />
           </IconButton>

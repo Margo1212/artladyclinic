@@ -26,7 +26,7 @@ export function ListServices(props: ListServicesProps) {
     <div className="w-full tablet:h-[33.438rem] bg-white">
       <Tab.Group vertical>
         <div className="grid grid-cols-4 h-full w-full">
-          <Tab.List className="flex col-span-1 flex-col laptop:w-[280px] tablet:h-[33.438rem] tablet:space-y-1 rounded-sm text-dark-blue p-2 overflow-auto scrollbar scrollbar-w-2 scrollbar-thumb-rounded-md scrollbar-track-white scrollbar-thumb-dark-blue">
+          <Tab.List className="flex col-span-1 flex-col laptop:w-full tablet:h-full tablet:space-y-1 rounded-sm text-dark-blue p-2 overflow-auto scrollbar scrollbar-w-2 scrollbar-thumb-rounded-md scrollbar-track-white scrollbar-thumb-dark-blue">
             {categories.map((category) => (
               <Tab as={Fragment} key={category.id}>
                 <button

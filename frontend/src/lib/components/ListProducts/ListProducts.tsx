@@ -1,15 +1,13 @@
 "use client";
+import dynamic from "next/dynamic";
+const Image = dynamic(() => import("next/image"), {
+  loading: () => <p>Loading...</p>,
+});
 
-import { Category, Product, ProductCategory, Service } from "types/types";
-import Image from "next/image";
+import { Category, Product, ProductCategory } from "types/types";
 import { Tab } from "@headlessui/react";
 import Link from "next/link";
-import { Fragment, useState } from "react";
-import { Title } from "../Title/Title";
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
+import { Fragment } from "react";
 
 export type CategoryList = Category[];
 
@@ -22,12 +20,12 @@ export function ListProducts(props: ListProductsProps) {
   const { products, productCategories } = props;
 
   if (!productCategories) return <p>No profile data</p>;
-  console.log(productCategories);
+
   return (
-    <div className="w-full min-h-[33.438rem] shadow-md pb-5">
+    <div className="w-full min-h-[33.438rem] shadow-md pb-5 bg-white z-10">
       <Tab.Group vertical>
-        <div className="flex flex-col laptop:flex-row w-full justify-around gap-5 laptop:gap-0">
-          <Tab.List className="flex flex-col w-full laptop:w-1/4 h-full space-y-1 rounded-sm text-dark-blue   p-1">
+        <div className="flex z-50 flex-col laptop:flex-row w-full justify-around gap-5 laptop:gap-0">
+          <Tab.List className="flex z-50  flex-col w-full laptop:w-1/4 h-full space-y-1 rounded-sm text-dark-blue   p-1">
             {productCategories.map((category) => (
               <Tab as={Fragment} key={category.id}>
                 <button
@@ -64,19 +62,16 @@ export function ListProducts(props: ListProductsProps) {
                         key={product.id}
                         className="px-4 py-2 my-3 border-[0.5px] border-dark-gray/10 shadow-sm h-72 rounded-md hover:bg-gray-100"
                       >
-                        <div className="w-full h-full flex flex-col justify-between gap-y-2">
-                          <div className="h-1/2">
-                            <Image
-                              className="h-full w-full rounded-md object-cover"
-                              src={product.image.data?.attributes.url}
-                              alt={
-                                product.image.data?.attributes.alternativeText
-                              }
-                              width={product.image.data?.attributes.width}
-                              height={product.image.data?.attributes.height}
-                            />
-                          </div>
-                          <div className="flex flex-col gap-2">
+                        <div className="w-full h-full flex flex-col  gap-y-2">
+                          <Image
+                            className="h-1/2 rounded-md object-cover"
+                            src={product.image.data?.attributes.url}
+                            alt={product.image.data?.attributes.alternativeText}
+                            width={500}
+                            height={500}
+                          />
+
+                          <div className="h-1/2 flex flex-col justify-between">
                             <h3 className="text-xs font-medium leading-5 text-[#565656]">
                               {product.name}
                             </h3>
