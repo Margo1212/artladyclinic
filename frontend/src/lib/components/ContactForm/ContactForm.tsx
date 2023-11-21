@@ -87,7 +87,7 @@ export const ContactForm = () => {
         value={formik.values.title}
         name="title"
         placeholder="Tytul"
-        type="tel"
+        type="text"
       />
       {formik.touched.title && formik.errors.title && (
         <span className="text-alert text-xs p-0 m-0">
