@@ -54,6 +54,19 @@ export type Service = {
   oldPrice: number;
 };
 
+export type New = {
+  id: string;
+  title: string;
+  description: string;
+  date: number;
+  image: any;
+  slug: string;
+};
+
+export type NewsList = {
+  news: New[];
+};
+
 export type ServiceList = Service[];
 
 export type Employee = {
