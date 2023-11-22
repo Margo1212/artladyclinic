@@ -23,11 +23,10 @@ export const FaqSection = ({ homepage }: HeaderProps) => {
             <Accordion
               key={question.id}
               sx={{
-                marginBottom: "10px",
+                marginBottom: "25px",
                 backgroundColor: "#F4F4F4",
                 borderTop: "solid 1px #C4C4C4",
                 borderBottom: "solid 1px #C4C4C4",
-                boxShadow: "5px",
               }}
             >
               <AccordionSummary

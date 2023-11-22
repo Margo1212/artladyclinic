@@ -17,7 +17,7 @@ export default async function Page() {
   const gallery = await Promise.resolve(galleryData).catch((err) =>
     console.error(err)
   );
-  console.log(gallery.photo);
+
   return (
     <div className="relative overflow-clip w-full h-full px-3 py-4 flex flex-col bg-white laptop:px-48 laptop:py-14">
       <GalleryPageImage position="up" />
