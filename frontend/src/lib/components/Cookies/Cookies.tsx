@@ -24,7 +24,7 @@ const CookieConsent = () => {
     <div className="fixed w-full z-50 ">
       <div
         data-aos="fade-up"
-        className="fixed bottom-0  bg-white border-2 rounded-lg w-full border-dark-blue flex items-center justify-between gap-x-5 px-4 py-2 laptop:py-4"
+        className="fixed bottom-0  bg-white border-[1.5px] rounded-lg w-full border-dark-blue flex items-center justify-between gap-x-5 px-4 py-2 laptop:py-4"
       >
         <CookieOutlinedIcon fontSize="large" sx={{ color: "#001144" }} />
         <span className="text-dark text-xs tablet:text-sm laptop:text-base my-5 laptop:my-5">
