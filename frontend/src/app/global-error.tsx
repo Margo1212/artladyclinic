@@ -24,7 +24,6 @@ export default function GlobalError({
             Try again
           </button>
         </div>
-        <button onClick={() => reset()}>Try again</button>
       </body>
     </html>
   );
