@@ -6,11 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "maxLength": 40,
-      "required": true
-    },
     "questions": {
       "displayName": "questions",
       "type": "component",

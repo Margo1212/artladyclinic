@@ -6,11 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true,
-      "maxLength": 40
-    },
     "textBlock": {
       "type": "richtext",
       "required": true,

@@ -30,12 +30,6 @@
       "repeatable": false,
       "component": "page.services"
     },
-    "newsSection": {
-      "displayName": "newsSection",
-      "type": "component",
-      "repeatable": false,
-      "component": "page.news-section"
-    },
     "reviewsSection": {
       "displayName": "reviews-section",
       "type": "component",

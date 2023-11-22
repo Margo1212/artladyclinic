@@ -43,9 +43,6 @@
         "audios"
       ]
     },
-    "applicationRequirements": {
-      "type": "richtext"
-    },
     "product_category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -54,6 +51,11 @@
     },
     "oldPrice": {
       "type": "decimal"
+    },
+    "application": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.application"
     }
   }
 }

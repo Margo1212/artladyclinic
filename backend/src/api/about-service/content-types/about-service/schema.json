@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true,
-      "maxLength": 40
-    },
     "description": {
       "type": "richtext",
       "maxLength": 1000

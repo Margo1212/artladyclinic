@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true,
-      "maxLength": 40,
-      "minLength": 2
-    },
     "employees": {
       "type": "component",
       "repeatable": true,
