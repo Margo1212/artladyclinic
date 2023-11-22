@@ -34,6 +34,11 @@ const Navigation = ({ nav }: NavProps) => {
 
       <ul className="hidden tablet:px-10 desktop:px-24 space-x-8 align-middle py-6 laptop:flex flex-row justify-between">
         <li>
+          <Link aria-label="Link to home page" href="/">
+            Strona główna
+          </Link>
+        </li>
+        <li>
           <Link aria-label="Link to about page" href="/about">
             O nas
           </Link>
