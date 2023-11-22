@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 import { Service } from "types/types";
+import { error } from "console";
 export const revalidate = 10;
 
 export const metadata: Metadata = {
@@ -15,9 +16,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const aboutServicesData = getAboutServices();
 
-  const aboutServices = await Promise.resolve(aboutServicesData).catch((err) =>
-    console.error(err)
-  );
+  const aboutServices = await Promise.resolve(aboutServicesData);
 
   return (
     <section className="relative w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52  laptop:py-14 overflow-clip">
@@ -42,7 +41,7 @@ export default async function Page() {
         </div>
       </div>
       <div className="space-y-12">
-        {aboutServices.ourService.map((service: any) => (
+        {aboutServices.ourService?.map((service: any) => (
           <div
             key={service.id}
             data-aos="zoom-in"

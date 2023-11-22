@@ -13,8 +13,8 @@ export const getNews = cache(async () => {
     }
   );
   const res = await request(`last-news?${query}`);
-  const rawNews = res.data;
-  const news = rawNews.map((news: any) => newsReducer(news));
+  const rawNews = res?.data;
+  const news = rawNews?.map((news: any) => newsReducer(news));
 
   return news;
 });

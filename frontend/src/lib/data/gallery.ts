@@ -14,7 +14,7 @@ export const getGallery = cache(async () => {
   );
   const res = await request(`gallery?${query}`);
 
-  const rawGallery = res.data;
+  const rawGallery = res?.data;
 
   const gallery = galleryReducer(rawGallery);
   return gallery;

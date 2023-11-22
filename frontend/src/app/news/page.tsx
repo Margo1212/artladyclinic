@@ -15,10 +15,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const newsData = getNews();
 
-  const news = await Promise.resolve(newsData).catch((err) =>
-    console.error(err)
-  );
-  if (!news) return <h2>No news Found</h2>;
+  const news = await Promise.resolve(newsData);
   return (
     <section className="relative px-10 py-4 mb-10 tablet:px-20 desktop:px-32 laptop:px-0 laptop:py-14">
       <NewsSectionImage position="up" />

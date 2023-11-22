@@ -14,7 +14,7 @@ export const getAboutServices = cache(async () => {
   );
   const res = await request(`about-service?${query}`);
 
-  const rawAboutServices = res.data;
+  const rawAboutServices = res?.data;
 
   const aboutService = aboutServices(rawAboutServices);
   return aboutService;

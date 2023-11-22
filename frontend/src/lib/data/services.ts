@@ -13,9 +13,9 @@ export const getServices = cache(async () => {
     }
   );
   const res = await request(`services?${query}`);
-  const rawServices = res.data;
+  const rawServices = res?.data;
 
-  const services = rawServices.map((service: any) => serviceReducer(service));
+  const services = rawServices?.map((service: any) => serviceReducer(service));
   return services;
 });
 
@@ -29,9 +29,9 @@ export const getServicesSlugs = async () => {
     }
   );
   const res = await request(`services?${query}`);
-  const rawSlugs = res.data;
+  const rawSlugs = res?.data;
 
-  const slugs = rawSlugs.map((rawSlug: any) => {
+  const slugs = rawSlugs?.map((rawSlug: any) => {
     return rawSlug.attributes.slug;
   });
   return slugs;
@@ -52,7 +52,7 @@ export const getServiceBySlug = async ({ slug }: any) => {
     }
   );
   const res = await request(`services?${query}`);
-  const rawService = res.data[0];
+  const rawService = res?.data[0];
   return serviceReducer(rawService);
 };
 
@@ -74,7 +74,7 @@ export const getServicesByCategoryId = async ({ id }: any) => {
   );
   const res = await request(`services?${query}`);
   const rawServices = res.data;
-  const services = rawServices.map((rawService: any) =>
+  const services = rawServices?.map((rawService: any) =>
     serviceReducer(rawService)
   );
   return services;

@@ -14,7 +14,7 @@ export const getNavbar = cache(async () => {
   );
   const res = await request(`nav-bar?${query}`);
 
-  const rawNavbar = res.data;
+  const rawNavbar = res?.data;
 
   const nav = navBarReducer(rawNavbar);
   return nav;

@@ -14,7 +14,7 @@ export const getAboutUs = cache(async () => {
   );
   const res = await request(`about-page?${query}`);
 
-  const rawAboutUs = res.data;
+  const rawAboutUs = res?.data;
 
   const aboutUs = aboutUsReducer(rawAboutUs);
   return aboutUs;

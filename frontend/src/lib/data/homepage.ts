@@ -31,7 +31,7 @@ export const getHomepage = cache(async () => {
     }
   );
   const res = await request(`homepage?${query}`);
-  const rawHomepage = res.data;
+  const rawHomepage = res?.data;
 
   const homepage = homepageReducer(rawHomepage);
   return homepage;

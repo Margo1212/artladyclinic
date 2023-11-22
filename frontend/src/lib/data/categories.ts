@@ -31,7 +31,7 @@ export const getCategories = cache(async () => {
     }
   );
   const res = await request(`categories?${query}`);
-  const rawCategories = res.data;
+  const rawCategories = res?.data;
   const categories = rawCategories?.map((category: Category) =>
     categoryReducer(category)
   );

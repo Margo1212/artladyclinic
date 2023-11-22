@@ -7,7 +7,6 @@ export const revalidate = 10;
 
 export const AboutUsSection = ({ homepage }: HeaderProps) => {
   const imageAbout = homepage.aboutSection.imageAboutSection.data.attributes;
-  const buttonAbout = homepage.aboutSection.buttonAboutSection;
   return (
     <section className="mb-10 px-2 py-4 laptop:px-0 laptop:py-14 laptop:h-[28rem]">
       <Card>

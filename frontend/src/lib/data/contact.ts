@@ -3,8 +3,6 @@ import qs from "qs";
 import { cache } from "react";
 import { request } from "./index";
 
-const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
-
 export const getContact = cache(async () => {
   const query = qs.stringify(
     {
@@ -16,7 +14,7 @@ export const getContact = cache(async () => {
   );
   const res = await request(`contact-page?${query}`);
 
-  const rawContact = res.data;
+  const rawContact = res?.data;
 
   const contact = contactReducer(rawContact);
   return contact;

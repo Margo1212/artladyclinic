@@ -14,18 +14,14 @@ export const metadata: Metadata = {
 export default async function Page() {
   const galleryData = getGallery();
 
-  const gallery = await Promise.resolve(galleryData).catch((err) =>
-    console.error(err)
-  );
-
-  if (!gallery) return <h2>No Images Found</h2>;
+  const gallery = await Promise.resolve(galleryData);
   return (
     <div className="relative overflow-clip w-full h-full px-3 py-4 flex flex-col bg-white laptop:px-48 laptop:py-14">
       <GalleryPageImage position="up" />
       <GalleryPageImage position="down" />
-      <Title>{gallery.title}</Title>
+      <Title>{gallery?.title}</Title>
       <div className="w-full h-full mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-12 gap-y-7 z-10">
-        {gallery.photo.map((ph: any) => (
+        {gallery?.photo.map((ph: any) => (
           <ImageContainer key={ph.id} photo={ph} />
         ))}
       </div>
