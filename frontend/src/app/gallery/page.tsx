@@ -22,13 +22,12 @@ export default async function Page() {
     <div className="relative overflow-clip w-full h-full px-3 py-4 flex flex-col bg-white laptop:px-48 laptop:py-14">
       <GalleryPageImage position="up" />
       <GalleryPageImage position="down" />
-      <Title>{gallery?.title}</Title>
-      {gallery.photo === undefined ? (
+      <Title>Galeria</Title>
+      {gallery.photo ? (
         <div className="w-full h-full mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-12 gap-y-7 z-10">
-          {gallery?.photo.map(
-            (ph: any) =>
-              !ph.image.data(<ImageContainer key={ph.id} photo={ph} />)
-          )}
+          {gallery?.photo.map((ph: any) => (
+            <ImageContainer key={ph.id} photo={ph} />
+          ))}
         </div>
       ) : (
         <h2>No images founded...</h2>
