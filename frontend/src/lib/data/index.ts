@@ -10,7 +10,7 @@ export async function request(url: string): Promise<any> {
     process.env.NEXT_PUBLIC_STRAPI_API_TOKEN ||
     "";
 
-  const cache = "no-store";
+  const cache = "force-cache";
 
   const headers = {
     Accept: "application/json",
@@ -20,9 +20,10 @@ export async function request(url: string): Promise<any> {
   const response = fetch(`${await getStrapiURL("/api")}/${url}`, {
     cache,
     headers,
+    next: { revalidate: 10 },
   })
     .then((response) => response.json())
-    .catch((error) => error.toJSON());
+    .catch((error) => console.log(error));
 
   return response;
 }
