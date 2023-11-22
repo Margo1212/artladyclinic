@@ -24,7 +24,7 @@ export default async function Page() {
       <GalleryPageImage position="down" />
       <Title>Galeria</Title>
       {gallery.photo ? (
-        <div className="w-full h-full mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-12 gap-y-7 z-10">
+        <div className="w-full h-full mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-16 gap-y-16 z-10">
           {gallery?.photo.map((ph: any) => (
             <ImageContainer key={ph.id} photo={ph} />
           ))}

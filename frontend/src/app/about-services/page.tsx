@@ -27,9 +27,9 @@ export default async function Page() {
         data-aos="zoom-in"
         className="flex flex-col mt-10 laptop:flex-row mb-5"
       >
-        <div className="laptop:w-1/4 w-full ">
+        <div className="laptop:w-1/4 w-full h-[350px]">
           <Image
-            className="w-full object-cover h-full shadow-md"
+            className="w-full object-cover h-full shadow-[5px_-5px_0px_0px_#001965]"
             src={aboutServices.image.data?.attributes.url}
             alt={aboutServices.image.data?.attributes.alternativeText}
             width={aboutServices.image.data?.attributes.width}
@@ -60,7 +60,7 @@ export default async function Page() {
                   {service.description}
                 </p>
               </div>
-              <div className="laptop:w-1/4 h-[400px] w-full shadow-md">
+              <div className="laptop:w-1/4 h-[350px] w-full shadow-md">
                 {service.image.data?.attributes.url
                   .split(".")
                   .pop()
@@ -69,13 +69,13 @@ export default async function Page() {
                     autoPlay={true}
                     muted
                     loop
-                    className="w-full object-cover h-full shadow-md"
+                    className="w-full object-cover h-full shadow-[5px_5px_0px_0px_#001965]"
                     src={service.image.data?.attributes.url}
                     height={service.image.data?.attributes.height}
                   />
                 ) : (
                   <Image
-                    className="w-full object-cover h-full shadow-md"
+                    className="w-full object-cover h-full shadow-[5px_-5px_0px_0px_#001965]"
                     src={service.image.data?.attributes.url}
                     alt={service.image.data?.attributes.alternativeText}
                     width={service.image.data?.attributes.width}

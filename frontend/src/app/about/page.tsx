@@ -33,9 +33,9 @@ export default async function Page() {
               data-aos="zoom-in"
               className="flex flex-col gap-x-5 space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
             >
-              <div className="laptop:w-1/4 shadow-md">
+              <div className="laptop:w-1/4">
                 <Image
-                  className="w-full object-cover h-full"
+                  className="w-full object-cover h-full shadow-[5px_-5px_0px_0px_#001965]"
                   src={employee.image.data?.attributes.url}
                   alt={employee.image.data?.attributes.alternativeText}
                   width={employee.image.data?.attributes.width}
