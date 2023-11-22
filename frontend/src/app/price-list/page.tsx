@@ -30,71 +30,75 @@ export default async function Page() {
       <PriceListImage position="up" />
       <PriceListImage position="down" />
       <Title>Cennik</Title>
-      <div className="w-full mt-14">
-        {categories.map((category: Category) => (
-          <Accordion
-            key={category.id}
-            sx={{
-              backgroundColor: "transparent",
-              boxShadow: "none",
-              border: "none",
-              fontFamily: "Roboto Serif",
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#001965" }} />}
+      {categories ? (
+        <div className="w-full mt-14">
+          {categories.map((category: Category) => (
+            <Accordion
+              key={category.id}
               sx={{
-                marginBottom: "10px",
-                backgroundColor: "#fff",
-                borderBottom: "solid 1px #001965",
+                backgroundColor: "transparent",
                 boxShadow: "none",
+                border: "none",
+                fontFamily: "Roboto Serif",
               }}
             >
-              <p className="font-medium text-xl text-blue">{category.name}</p>
-            </AccordionSummary>
-            {services
-              .filter(
-                (service: any) => category.name === service.category?.name
-              )
-              .map((service: any) => (
-                <AccordionDetails
-                  key={service.id}
-                  sx={{
-                    background: "transparent",
-                    border: "none",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <Link
-                      aria-label="Link to services details"
-                      href={`/services/${service.slug}`}
-                    >
-                      <p className="font-normal text-lg text-dark-gray/90">
-                        {service.name}
-                      </p>
-                    </Link>
-                  </div>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#001965" }} />}
+                sx={{
+                  marginBottom: "10px",
+                  backgroundColor: "#fff",
+                  borderBottom: "solid 1px #001965",
+                  boxShadow: "none",
+                }}
+              >
+                <p className="font-medium text-xl text-blue">{category.name}</p>
+              </AccordionSummary>
+              {services
+                .filter(
+                  (service: any) => category.name === service.category?.name
+                )
+                .map((service: any) => (
+                  <AccordionDetails
+                    key={service.id}
+                    sx={{
+                      background: "transparent",
+                      border: "none",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <div>
+                      <Link
+                        aria-label="Link to services details"
+                        href={`/services/${service.slug}`}
+                      >
+                        <p className="font-normal text-lg text-dark-gray/90">
+                          {service.name}
+                        </p>
+                      </Link>
+                    </div>
 
-                  <div className="flex flex-col ml-3">
-                    <p className="text-sm text-[#777676] line-through">
-                      {service.oldPrice
-                        ? service.oldPrice?.toFixed(2).toString() + "zł"
-                        : null}
-                    </p>
-                    <p className="text-lg text-[#777676]">
-                      {service.price
-                        ? service.price?.toFixed(2).toString() + "zł"
-                        : null}
-                    </p>
-                  </div>
-                </AccordionDetails>
-              ))}
-          </Accordion>
-        ))}
-      </div>
+                    <div className="flex flex-col ml-3">
+                      <p className="text-sm text-[#777676] line-through">
+                        {service.oldPrice
+                          ? service.oldPrice?.toFixed(2).toString() + "zł"
+                          : null}
+                      </p>
+                      <p className="text-lg text-[#777676]">
+                        {service.price
+                          ? service.price?.toFixed(2).toString() + "zł"
+                          : null}
+                      </p>
+                    </div>
+                  </AccordionDetails>
+                ))}
+            </Accordion>
+          ))}
+        </div>
+      ) : (
+        <h2>No services founded...</h2>
+      )}
     </section>
   );
 }

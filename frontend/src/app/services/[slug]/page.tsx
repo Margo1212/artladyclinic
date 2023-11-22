@@ -7,7 +7,9 @@ export const revalidate = 10;
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const serviceData = getServiceBySlug({ slug: params.slug });
-  const service: Service = await Promise.resolve(serviceData);
+  const service: Service = await Promise.resolve(serviceData).catch((err) =>
+    console.error(err)
+  );
 
   return (
     <div className="relative flex flex-col-reverse gap-4 laptop:flex-row px-6 py-4 laptop:py-16 laptop:px-20 bg-white overflow-clip">
