@@ -21,7 +21,7 @@ export default async function Page() {
   );
 
   return (
-    <section className="relative w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 space-y-10 overflow-clip">
+    <section className="relative w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 mb-10 overflow-clip">
       <AboutUsPageImage position="up" />
       <AboutUsPageImage position="down" />
       <Title>O nas</Title>
