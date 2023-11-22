@@ -37,7 +37,7 @@ export default async function Home() {
           <ServiceImage position="up" />
           <ServiceImage position="down" />
           <div className="flex flex-col gap-y-5 ">
-            <Title>{homepage.services.title}</Title>
+            <Title>Nasze usługi</Title>
             <p className="text-center italic font-light text-[13px]">
               {homepage.services.description}
             </p>

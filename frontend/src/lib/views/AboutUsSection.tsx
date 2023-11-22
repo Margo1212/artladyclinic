@@ -21,9 +21,11 @@ export const AboutUsSection = ({ homepage }: HeaderProps) => {
             />
           </div>
           <div className="laptop:w-2/3 w-full flex flex-col laptop:items-start items-center justify-center laptop:justify-between py-5 laptop:py-5 px-4 laptop:px-10 space-y-4">
-            <Title>{homepage.aboutSection.title}</Title>
+            <Title>O nas</Title>
             <p className="text-xs text-center laptop:text-left break-words font-light leading-normal tracking-wide">
-              {homepage.aboutSection.textBlock}
+              {!homepage.aboutSection.textBlock
+                ? ""
+                : homepage.aboutSection.textBlock}
             </p>
 
             <Link

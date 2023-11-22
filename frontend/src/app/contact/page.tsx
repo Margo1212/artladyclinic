@@ -26,7 +26,7 @@ export default async function Page() {
     <section className="relative overflow-clip w-full h-full px-3 py-4  tablet:px-10 desktop:px-20 bg-white laptop:py-14">
       <ContactPageImage position="up" />
       <ContactPageImage position="down" />
-      <Title>{contact.title}</Title>
+      <Title>Skontaktuj się z nami</Title>
       <div className="grid grid-cols-1 laptop:grid-cols-2 mt-10 laptop:grid-rows-6 gap-y-4">
         <div className="laptop:row-span-3 w-full h-full flex flex-col tablet:flex-row gap-x-9 gap-y-3 pb-20">
           <div
@@ -37,35 +37,45 @@ export default async function Page() {
               <span>
                 <Email />
               </span>
-              <p className="text-xs">{contact?.contactInfo?.email}</p>
+              <p className="text-xs">
+                {contact.contactInfo.email ? contact.contactInfo.email : ""}
+              </p>
             </div>
             <div className="flex items-center gap-x-6">
               <span>
                 <Phone />
               </span>
-              <p className="text-xs">{contact.contactInfo.phone}</p>
+              <p className="text-xs">
+                {contact.contactInfo.phone ? contact.contactInfo.phone : ""}
+              </p>
             </div>
             <div className="flex items-center gap-x-6">
               <span>
                 <Local />
               </span>
-              <p className="text-xs">{contact.contactInfo.address}</p>
+              <p className="text-xs">
+                {contact.contactInfo.address
+                  ? contact.contactInfo.address
+                  : null}
+              </p>
             </div>
           </div>
-          <div
-            data-aos="zoom-in"
-            className="bg-white shadow-md py-6 px-2 desktop:px-10 items-center tablet:items-start  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
-          >
-            <p className="text-sm font-medium">Godziny otwarcia</p>
-            {contact.openingHours.hours.map((hour: Hours) => (
-              <p key={hour.id} className="flex text-xs">
-                <span className="text-dark-blue mr-2 text-xs font-medium">{`${hour.day}: `}</span>
-                {!hour.from && !hour.to
-                  ? " zamknięte"
-                  : ` ${hour.from.slice(0, 5)} - ${hour.to.slice(0, 5)}`}
-              </p>
-            ))}
-          </div>
+          {contact.openingHours.hours ? (
+            <div
+              data-aos="zoom-in"
+              className="bg-white shadow-md py-6 px-2 desktop:px-10 items-center tablet:items-start  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
+            >
+              <p className="text-sm font-medium">Godziny otwarcia</p>
+              {contact.openingHours.hours.map((hour: Hours) => (
+                <p key={hour.id} className="flex text-xs">
+                  <span className="text-dark-blue mr-2 text-xs font-medium">{`${hour.day}: `}</span>
+                  {!hour.from && !hour.to
+                    ? " zamknięte"
+                    : ` ${hour.from.slice(0, 5)} - ${hour.to.slice(0, 5)}`}
+                </p>
+              ))}
+            </div>
+          ) : null}
         </div>
         <div
           data-aos="zoom-in"

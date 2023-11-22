@@ -22,7 +22,7 @@ export type Product = {
   image: any;
   price: number;
   slug: string;
-  applicationRequirements: any;
+  application: any;
   oldPrice: number;
 };
 

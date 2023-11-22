@@ -27,16 +27,18 @@ export const Header = ({ homepage }: HeaderProps) => {
         <HeaderImage position="down" />
 
         <h1 className="text-white text-center break-words laptop:text-left w-4/5 font-medium tablet:text-4xl laptop:text-5xl text-3xl ">
-          {homepage.header.title}
+          {!homepage.header.title ? "No title founded" : homepage.header.title}
         </h1>
         <p className=" text-white text-center laptop:text-left font-light text-[0.813rem] tracking-[8%]">
-          {homepage.header.description}
+          {!homepage.header.description
+            ? "No title founded"
+            : homepage.header.description}
         </p>
         <Link
           href="/contact"
           className="bg-white flex justify-between transition ease-in-out duration-300 hover:bg-white/80 shadow-md rounded-md font-semibold text-dark-blue py-2 px-4 w-[14.438rem]"
         >
-          {button.title}
+          {!button.title ? <p>Zobacz więcej</p> : button.title}
           <ArrowForwardIcon />
         </Link>
       </div>
