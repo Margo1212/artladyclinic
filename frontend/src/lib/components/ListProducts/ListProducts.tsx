@@ -29,10 +29,10 @@ export function ListProducts(props: ListProductsProps) {
             {productCategories.map((category) => (
               <Tab as={Fragment} key={category.id}>
                 <button
-                  className={`outline-none
+                  className={`outline-none focus:bg-dark-blue
                      border-b-2 group border-dark-gray/20 transition ease-in-out duration-200 hover:bg-dark-blue flex items-center gap-5 w-full h-14 rounded-sm px-6 py-3 text-sm font-medium leading-5 hover:text-white`}
                 >
-                  <h3 className="text-dark-blue group-hover:text-white font-normal text-sm">
+                  <h3 className="text-dark-blue group-hover:text-white font-semibold text-md group-focus:invert group-focus:brightness-0">
                     {category.name}
                   </h3>
                 </button>
@@ -42,11 +42,11 @@ export function ListProducts(props: ListProductsProps) {
           <Tab.Panels className="h-full w-full laptop:w-3/4 px-8 tablet:px-20 laptop:px-16">
             {productCategories.map((category) => (
               <Tab.Panel key={category.id}>
-                <div className="flex flex-col items-center">
-                  <h2 className="text-base font-normal text-dark-blue">
+                <div className="flex flex-col items-center gap-y-3 mb-4">
+                  <h2 className="text-lg font-normal text-dark-blue">
                     {category.name}
                   </h2>
-                  <p className="text-[#5a5a5a] text-[10px] font-light text-center">
+                  <p className="text-[#5a5a5a] text-xs font-light text-center">
                     {category.description}
                   </p>
                 </div>
@@ -60,7 +60,7 @@ export function ListProducts(props: ListProductsProps) {
                       <div
                         data-aos="zoom-in"
                         key={product.id}
-                        className="px-4 py-2 my-3 border-[0.5px] border-dark-gray/10 shadow-sm h-72 rounded-md hover:bg-gray-100"
+                        className="p-2 my-3 border-[0.5px] border-dark-gray/10 shadow-sm h-72 rounded-md hover:bg-gray-100"
                       >
                         <div className="w-full h-full flex flex-col  gap-y-2">
                           <Image
@@ -80,7 +80,7 @@ export function ListProducts(props: ListProductsProps) {
                             </p>
                             <Link
                               aria-label="Link to products details"
-                              className="self-end w-24 tablet:w-28 px-2 py-2 transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md text-center text-white text-[8px]"
+                              className="self-end w-24 tablet:w-28 px-2 py-2 transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md text-center text-white text-[9px]"
                               href={`/products/${product.slug}`}
                             >
                               Zobacz więcej

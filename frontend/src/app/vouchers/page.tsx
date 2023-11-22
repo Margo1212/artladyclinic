@@ -42,23 +42,28 @@ export default async function Page() {
             {vouchers.voucher.map((v: Voucher) => (
               <div
                 data-aos="zoom-in"
-                className="w-full h-80 bg-white shadow-md rounded-b-md space-y-2"
                 key={v.id}
+                className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
               >
-                <div className=" h-1/2 rounded-t-md">
-                  <Image
-                    className="w-full object-cover h-full rounded-t-md"
-                    src={v.image?.data?.attributes.url ?? ""}
-                    alt={v.image?.data?.attributes.alternativeText ?? ""}
-                    width={v.image?.data?.attributes.width}
-                    height={v.image?.data?.attributes.height}
-                  />
-                </div>
-                <div className="w-full h-1/2 px-3 gap-y-2 flex flex-col">
-                  <p className="text-base font-normal">{v.title}</p>
-                  <p className="tablet:text-[10px] text-[9px]  break-words font-normal">
-                    {v.description}
-                  </p>
+                <div className="md:flex">
+                  <div className="md:flex-shrink-0">
+                    <Image
+                      className="h-44 w-full object-cover md:w-44"
+                      src={v.image?.data?.attributes.url ?? ""}
+                      alt={v.image?.data?.attributes.alternativeText ?? ""}
+                      width={v.image?.data?.attributes.width}
+                      height={v.image?.data?.attributes.height}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                      {v.title}
+                    </div>
+
+                    <p className="mt-2 text-dark-gray/80 text-sm">
+                      {v.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

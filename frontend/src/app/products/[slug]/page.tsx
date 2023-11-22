@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </p>
         </div>
         <div>
-          {product.application.map((appl: any) => (
+          {product.application?.map((appl: any) => (
             <div key={appl.id}>
               <h4 className="text-blue font-medium text-lg">{appl.title}</h4>
               <p className="laptop:text-base text-sm">{appl.description}</p>
