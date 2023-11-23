@@ -1,11 +1,10 @@
-import { Booksy } from "@lib/assets/svg/Booksy";
 import { Email } from "@lib/assets/svg/Email";
-import { Instagram } from "@lib/assets/svg/Instagram";
 import { Local } from "@lib/assets/svg/Local";
 import { Phone } from "@lib/assets/svg/Phone";
 import Link from "next/link";
 import { Category } from "types/types";
 import { SocialMedia } from "../SocialMedia/SocialMedia";
+import { OpeningHours } from "../OpeningHours/OpeningHours";
 
 export type FooterProps = {
   categories: Category[];
@@ -83,15 +82,7 @@ export const Footer = ({ categories, contact }: FooterProps) => {
         </ul>
       </div>
       <div className="hidden laptop:flex py-6 px-10 w-full flex-col gap-y-2">
-        <p className="text-base font-medium text-white">Godziny otwarcia</p>
-        {contact.openingHours?.hours.map((hour: any) => (
-          <p key={hour.id} className="flex text-xs text-white">
-            <span className="text-white mr-2 text-xs font-medium">{`${hour.day}: `}</span>
-            {!hour.from && !hour.to
-              ? " zamknięte"
-              : ` ${hour.from.slice(0, 5)} - ${hour.to.slice(0, 5)}`}
-          </p>
-        ))}
+        <OpeningHours hours={contact.openingHours?.hours} color="light" />
       </div>
     </footer>
   );

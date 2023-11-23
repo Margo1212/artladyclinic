@@ -82,7 +82,7 @@ export type Question = {
   answer: string;
 };
 
-export type Hours = {
+export type Hour = {
   id: string;
   from: string;
   day: string;
