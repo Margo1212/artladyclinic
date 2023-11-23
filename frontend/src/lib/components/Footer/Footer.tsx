@@ -82,7 +82,11 @@ export const Footer = ({ categories, contact }: FooterProps) => {
         </ul>
       </div>
       <div className="hidden laptop:flex py-6 px-10 w-full flex-col gap-y-2">
-        <OpeningHours hours={contact.openingHours?.hours} color="light" />
+        <OpeningHours
+          colorOfDays="light"
+          hours={contact.openingHours?.hours}
+          color="light"
+        />
       </div>
     </footer>
   );

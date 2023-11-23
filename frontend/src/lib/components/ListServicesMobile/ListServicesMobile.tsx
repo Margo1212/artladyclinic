@@ -1,8 +1,6 @@
 "use client";
 
 import { Category, Service } from "types/types";
-import Image from "next/image";
-import { Tab } from "@headlessui/react";
 import Link from "next/link";
 import { ComponentPropsWithRef } from "react";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";

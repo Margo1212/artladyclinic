@@ -11,10 +11,8 @@ const config: Config = {
   theme: {
     screens: {
       tablet: "640px",
-      // => @media (min-width: 640px) { ... }
       laptop: "1024px",
       desktop: "1280px",
-      // => @media (min-width: 1280px) { ... }
     },
     colors: {
       "dark-blue": "#0E0045",
@@ -25,6 +23,7 @@ const config: Config = {
       "dark-gray": "#303030",
       gray: "#8492a6",
       alert: "#dc2626",
+      black: "#000",
     },
     extend: {
       backgroundImage: {

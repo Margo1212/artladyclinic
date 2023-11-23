@@ -65,7 +65,11 @@ export default async function Page() {
               data-aos="zoom-in"
               className="bg-white shadow-md py-6 px-2 desktop:px-10 items-center tablet:items-start  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
             >
-              <OpeningHours color="dark" hours={contact.openingHours.hours} />
+              <OpeningHours
+                colorOfDays="dark"
+                color="dark"
+                hours={contact.openingHours.hours}
+              />
             </div>
           ) : null}
         </div>
