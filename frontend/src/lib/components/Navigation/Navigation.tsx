@@ -4,8 +4,8 @@ import { Instagram } from "@svg/Instagram";
 import { Booksy } from "@svg/Booksy";
 
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
-import { Email } from "@lib/assets/svg/Email";
 import { Logo } from "@lib/assets/svg/Logo";
+import { SocialMedia } from "../SocialMedia/SocialMedia";
 export const revalidate = 10;
 export type NavProps = {
   nav: any;
@@ -79,30 +79,7 @@ const Navigation = ({ nav }: NavProps) => {
           </Link>
         </li>
       </ul>
-      <ul className="laptop:flex hidden space-x-2.5">
-        <li>
-          <Link
-            aria-label="Link to instagram"
-            href={
-              "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
-            }
-            target="_blank"
-          >
-            <Instagram />
-          </Link>
-        </li>
-        <li>
-          <Link
-            aria-label="Link to booksy"
-            href={
-              "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
-            }
-            target="_blank"
-          >
-            <Booksy />
-          </Link>
-        </li>
-      </ul>
+      <SocialMedia isVisibleOnTablet={false} color="dark" />
     </nav>
   );
 };

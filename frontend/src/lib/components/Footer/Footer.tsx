@@ -5,6 +5,7 @@ import { Local } from "@lib/assets/svg/Local";
 import { Phone } from "@lib/assets/svg/Phone";
 import Link from "next/link";
 import { Category } from "types/types";
+import { SocialMedia } from "../SocialMedia/SocialMedia";
 
 export type FooterProps = {
   categories: Category[];
@@ -16,32 +17,7 @@ export const Footer = ({ categories, contact }: FooterProps) => {
     <footer className="w-full flex flex-col tablet:flex-row gap-x-5 laptop:gap-x-0 justify-between laptop:grid laptop:grid-cols-4 px-10 py-10 laptop:px-16 desktop:px-36 bg-gradient-to-b from-dark-blue to-light-blue">
       <div className="flex flex-col gap-y-3 py-6 px-10">
         <h3 className="text-white text-3xl italic">ArtLadyClinic</h3>
-        <ul className="flex space-x-2">
-          <li>
-            <Link
-              aria-label="Link to instagram"
-              className="invert brightness-0"
-              href={
-                "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
-              }
-              target="_blank"
-            >
-              <Instagram />
-            </Link>
-          </li>
-          <li>
-            <Link
-              aria-label="Link to booksy"
-              className="invert brightness-0"
-              href={
-                "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
-              }
-              target="_blank"
-            >
-              <Booksy />
-            </Link>
-          </li>
-        </ul>
+        <SocialMedia isVisibleOnTablet={true} color="light" />
       </div>
       <div className="laptop:hidden py-6 space-y-2 w-full h-full tablet:flex flex-col justify-center gap-y-2 gap-x-7">
         <div className="flex items-center gap-x-6">
