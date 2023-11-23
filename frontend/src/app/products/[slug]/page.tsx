@@ -2,6 +2,7 @@ import { getProductBySlug } from "@lib/data/products";
 import { Product } from "types/types";
 import Image from "next/image";
 import { ServiceDetailsImage } from "@lib/assets/svg/ServiceDetailsImage";
+import { Price } from "@lib/components/Price/Price";
 export const revalidate = 10;
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -36,18 +37,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <div className="flex justify-between items-center">
           <h4 className="text-blue font-medium text-lg mb-4">Cena:</h4>
-          <div className="flex flex-col">
-            <p className="text-l text-[#777676] line-through">
-              {product.oldPrice
-                ? product.oldPrice?.toFixed(2).toString() + "zł"
-                : null}
-            </p>
-            <p className="text-2xl text-[#777676]">
-              {product.price
-                ? product.price?.toFixed(2).toString() + "zł"
-                : null}
-            </p>
-          </div>
+          <Price oldPriceTextSize="lg" newPriceTextSize="2xl" data={product} />
         </div>
       </div>
       <div className="laptop:w-1/2 w-full px-10 py-5 flex justify-center">

@@ -9,6 +9,7 @@ import { Category } from "types/types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
 import { PriceListImage } from "@lib/assets/svg/PriceListImage";
+import { Price } from "@lib/components/Price/Price";
 export const revalidate = 10;
 
 export const metadata: Metadata = {
@@ -68,7 +69,7 @@ export default async function Page() {
                       alignItems: "center",
                     }}
                   >
-                    <div>
+                    <div className="mr-3">
                       <Link
                         aria-label="Link to services details"
                         href={`/services/${service.slug}`}
@@ -79,18 +80,11 @@ export default async function Page() {
                       </Link>
                     </div>
 
-                    <div className="flex flex-col ml-3">
-                      <p className="text-sm text-[#777676] line-through">
-                        {service.oldPrice
-                          ? service.oldPrice?.toFixed(2).toString() + "zł"
-                          : null}
-                      </p>
-                      <p className="text-lg text-[#777676]">
-                        {service.price
-                          ? service.price?.toFixed(2).toString() + "zł"
-                          : null}
-                      </p>
-                    </div>
+                    <Price
+                      oldPriceTextSize="sm"
+                      newPriceTextSize="lg"
+                      data={service}
+                    />
                   </AccordionDetails>
                 ))}
             </Accordion>
