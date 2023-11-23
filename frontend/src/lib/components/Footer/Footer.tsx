@@ -12,6 +12,8 @@ export type FooterProps = {
 };
 
 export const Footer = ({ categories, contact }: FooterProps) => {
+  const now = new Date();
+  const year = now.getFullYear();
   return (
     <footer className="w-full flex flex-col tablet:flex-row gap-x-5 laptop:gap-x-0 justify-between laptop:grid laptop:grid-cols-4 px-10 py-10 laptop:px-16 desktop:px-36 bg-gradient-to-b from-dark-blue to-light-blue">
       <div className="flex flex-col gap-y-3 py-6 px-10">
@@ -87,6 +89,12 @@ export const Footer = ({ categories, contact }: FooterProps) => {
           hours={contact.openingHours?.hours}
           color="light"
         />
+      </div>
+      <div className="w-full flex flex-col self-center">
+        <p className="text-white text-sm">
+          All rights reserved © Marharyta Lesniak
+        </p>
+        <p className="text-white text-xs">{year}</p>
       </div>
     </footer>
   );
