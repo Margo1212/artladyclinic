@@ -3,6 +3,7 @@ import { HeaderProps } from "./Header";
 import { Card } from "@lib/components/Card/Card";
 import { Title } from "@lib/components/Title/Title";
 import Link from "next/link";
+import { Button } from "@lib/components/Button/Button";
 export const revalidate = 10;
 
 export const AboutUsSection = ({ homepage }: HeaderProps) => {
@@ -28,12 +29,12 @@ export const AboutUsSection = ({ homepage }: HeaderProps) => {
                 : homepage.aboutSection.textBlock}
             </p>
 
-            <Link
+            <Button
+              styles="w-[14.438rem] laptop:w-40 text-sm font-medium"
               href="/about"
-              className="transition ease-in-out duration-300 laptop:w-40 bg-dark-blue hover:bg-dark-blue/90 rounded-md shadow-md text-sm font-medium text-white py-2 px-4 text-center w-[14.438rem]"
-            >
-              Zobacz więcej
-            </Link>
+              bg="dark"
+              text="Zobacz więcej"
+            />
           </div>
         </div>
       </Card>

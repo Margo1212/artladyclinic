@@ -3,6 +3,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Img } from "types/types";
 import { HeaderImage } from "@lib/assets/svg/HeaderImg";
 import Link from "next/link";
+import { Button } from "@lib/components/Button/Button";
 
 export const revalidate = 10;
 export type HeaderProps = {
@@ -34,13 +35,13 @@ export const Header = ({ homepage }: HeaderProps) => {
             ? "No title founded"
             : homepage.header.description}
         </p>
-        <Link
+        <Button
+          styles="w-[14.438rem] flex justify-between font-semibold"
           href="/contact"
-          className="bg-white flex justify-between transition ease-in-out duration-300 hover:bg-white/80 shadow-md rounded-md font-semibold text-dark-blue py-2 px-4 w-[14.438rem]"
-        >
-          {!button.title ? <p>Zobacz więcej</p> : button.title}
-          <ArrowForwardIcon />
-        </Link>
+          bg="light"
+          text={button.title}
+          icon={<ArrowForwardIcon />}
+        />
       </div>
 
       <div className="relative laptop:mt-3 grid grid-cols-5 overflow-visible grid-rows-5 gap-2 tablet:gap-5  desktop:w-[35rem] desktop:h-[105%] desktop:mt-12 tablet:w-[30rem] tablet:h-[28rem] w-[279px] h-[267px]">

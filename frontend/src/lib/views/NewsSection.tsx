@@ -3,6 +3,7 @@ import { New } from "types/types";
 import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 import Link from "next/link";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { Button } from "@lib/components/Button/Button";
 export const revalidate = 10;
 
 export const NewsSection = ({ news }: any) => {
@@ -55,11 +56,12 @@ export const NewsSection = ({ news }: any) => {
           <h2>No news founded...</h2>
         )}
 
-        <Link href="/news">
-          <button className="transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md font-medium text-white py-3 px-6 w-[250px]">
-            Zobacz więcej
-          </button>
-        </Link>
+        <Button
+          styles="py-3 px-6 w-[250px] text-sm font-medium"
+          href="/news"
+          bg="dark"
+          text="Zobacz więcej"
+        />
       </div>
     </section>
   );
