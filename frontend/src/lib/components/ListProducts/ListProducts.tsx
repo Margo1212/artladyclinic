@@ -8,6 +8,7 @@ import { Category, Product, ProductCategory } from "types/types";
 import { Tab } from "@headlessui/react";
 import Link from "next/link";
 import { Fragment } from "react";
+import { Button } from "../Button/Button";
 
 export type CategoryList = Category[];
 
@@ -78,13 +79,13 @@ export function ListProducts(props: ListProductsProps) {
                             <p className="text-[10px] font-light  text-[#565656]">
                               {product.description?.slice(0, 100) + "..."}
                             </p>
-                            <Link
-                              aria-label="Link to products details"
-                              className="self-end w-24 tablet:w-28 px-2 py-2 transition ease-in-out duration-300 bg-dark-blue hover:bg-dark-blue/90 rounded-md text-center text-white text-[9px]"
-                              href={`/products/${product.slug}`}
-                            >
-                              Zobacz więcej
-                            </Link>
+
+                            <Button
+                              styles="px-2 py-2 self-end w-24 tablet:w-28 text-[9px]"
+                              href="/products/${product.slug}"
+                              bg="dark"
+                              text="Zobacz więcej"
+                            />
                           </div>
                         </div>
                       </div>
