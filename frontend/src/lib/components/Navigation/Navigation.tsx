@@ -32,7 +32,7 @@ const Navigation = ({ nav }: NavProps) => {
 
       <HamburgerMenu />
 
-      <ul className="hidden tablet:px-10 desktop:px-24 space-x-8 align-middle py-6 laptop:flex flex-row justify-between">
+      <ul className="hidden tablet:px-10 desktop:px-24 space-x-4 align-middle py-5 laptop:flex flex-row justify-between">
         <li>
           <Link aria-label="Link to home page" href="/">
             Strona główna

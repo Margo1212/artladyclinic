@@ -8,16 +8,16 @@ export const revalidate = 10;
 
 export const NewsSection = ({ news }: any) => {
   return (
-    <section className="relative px-10 py-4 mb-10 tablet:px-20 desktop:px-32 laptop:px-5 laptop:py-14">
+    <section className="relative px-10 py-4 mb-10 tablet:px-12 desktop:px-32 laptop:px-0 laptop:py-14">
       <NewsSectionImage position="up" />
       <NewsSectionImage position="down" />
-      <div className="flex flex-col items-center justify-center gap-y-5">
+      <div className="flex flex-col items-center gap-y-5">
         <Title>Nowośći</Title>
         <p className="text-center italic font-light text-[13px]">
           {news.description}
         </p>
         {news ? (
-          <div className="grid grid-cols-1 laptop:grid-cols-4 tablet:grid-cols-2 gap-4 tablet:gap-5 laptop:gap-4 justify-center mb-7 bg-opacity-0">
+          <div className="grid grid-cols-1 laptop:grid-cols-4 tablet:grid-cols-2 gap-5 tablet:gap-14 place-items-center laptop:gap-5 justify-center mb-7 bg-opacity-0">
             {news.slice(-4).map((news: New) => (
               <div
                 data-aos="zoom-in"
@@ -27,9 +27,9 @@ export const NewsSection = ({ news }: any) => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-                className={`w-full min-h-[380px] shadow-md rounded-sm flex justify-center items-end p-2`}
+                className={`w-9/12 tablet:w-full min-h-[420px] shadow-md rounded-sm flex items-end p-2`}
               >
-                <div className="w-full min-h-1/2 h-auto tablet:h-1/2 bg-white/75 flex flex-col rounded-md p-2">
+                <div className="w-full tablet:h-44 laptop:h-48 bg-white/75 flex flex-col rounded-md p-2">
                   <h3 className="text-sm font-medium text-dark-gray">
                     {news.title}
                   </h3>

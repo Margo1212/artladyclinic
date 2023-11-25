@@ -21,7 +21,7 @@ export default async function Page() {
     servicesData,
   ]);
   return (
-    <section className="relative h-full flex flex-col items-center px-3 py-4 laptop:py-14 laptop:px-20 bg-white overflow-clip">
+    <section className="relative h-full flex flex-col items-center px-5 py-6 laptop:py-14 laptop:px-20 bg-white overflow-clip">
       <PriceListImage position="up" />
       <PriceListImage position="down" />
       <Title>Cennik</Title>

@@ -8,19 +8,19 @@ export const VouchersImage = (props: ImageProps) => {
   const imagePosition =
     position === "down"
       ? "hidden desktop:block z-0 desktop:absolute desktop:top-0 desktop:-right-28 "
-      : "hidden  desktop:block z-0 desktop:absolute desktop:top-0 desktop:left-0";
+      : "hidden  desktop:block z-0 desktop:absolute desktop:top-0 desktop:-left-28";
 
   return (
     <svg
       className={imagePosition}
-      width="360"
-      height="336"
-      viewBox="0 0 600 336"
+      width="400"
+      height="390"
+      viewBox="0 0 400 390"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M334.053 130.273L399.913 81.5867L269.986 54.3763L291.857 -76.5549L222.565 -32.8997L170.536 -92.5917L150.178 29.2849L29.2367 3.95618L65.9374 74.1216L0.0840447 122.809L130.011 150.02L108.14 280.951L177.433 237.29L229.461 296.987L249.819 175.111L370.76 200.44L334.053 130.273Z"
+        d="M334.053 223.273L399.913 174.586L269.986 147.376L291.857 16.4448L222.565 60.1L170.536 0.408063L150.178 122.285L29.2367 96.9559L65.9374 167.121L0.0840447 215.809L130.011 243.019L108.14 373.95L177.433 330.289L229.461 389.987L249.819 268.111L370.76 293.439L334.053 223.273Z"
         fill="#8F00FF"
         fillOpacity="0.05"
       />

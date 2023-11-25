@@ -21,32 +21,32 @@ export default async function Page() {
   );
 
   return (
-    <section className="relative w-full bg-white px-5 py-4 laptop:px-52 laptop:py-14 mb-10 overflow-clip">
+    <section className="relative w-full bg-white px-5 py-6 laptop:px-20 laptop:py-14 mb-10 overflow-clip">
       <AboutUsPageImage position="up" />
       <AboutUsPageImage position="down" />
       <Title>O nas</Title>
       {aboutUs.employees ? (
-        <div className="space-y-12">
+        <div className="space-y-12 mt-10">
           {aboutUs.employees.map((employee: Employee) => (
             <div
               key={employee.id}
               data-aos="zoom-in"
-              className="flex flex-col gap-x-5 space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
+              className="flex flex-col gap-y-4 laptop:gap-x-5 space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
             >
-              <div className="laptop:w-1/4">
+              <div className="w-3/4 tablet:w-1/2 m-auto laptop:w-1/4">
                 <Image
-                  className="w-full object-cover h-full shadow-[5px_-5px_0px_0px_#001965]"
+                  className="w-full object-cover h-full shadow-lg"
                   src={employee.image.data?.attributes.url}
                   alt={employee.image.data?.attributes.alternativeText}
                   width={employee.image.data?.attributes.width}
                   height={employee.image.data?.attributes.height}
                 />
               </div>
-              <div className="laptop:w-3/4 flex flex-col space-y-1 laptop:justify-center laptop:space-y-3">
+              <div className="m-auto laptop:w-3/4 flex flex-col gap-y-2 laptop:justify-center laptop:space-y-3">
                 <h2 className="text-4xl text-center laptop:text-left font-normal text-dark-gray">
                   {employee.name}
                 </h2>
-                <p className="text-base text-center break-all laptop:text-left font-normal text-dark-gray/80">
+                <p className="text-sm desktop:text-base text-center break-all laptop:text-left font-normal text-dark-gray/80">
                   {employee.description}
                 </p>
               </div>

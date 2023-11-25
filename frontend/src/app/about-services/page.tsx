@@ -19,24 +19,24 @@ export default async function Page() {
   );
 
   return (
-    <section className="relative w-full bg-white px-3 py-4 tablet:px-24 laptop:px-24 desktop:px-52  laptop:py-14 overflow-clip">
+    <section className="relative w-full bg-white px-5 py-6 laptop:px-20 laptop:py-14 mb-10 overflow-clip">
       <NewsSectionImage position="up" />
       <NewsSectionImage position="down" />
       <Title>O Usługach</Title>
       <div
         data-aos="zoom-in"
-        className="flex flex-col mt-10 laptop:flex-row mb-5"
+        className="flex flex-col mt-10 laptop:flex-row mb-5 gap-y-4 laptop:gap-x-5"
       >
-        <div className="laptop:w-1/4 w-full h-[350px]">
+        <div className="w-3/4 tablet:w-1/2 m-auto laptop:w-1/4 desktop:h-96">
           <Image
-            className="w-full object-cover h-full shadow-[5px_-5px_0px_0px_#001965]"
+            className="w-full object-cover h-full shadow-lg"
             src={aboutServices.image.data?.attributes.url}
             alt={aboutServices.image.data?.attributes.alternativeText}
             width={aboutServices.image.data?.attributes.width}
             height={aboutServices.image.data?.attributes.height}
           />
         </div>
-        <div className="laptop:w-3/4 laptop:text-left text-center text-sm laptop:px-10 break-all flex items-center">
+        <div className="text-sm desktop:text-base laptop:w-3/4 my-auto text-center break-all laptop:text-left font-normal text-dark-gray/80">
           <p>
             {aboutServices.description
               ? aboutServices.description
@@ -45,7 +45,7 @@ export default async function Page() {
         </div>
       </div>
       {aboutServices.ourService ? (
-        <div className="space-y-12">
+        <div className="space-y-12 laptop:gap-x-5">
           {aboutServices.ourService?.map((service: any) => (
             <div
               key={service.id}
@@ -56,11 +56,11 @@ export default async function Page() {
                 <h2 className="text-2xl font-normal laptop:text-left text-center text-dark-blue">
                   {service.title}
                 </h2>
-                <p className="text-sm break-all font-normal laptop:text-left text-center text-dark-gray/80">
+                <p className="text-sm desktop:text-base text-center break-all laptop:text-left font-normal text-dark-gray/80">
                   {service.description}
                 </p>
               </div>
-              <div className="laptop:w-1/4 h-[350px] w-full shadow-md">
+              <div className="w-3/4 tablet:w-1/2 m-auto laptop:w-1/4 desktop:h-96">
                 {service.image.data?.attributes.url
                   .split(".")
                   .pop()
@@ -69,13 +69,13 @@ export default async function Page() {
                     autoPlay={true}
                     muted
                     loop
-                    className="w-full object-cover h-full shadow-[5px_5px_0px_0px_#001965]"
+                    className="w-full object-cover h-full shadow-lg"
                     src={service.image.data?.attributes.url}
                     height={service.image.data?.attributes.height}
                   />
                 ) : (
                   <Image
-                    className="w-full object-cover h-full shadow-[5px_-5px_0px_0px_#001965]"
+                    className="w-full object-cover h-full shadow-lg"
                     src={service.image.data?.attributes.url}
                     alt={service.image.data?.attributes.alternativeText}
                     width={service.image.data?.attributes.width}

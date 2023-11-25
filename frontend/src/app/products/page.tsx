@@ -23,7 +23,7 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="relative w-full h-full bg-white py-4 px-3 desktop:px-32 laptop:py-14 space-y-10 overflow-clip">
+    <div className="relative w-full h-full bg-white px-5 py-6 desktop:px-32 laptop:py-14 space-y-10 overflow-clip">
       <ProductsImage position="up" />
       <ProductsImage position="down" />
       <Title>Produkty</Title>

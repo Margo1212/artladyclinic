@@ -15,9 +15,11 @@ export const Footer = ({ categories, contact }: FooterProps) => {
   const now = new Date();
   const year = now.getFullYear();
   return (
-    <footer className="w-full flex flex-col tablet:flex-row gap-x-5 laptop:gap-x-0 justify-between laptop:grid laptop:grid-cols-4 px-10 py-10 laptop:px-16 desktop:px-36 bg-gradient-to-b from-dark-blue to-light-blue">
-      <div className="flex flex-col gap-y-3 py-6 px-10">
-        <h3 className="text-white text-3xl italic">ArtLadyClinic</h3>
+    <footer className="w-full flex flex-col tablet:grid-cols-2 gap-x-5 laptop:gap-x-0 justify-between tablet:grid laptop:grid-cols-4 px-10 py-10 laptop:px-16 desktop:px-36 bg-gradient-to-b from-dark-blue to-light-blue">
+      <div className="flex flex-col gap-y-3 py-6">
+        <h3 className="text-white text-3xl text-medium italic">
+          ArtLadyClinic
+        </h3>
         <SocialMedia isVisibleOnTablet={true} color="light" />
       </div>
       <div className="laptop:hidden py-6 space-y-2 w-full h-full tablet:flex flex-col justify-center gap-y-2 gap-x-7">
@@ -90,11 +92,11 @@ export const Footer = ({ categories, contact }: FooterProps) => {
           color="light"
         />
       </div>
-      <div className="w-full flex flex-col self-center">
-        <p className="text-white text-sm">
+      <div className="w-full border-t-[1px] py-5 border-white tablet:col-span-2 laptop:col-span-4 flex flex-col mt-4">
+        <p className="text-white text-sm text-center">
           All rights reserved © Marharyta Lesniak
         </p>
-        <p className="text-white text-xs">{year}</p>
+        <p className="text-white text-xs text-center">{year}</p>
       </div>
     </footer>
   );

@@ -2,7 +2,6 @@ import Image from "next/image";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Img } from "types/types";
 import { HeaderImage } from "@lib/assets/svg/HeaderImg";
-import Link from "next/link";
 import { Button } from "@lib/components/Button/Button";
 
 export const revalidate = 10;
@@ -23,14 +22,14 @@ export const Header = ({ homepage }: HeaderProps) => {
   ];
   return (
     <header className="relative flex flex-col-reverse mb-10 px-3 py-6 gap-5 justify-around  items-center w-full h-full bg-gradient-to-b from-dark-blue to-light-blue laptop:flex-row laptop:justify-between laptop:h-screen  desktop:py-0 desktop:px-20  desktop:h-[75.28089887640449vh]">
-      <div className="relative laptop:w-2/4 w-full h-full items-center laptop:items-start flex flex-col space-y-10 justify-center ">
+      <div className="relative laptop:w-2/4 w-full h-full items-center laptop:items-start flex flex-col gap-y-10 justify-center ">
         <HeaderImage position="up" />
         <HeaderImage position="down" />
 
-        <h1 className="text-white text-center break-words laptop:text-left w-4/5 font-medium tablet:text-4xl laptop:text-5xl text-3xl ">
+        <h1 className="text-white text-center break-words laptop:text-left w-5/6 tracking-tight font-medium desktop:font-normal text-4xl tablet:text-5xl laptop:text-5xl">
           {!homepage.header.title ? "No title founded" : homepage.header.title}
         </h1>
-        <p className=" text-white text-center laptop:text-left font-light text-[0.813rem] tracking-[8%]">
+        <p className=" text-white text-center laptop:text-left font-thin text-sm">
           {!homepage.header.description
             ? "No title founded"
             : homepage.header.description}

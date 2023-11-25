@@ -63,7 +63,7 @@ export default async function Page() {
           {contact.openingHours.hours ? (
             <div
               data-aos="zoom-in"
-              className="bg-white shadow-md py-6 px-2 desktop:px-10 items-center tablet:items-start  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
+              className="bg-white shadow-md px-3 py-6 desktop:px-10 items-center tablet:items-start  laptop:px-3 w-full laptop:w-1/2 flex flex-col gap-y-2"
             >
               <OpeningHours
                 colorOfDays="dark"

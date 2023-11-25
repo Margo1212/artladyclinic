@@ -7,7 +7,7 @@ export const ServiceImage = (props: ImageProps) => {
   const { position } = props;
   const imagePosition =
     position === "down"
-      ? "hidden desktop:block z-0 scale-x-[-1] desktop:absolute desktop:top-28 desktop:-right-10"
+      ? "hidden desktop:block z-0 scale-x-[-1] desktop:absolute desktop:top-10 desktop:-right-10"
       : "hidden  desktop:block z-0 desktop:absolute desktop:top-0 desktop:-left-10";
   return (
     <svg

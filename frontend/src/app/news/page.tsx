@@ -18,7 +18,7 @@ export default async function Page() {
     console.error(err)
   );
   return (
-    <section className="relative px-10 py-4 mb-10 tablet:px-20 desktop:px-32 laptop:px-0 laptop:py-14">
+    <section className="relative px-3 py-6 mb-10 tablet:px-20 desktop:px-32 laptop:px-0 laptop:py-14">
       <NewsSectionImage position="up" />
       <NewsSectionImage position="down" />
       <div className="flex flex-col items-center justify-center gap-y-5">

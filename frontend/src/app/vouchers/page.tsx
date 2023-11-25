@@ -38,7 +38,7 @@ export default async function Page() {
           </p>
         </div>
         {vouchers.voucher ? (
-          <div className="w-full grid grid-cols-1 px-5 tablet:px-8 laptop:px-0 desktop:px-10 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 laptop:gap-10 ">
+          <div className="w-full grid grid-cols-1 px-3 py-6 tablet:px-8 laptop:px-0 desktop:px-10 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 laptop:gap-10 ">
             {vouchers.voucher.map((v: Voucher) => (
               <div
                 data-aos="zoom-in"
