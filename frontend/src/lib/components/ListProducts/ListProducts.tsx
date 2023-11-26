@@ -82,7 +82,7 @@ export function ListProducts(props: ListProductsProps) {
 
                             <Button
                               styles="px-2 py-2 self-end w-24 tablet:w-28 text-[9px]"
-                              href="/products/${product.slug}"
+                              href={`/products/${product.slug}`}
                               bg="dark"
                               text="Zobacz więcej"
                             />
