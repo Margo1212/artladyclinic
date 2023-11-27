@@ -49,6 +49,7 @@ export default async function RootLayout({
           href={nav?.logo?.data?.attributes.url ?? null}
           sizes="512x512"
         />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
       <AOSInit />
       <body className={`${roboto.className} w-screen overflow-x-hidden`}>

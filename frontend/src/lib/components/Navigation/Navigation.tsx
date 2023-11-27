@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram } from "@svg/Instagram";
-import { Booksy } from "@svg/Booksy";
 
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 import { Logo } from "@lib/assets/svg/Logo";
