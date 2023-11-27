@@ -12,6 +12,7 @@ type UserSubmitForm = {
   name: string;
   email: string;
   title: string;
+  phone: string;
   message: string;
 };
 
@@ -21,6 +22,7 @@ export const ContactForm = () => {
       name: "",
       email: "",
       title: "",
+      phone: "",
       message: "",
     },
     validationSchema: Yup.object({
@@ -32,6 +34,7 @@ export const ContactForm = () => {
         .required("Email is required")
         .email("Email is invalid"),
       title: Yup.string().required("Title is required"),
+      phone: Yup.string().required("Phone is required"),
       message: Yup.string()
         .required("Message is required")
         .min(10, "Message must be at least 10 characters"),
@@ -80,6 +83,18 @@ export const ContactForm = () => {
       {formik.touched.email && formik.errors.email && (
         <span className="text-alert text-xs p-0 m-0">
           {formik.errors.email}
+        </span>
+      )}
+      <Input
+        onChange={formik.handleChange}
+        value={formik.values.phone}
+        name="phone"
+        placeholder="Enter your phone"
+        type="tel"
+      />
+      {formik.touched.phone && formik.errors.phone && (
+        <span className="text-alert text-xs p-0 m-0">
+          {formik.errors.phone}
         </span>
       )}
       <Input
