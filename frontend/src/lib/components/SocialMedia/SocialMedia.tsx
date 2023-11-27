@@ -17,9 +17,7 @@ export const SocialMedia = ({ color, isVisibleOnTablet }: SocialMediaProps) => {
         <Link
           className={iconsColor}
           aria-label="Link to instagram"
-          href={
-            "https://booksy.com/pl-pl/81163_art-lady_brwi-i-rzesy_8820_krakow#ba_s=sr_1"
-          }
+          href={"https://www.instagram.com/art.lady_clinic/"}
           target="_blank"
         >
           <Instagram />
