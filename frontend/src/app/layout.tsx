@@ -42,12 +42,12 @@ export default async function RootLayout({
           rel="icon"
           href={nav?.logo?.data?.attributes.url ?? null}
           type="image/svg+xml"
-          sizes="512x512"
+          sizes="any"
         />
         <link
           rel="apple-touch-icon"
           href={nav?.logo?.data?.attributes.url ?? null}
-          sizes="512x512"
+          sizes="any"
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>

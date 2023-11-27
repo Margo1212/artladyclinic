@@ -89,7 +89,7 @@ export const ContactForm = () => {
         onChange={formik.handleChange}
         value={formik.values.phone}
         name="phone"
-        placeholder="Enter your phone"
+        placeholder="Numer telefonu"
         type="tel"
       />
       {formik.touched.phone && formik.errors.phone && (
