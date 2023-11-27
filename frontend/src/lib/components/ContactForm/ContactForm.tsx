@@ -43,10 +43,10 @@ export const ContactForm = () => {
       try {
         emailjs
           .send(
-            "service_yse5tug",
-            "template_wn4vxb2",
+            "service_0kn1qub",
+            "template_xu63crp",
             values,
-            "xxxIaxYoLEn78ySPn"
+            "mdpB1suhzwQ6cJX0U"
           )
           .then(() => {
             setSubmitting(false);
