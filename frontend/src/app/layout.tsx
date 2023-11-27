@@ -8,6 +8,7 @@ import Navigation from "@lib/components/Navigation/Navigation";
 import type { Metadata } from "next";
 import { Roboto_Serif } from "next/font/google";
 import CookieConsent from "@lib/components/Cookies/Cookies";
+import { Logo } from "@lib/assets/svg/Logo";
 
 const roboto = Roboto_Serif({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -41,10 +42,12 @@ export default async function RootLayout({
           rel="icon"
           href={nav?.logo?.data?.attributes.url ?? null}
           type="image/svg+xml"
+          sizes="512x512"
         />
         <link
           rel="apple-touch-icon"
           href={nav?.logo?.data?.attributes.url ?? null}
+          sizes="512x512"
         />
       </head>
       <AOSInit />
