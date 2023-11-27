@@ -44,6 +44,11 @@ export default async function RootLayout({
           href={nav?.logo?.data?.attributes.url ?? null}
           sizes="any"
         />
+        <meta
+          property="og:image"
+          content={nav?.logo?.data?.attributes.url ?? null}
+          key="ogimage"
+        />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
       <AOSInit />
