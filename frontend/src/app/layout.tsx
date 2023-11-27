@@ -38,12 +38,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          rel="icon"
-          href="../../public/logo.svg"
-          type="image/svg+xml"
-          sizes="any"
-        />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" sizes="any" />
         <link
           rel="apple-touch-icon"
           href={nav?.logo?.data?.attributes.url ?? null}
