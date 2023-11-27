@@ -42,6 +42,10 @@ export default async function RootLayout({
           href={nav?.logo?.data?.attributes.url ?? null}
           type="image/svg+xml"
         />
+        <link
+          rel="apple-touch-icon"
+          href={nav?.logo?.data?.attributes.url ?? null}
+        />
       </head>
       <AOSInit />
       <body className={`${roboto.className} w-screen overflow-x-hidden`}>
