@@ -40,7 +40,7 @@ export default async function RootLayout({
         <link
           rel="icon"
           href={nav?.logo?.data?.attributes.url ?? null}
-          type="image/x-icon"
+          type="image/svg+xml"
         />
       </head>
       <AOSInit />
