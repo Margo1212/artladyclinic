@@ -40,7 +40,7 @@ export default async function RootLayout({
       <head>
         <link
           rel="icon"
-          href={nav?.logo?.data?.attributes.url ?? null}
+          href="../../public/logo.svg"
           type="image/svg+xml"
           sizes="any"
         />
