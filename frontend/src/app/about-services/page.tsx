@@ -36,7 +36,7 @@ export default async function Page() {
             height={aboutServices.image.data?.attributes.height}
           />
         </div>
-        <div className="text-sm desktop:text-base laptop:w-3/4 my-auto text-center break-all laptop:text-left font-normal text-dark-gray/80">
+        <div className="text-sm desktop:text-base laptop:w-3/4 my-auto text-center break-words laptop:text-left font-normal text-dark-gray/80">
           <p>
             {aboutServices.description
               ? aboutServices.description
@@ -56,7 +56,7 @@ export default async function Page() {
                 <h2 className="text-2xl font-normal laptop:text-left text-center text-dark-blue">
                   {service.title}
                 </h2>
-                <p className="text-sm desktop:text-base text-center break-all laptop:text-left font-normal text-dark-gray/80">
+                <p className="text-sm desktop:text-base text-center break-words laptop:text-left font-normal text-dark-gray/80">
                   {service.description}
                 </p>
               </div>

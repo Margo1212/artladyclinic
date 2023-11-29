@@ -46,7 +46,7 @@ export default async function Page() {
                 <h2 className="text-4xl text-center laptop:text-left font-normal text-dark-gray">
                   {employee.name}
                 </h2>
-                <p className="text-sm desktop:text-base text-center break-all laptop:text-left font-normal text-dark-gray/80">
+                <p className="text-sm desktop:text-base text-center break-words laptop:text-left font-normal text-dark-gray/80">
                   {employee.description}
                 </p>
               </div>
