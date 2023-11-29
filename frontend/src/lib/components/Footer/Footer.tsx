@@ -15,7 +15,7 @@ export const Footer = ({ categories, contact }: FooterProps) => {
   const now = new Date();
   const year = now.getFullYear();
   return (
-    <footer className="w-full flex flex-col tablet:grid-cols-2 gap-x-5 laptop:gap-x-0 justify-between tablet:grid laptop:grid-cols-4 px-10 py-10 laptop:px-16 desktop:px-36 bg-gradient-to-b from-dark-blue to-light-blue">
+    <footer className="w-full flex flex-col tablet:grid-cols-2 gap-x-5 laptop:gap-x-0 justify-between tablet:grid laptop:grid-cols-4 px-10 pt-10 laptop:px-16 desktop:px-36 bg-gradient-to-b from-dark-blue to-light-blue">
       <div className="flex flex-col gap-y-3 py-6">
         <h3 className="text-white text-3xl text-medium italic">
           ArtLadyClinic
@@ -92,8 +92,8 @@ export const Footer = ({ categories, contact }: FooterProps) => {
           color="light"
         />
       </div>
-      <div className="w-full border-t-[1px] py-5 border-white tablet:col-span-2 laptop:col-span-4 flex flex-col mt-4">
-        <p className="text-white text-sm text-center">
+      <div className="w-full border-t-[1px] py-5 border-white tablet:col-span-2 laptop:col-span-4 flex flex-col gap-3 mt-4">
+        <p className="text-white text-xs text-center">
           All rights reserved © Marharyta Lesniak
         </p>
         <p className="text-white text-xs text-center">{year}</p>
