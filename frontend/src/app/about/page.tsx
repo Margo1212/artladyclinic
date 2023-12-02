@@ -25,11 +25,11 @@ export default async function Page() {
       <AboutUsPageImage position="up" />
       <AboutUsPageImage position="down" />
       <Title>O nas</Title>
-      {aboutUs.employees ? (
+      {aboutUs?.employees ? (
         <div className="space-y-12 mt-10">
-          {aboutUs.employees.map((employee: Employee) => (
+          {aboutUs?.employees.map((employee: Employee) => (
             <div
-              key={employee.id}
+              key={employee?.id}
               data-aos="zoom-in"
               className="flex flex-col gap-y-4 laptop:gap-x-5 space-y-3 laptop:flex-row laptop:even:flex-row-reverse "
             >
@@ -44,10 +44,10 @@ export default async function Page() {
               </div>
               <div className="m-auto laptop:w-3/4 flex flex-col gap-y-2 laptop:justify-center laptop:space-y-3">
                 <h2 className="text-4xl text-center laptop:text-left font-normal text-dark-gray">
-                  {employee.name}
+                  {employee?.name}
                 </h2>
                 <p className="text-sm desktop:text-base text-center break-words laptop:text-left font-normal text-dark-gray/80">
-                  {employee.description}
+                  {employee?.description}
                 </p>
               </div>
             </div>

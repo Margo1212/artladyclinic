@@ -9,7 +9,7 @@ export const homepageReducer = (rawHomepage: any) => {
 
 export const aboutUsReducer = (rawAboutUs: any) => {
   let aboutUs = { ...rawAboutUs?.attributes };
-  aboutUs.id = rawAboutUs.id;
+  aboutUs.id = rawAboutUs?.id;
 
   return aboutUs;
 };
