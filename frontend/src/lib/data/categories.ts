@@ -25,10 +25,6 @@ export const getCategories = cache(async () => {
   const query = qs.stringify(
     {
       populate: ["name", "description", "services", "icon"],
-      pagination: {
-        start: 0,
-        limit: 500,
-      },
     },
     {
       encodeValuesOnly: true,

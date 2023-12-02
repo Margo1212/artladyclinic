@@ -7,6 +7,10 @@ export const getGallery = cache(async () => {
   const query = qs.stringify(
     {
       populate: ["photo", "photo.image"],
+      pagination: {
+        start: 0,
+        limit: 500,
+      },
     },
     {
       encodeValuesOnly: true,

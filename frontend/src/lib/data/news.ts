@@ -7,10 +7,6 @@ export const getNews = cache(async () => {
   const query = qs.stringify(
     {
       populate: ["image"],
-      pagination: {
-        start: 0,
-        limit: 500,
-      },
     },
     {
       encodeValuesOnly: true,
