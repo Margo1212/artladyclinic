@@ -7,6 +7,10 @@ export const getProducts = cache(async () => {
   const query = qs.stringify(
     {
       populate: ["product_category", "image"],
+      pagination: {
+        start: 0,
+        limit: 500,
+      },
     },
     {
       encodeValuesOnly: true,
