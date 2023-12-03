@@ -27,7 +27,7 @@ export const NewsSection = ({ news }: any) => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-                className={`w-9/12 tablet:w-full min-h-[420px] shadow-md rounded-sm flex items-end p-2`}
+                className={`w-full min-h-[420px] shadow-md rounded-sm flex items-end p-2`}
               >
                 <div className="w-full tablet:h-44 laptop:h-48 bg-white/75 flex flex-col rounded-md p-2">
                   <h3 className="text-sm font-medium text-dark-gray">

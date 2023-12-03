@@ -9,8 +9,8 @@ export const revalidate = 10;
 export const AboutUsSection = ({ homepage }: HeaderProps) => {
   const imageAbout = homepage.aboutSection.imageAboutSection.data.attributes;
   return (
-    <section className="mb-10 px-2 py-4 laptop:px-0 laptop:py-14 laptop:h-[30rem]">
-      <div className="flex h-full">
+    <section className=" mb-10 px-2 py-4 laptop:px-0 laptop:py-14 laptop:h-[30rem]">
+      <div className="flex h-full bg-white">
         <div className="w-1/3 hidden laptop:block h-full">
           <Image
             className="laptop:h-full object-cover"
