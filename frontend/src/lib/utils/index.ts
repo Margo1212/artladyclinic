@@ -64,8 +64,8 @@ export const categoryReducer = (rawCategory: any) => {
 };
 
 export const productsCategoryReducer = (rawProductsCategory: any) => {
-  let productsCategory = { ...rawProductsCategory.attributes };
-  productsCategory.id = rawProductsCategory.id;
+  let productsCategory = { ...rawProductsCategory?.attributes };
+  productsCategory.id = rawProductsCategory?.id;
 
   return productsCategory;
 };
