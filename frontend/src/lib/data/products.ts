@@ -17,7 +17,7 @@ export const getProducts = cache(async () => {
     }
   );
   const res = await request(`products?${query}`);
-  const rawProducts = res.data;
+  const rawProducts = res?.data;
 
   const products = rawProducts.map((product: any) => productsReducer(product));
   return products;

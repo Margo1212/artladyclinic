@@ -36,22 +36,22 @@ export const contactReducer = (rawContact: any) => {
 };
 
 export const galleryReducer = (rawGallery: any) => {
-  let gallery = { ...rawGallery.attributes };
-  gallery.id = rawGallery.id;
+  let gallery = { ...rawGallery?.attributes };
+  gallery.id = rawGallery?.id;
 
   return gallery;
 };
 
 export const newsReducer = (rawNews: any) => {
-  let news = { ...rawNews.attributes };
-  news.id = rawNews.id;
+  let news = { ...rawNews?.attributes };
+  news.id = rawNews?.id;
 
   return news;
 };
 
 export const vouchersReducer = (rawVouchers: any) => {
-  let vouchers = { ...rawVouchers.attributes };
-  vouchers.id = rawVouchers.id;
+  let vouchers = { ...rawVouchers?.attributes };
+  vouchers.id = rawVouchers?.id;
 
   return vouchers;
 };
@@ -71,8 +71,8 @@ export const productsCategoryReducer = (rawProductsCategory: any) => {
 };
 
 export const serviceReducer = (rawService: any) => {
-  let service = { ...rawService.attributes };
-  service.id = rawService.id;
+  let service = { ...rawService?.attributes };
+  service.id = rawService?.id;
 
   service.category = categoryReducer(service.category.data);
 
@@ -80,8 +80,8 @@ export const serviceReducer = (rawService: any) => {
 };
 
 export const productsReducer = (rawProducts: any) => {
-  let products = { ...rawProducts.attributes };
-  products.id = rawProducts.id;
+  let products = { ...rawProducts?.attributes };
+  products.id = rawProducts?.id;
 
   products.product_category = productsCategoryReducer(
     products.product_category.data
