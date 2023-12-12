@@ -6,7 +6,7 @@ import { cache } from "react";
 export const getProducts = cache(async () => {
   const query = qs.stringify(
     {
-      populate: ["product_category", "image"],
+      populate: ["product_category", "product_category.name", "image"],
       pagination: {
         start: 0,
         limit: 500,
@@ -19,7 +19,7 @@ export const getProducts = cache(async () => {
   const res = await request(`products?${query}`);
   const rawProducts = res?.data;
 
-  const products = rawProducts.map((product: any) => productsReducer(product));
+  const products = rawProducts?.map((product: any) => productsReducer(product));
   return products;
 });
 

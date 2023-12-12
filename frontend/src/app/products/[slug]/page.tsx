@@ -18,13 +18,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <div className="laptop:w-1/2 space-y-8">
         <div className="border-b-2 mb-3 pb-2 border-b-blue">
           <h2 className="text-2xl text-blue font-normal text-center laptop:text-4xl laptop:text-left ">
-            {product.name ? product.name : "Produkt"}
+            {product.name}
           </h2>
         </div>
         <div>
           <h4 className="text-dark-blue font-medium text-lg">Opis</h4>
           <p className="laptop:text-base text-sm">
-            {product.description ? product.description : null}
+            {product.description}
           </p>
         </div>
         <div>
