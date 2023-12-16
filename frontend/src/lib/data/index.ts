@@ -4,7 +4,7 @@ async function getStrapiURL(path = "") {
   }${path}`;
 }
 
-export async function request(url: string): Promise<any> {
+export async function request(url: string, tag?: NextFetchRequestConfig): Promise<any> {
   const apiToken =
     process.env.STRAPI_API_TOKEN ||
     process.env.NEXT_PUBLIC_STRAPI_API_TOKEN ||
@@ -17,7 +17,7 @@ export async function request(url: string): Promise<any> {
 
   const response = fetch(`${await getStrapiURL("/api")}/${url}`, {
     headers,
-    next: { revalidate: 10 },
+   next: tag
   })
     .then((response) => response.json())
     .catch((error) => console.log(error));

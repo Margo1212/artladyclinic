@@ -16,7 +16,7 @@ export const getProducts = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await request(`products?${query}`);
+  const res = await request(`products?${query}`, {tags: ['products']});
   const rawProducts = res?.data;
 
   const products = rawProducts?.map((product: any) => productsReducer(product));
@@ -37,7 +37,7 @@ export const getProductBySlug = async ({ slug }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await request(`products?${query}`);
+  const res = await request(`products?${query}`,{tags: [slug]});
 
   const rawProducts = res?.data[0];
   return productsReducer(rawProducts);

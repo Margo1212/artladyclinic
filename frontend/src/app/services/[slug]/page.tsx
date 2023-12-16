@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ServiceDetailsImage } from "@lib/assets/svg/ServiceDetailsImage";
 import { Price } from "@lib/components/Price/Price";
 
-export const revalidate = 10;
+export const revalidate = 9;
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const serviceData = getServiceBySlug({ slug: params.slug });
