@@ -16,7 +16,7 @@ export const getServices = async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await request(`services?${query}`);
+  const res = await request(`services?${query}`, {tags: ['services']});
   const rawServices = res?.data;
 
   const services = rawServices?.map((service: any) => serviceReducer(service));
