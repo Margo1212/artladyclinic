@@ -17,7 +17,7 @@ export const getServices = cache(async () => {
       encodeValuesOnly: true,
     }
   );
-  const res = await request(`services?${query}`, {tags: ['services']});
+  const res = await request(`services?${query}`);
   const rawServices = res?.data;
 
   const services = rawServices?.map((service: any) => serviceReducer(service));
@@ -42,7 +42,7 @@ export const getServicesSlugs = async () => {
   return slugs;
 };
 
-export const getServiceBySlug = async ({ slug }: any) => {
+export const getServiceBySlug = cache(async ({ slug }: any) => {
   const query = qs.stringify(
     {
       filters: {
@@ -56,10 +56,10 @@ export const getServiceBySlug = async ({ slug }: any) => {
       encodeValuesOnly: true,
     }
   );
-  const res = await request(`services?${query}`, {tags: [slug]});
+  const res = await request(`services?${query}`);
   const rawService = res?.data[0];
   return serviceReducer(rawService);
-};
+});
 
 export const getServicesByCategoryId = async ({ id }: any) => {
   const query = qs.stringify(
