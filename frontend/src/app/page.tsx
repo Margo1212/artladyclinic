@@ -1,31 +1,26 @@
-import { getCategories } from "@lib/data/categories";
 import { ListServices } from "@components/ListServices/ListServices";
-import { getServices } from "@lib/data/services";
-import { Suspense } from "react";
-import { getHomepage } from "@lib/data/homepage";
-import { Title } from "@lib/components/Title/Title";
-import { getNews } from "@lib/data/news";
-import { Header } from "@lib/views/Header";
-import { AboutUsSection } from "@lib/views/AboutUsSection";
 import { ServiceImage } from "@lib/assets/svg/ServiceImage";
 import { ListServicesMobile } from "@lib/components/ListServicesMobile/ListServicesMobile";
+import { Title } from "@lib/components/Title/Title";
+import { getCategories } from "@lib/data/categories";
+import { getHomepage } from "@lib/data/homepage";
+import { getNews } from "@lib/data/news";
+import { getServices } from "@lib/data/services";
+import { AboutUsSection } from "@lib/views/AboutUsSection";
 import { FaqSection } from "@lib/views/FaqSection";
-import { ReviewsSection } from "@lib/views/ReviewsSection";
+import { Header } from "@lib/views/Header";
 import { NewsSection } from "@lib/views/NewsSection";
+import { ReviewsSection } from "@lib/views/ReviewsSection";
+import { Suspense } from "react";
 
 export const revalidate = 10;
 
 export default async function Home() {
-  const categoriesData = getCategories();
-  const servicesData = getServices();
-  const homepageData = getHomepage();
-  const newsData = getNews();
-
   const [categories, services, homepage, news] = await Promise.all([
-    categoriesData,
-    servicesData,
-    homepageData,
-    newsData,
+    getCategories(),
+    getServices(),
+    getHomepage(),
+    getNews(),
   ]);
 
   return (
@@ -39,7 +34,7 @@ export default async function Home() {
           <div className="flex flex-col gap-y-5 ">
             <Title>Nasze usługi</Title>
             <p className="text-center italic font-light text-[13px]">
-              {homepage.services.description}
+              {homepage?.services?.description}
             </p>
           </div>
           <div className="laptop:block hidden z-10 ">

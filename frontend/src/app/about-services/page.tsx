@@ -1,8 +1,8 @@
-import { getAboutServices } from "@lib/data/about-services";
+import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 import { Title } from "@lib/components/Title/Title";
+import { getAboutServices } from "@lib/data/about-services";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
 export const revalidate = 10;
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default async function Page() {
         data-aos="zoom-in"
         className="flex flex-col mt-10 laptop:flex-row mb-5 gap-y-4 laptop:gap-x-5"
       >
-        <div className="w-3/4 tablet:w-1/2 m-auto laptop:w-1/4 desktop:h-96">
+        <div className="w-3/4 tablet:w-1/2 m-auto laptop:w-1/4 desktop:h-full">
           <Image
             className="w-full object-cover h-full shadow-lg"
             src={aboutServices.image.data?.attributes.url}
