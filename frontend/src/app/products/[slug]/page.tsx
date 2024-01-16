@@ -1,9 +1,9 @@
-import { getProductBySlug } from "@lib/data/products";
-import { Product } from "types/types";
-import Image from "next/image";
 import { ServiceDetailsImage } from "@lib/assets/svg/ServiceDetailsImage";
 import { Price } from "@lib/components/Price/Price";
-// export const revalidate = 10;
+import { getProductBySlug } from "@lib/data/products";
+import Image from "next/image";
+import { Product } from "types/types";
+export const revalidate = 3600;
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const productData = getProductBySlug({ slug: params.slug });
@@ -23,9 +23,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <div>
           <h4 className="text-dark-blue font-medium text-lg">Opis</h4>
-          <p className="laptop:text-base text-sm">
-            {product.description}
-          </p>
+          <p className="laptop:text-base text-sm">{product.description}</p>
         </div>
         <div>
           {product.application?.map((appl: any) => (

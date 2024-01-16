@@ -1,10 +1,10 @@
-import { getServiceBySlug } from "@lib/data/services";
-import { Service } from "types/types";
-import Image from "next/image";
 import { ServiceDetailsImage } from "@lib/assets/svg/ServiceDetailsImage";
 import { Price } from "@lib/components/Price/Price";
+import { getServiceBySlug } from "@lib/data/services";
+import Image from "next/image";
+import { Service } from "types/types";
 
-// export const revalidate = 9;
+export const revalidate = 3600;
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const serviceData = getServiceBySlug({ slug: params.slug });
