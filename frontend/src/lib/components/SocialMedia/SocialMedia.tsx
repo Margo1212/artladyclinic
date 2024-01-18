@@ -1,7 +1,6 @@
-import Link from "next/link";
-import { Instagram } from "@svg/Instagram";
 import { Booksy } from "@svg/Booksy";
-export const revalidate = 10;
+import { Instagram } from "@svg/Instagram";
+import Link from "next/link";
 
 export type SocialMediaProps = {
   color: "dark" | "light";

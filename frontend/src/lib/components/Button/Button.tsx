@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-export const revalidate = 10;
-
 export type ButtonProps = {
   text: string;
   icon?: ReactNode;

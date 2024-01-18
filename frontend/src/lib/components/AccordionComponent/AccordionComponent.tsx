@@ -1,12 +1,10 @@
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import { Category } from "types/types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import { Category } from "types/types";
 import { ServicesLinksWithPrice } from "../ServicesLinksWithPrice/ServicesLinksWithPrice";
 import { ServicesLinksWithoutPrice } from "../ServicesLinksWithoutPrice/ServicesLinksWithoutPrice";
-
-export const revalidate = 10;
 
 export type AccordionProps = {
   categories: any;

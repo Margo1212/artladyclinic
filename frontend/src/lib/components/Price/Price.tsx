@@ -1,7 +1,5 @@
 import { Product, Service } from "types/types";
 
-export const revalidate = 10;
-
 export type PriceProps = {
   data: Service | Product;
   oldPriceTextSize: "xs" | "sm" | "lg" | "xl" | "2xl";

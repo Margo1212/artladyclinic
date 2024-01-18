@@ -1,7 +1,5 @@
 import { Hour } from "types/types";
 
-export const revalidate = 10;
-
 export type openingHoursProps = {
   hours: Hour[];
   color: "dark" | "light";
