@@ -1,9 +1,8 @@
 import { vouchersReducer } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { request } from "./index";
 
-export const getVouchers = cache(async () => {
+export const getVouchers = async () => {
   const query = qs.stringify(
     {
       populate: ["voucher", "voucher.image"],
@@ -16,4 +15,4 @@ export const getVouchers = cache(async () => {
   const rawVouchers = res.data;
   const vouchers = vouchersReducer(rawVouchers);
   return vouchers;
-});
+};

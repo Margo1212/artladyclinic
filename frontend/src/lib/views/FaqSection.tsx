@@ -1,15 +1,14 @@
-import { HeaderProps } from "./Header";
-import { Title } from "@lib/components/Title/Title";
 import { FaqSectionImage } from "@lib/assets/svg/FaqSectionImage";
+import { Title } from "@lib/components/Title/Title";
+import AddIcon from "@mui/icons-material/Add";
 import {
   Accordion,
+  AccordionDetails,
   AccordionSummary,
   Typography,
-  AccordionDetails,
 } from "@mui/material";
 import { Question } from "types/types";
-import AddIcon from "@mui/icons-material/Add";
-export const revalidate = 10;
+import { HeaderProps } from "./Header";
 
 export const FaqSection = ({ homepage }: HeaderProps) => {
   return (

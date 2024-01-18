@@ -1,10 +1,8 @@
-import { Title } from "@lib/components/Title/Title";
-import { New } from "types/types";
 import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
-import Link from "next/link";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Button } from "@lib/components/Button/Button";
-export const revalidate = 10;
+import { Title } from "@lib/components/Title/Title";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { New } from "types/types";
 
 export const NewsSection = ({ news }: any) => {
   return (

@@ -1,10 +1,9 @@
-import { Title } from "@lib/components/Title/Title";
-import type { Metadata } from "next";
-import { getCategories } from "@lib/data/categories";
-import { getServices } from "@lib/data/services";
 import { PriceListImage } from "@lib/assets/svg/PriceListImage";
 import { AccordionComponent } from "@lib/components/AccordionComponent/AccordionComponent";
-export const revalidate = 10;
+import { Title } from "@lib/components/Title/Title";
+import { getCategories } from "@lib/data/categories";
+import { getServices } from "@lib/data/services";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Cennik",
@@ -13,13 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const categoriesData = getCategories();
-  const servicesData = getServices();
-
-  const [categories, services] = await Promise.all([
-    categoriesData,
-    servicesData,
-  ]);
+  const categories = await getCategories().catch((err) => console.error(err));
+  const services = await getServices().catch((err) => console.error(err));
   return (
     <section className="relative h-full flex flex-col items-center px-5 py-6 laptop:py-14 laptop:px-20 bg-white overflow-clip">
       <PriceListImage position="up" />

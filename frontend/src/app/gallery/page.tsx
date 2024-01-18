@@ -1,9 +1,8 @@
+import { GalleryPageImage } from "@lib/assets/svg/GalleryPageImage";
 import { ImageContainer } from "@lib/components/ImageContainer/ImageContainer";
 import { Title } from "@lib/components/Title/Title";
 import { getGallery } from "@lib/data/gallery";
 import type { Metadata } from "next";
-import { GalleryPageImage } from "@lib/assets/svg/GalleryPageImage";
-export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Galeria",
@@ -12,11 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const galleryData = getGallery();
-
-  const gallery = await Promise.resolve(galleryData).catch((err) =>
-    console.error(err)
-  );
+  const gallery = await getGallery().catch((err) => console.error(err));
 
   return (
     <div className="relative overflow-clip w-full h-full px-3 py-4 flex flex-col bg-white laptop:px-48 laptop:py-14">

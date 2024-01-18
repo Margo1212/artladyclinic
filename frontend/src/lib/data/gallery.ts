@@ -1,9 +1,8 @@
 import { galleryReducer } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { request } from "./index";
 
-export const getGallery = cache(async () => {
+export const getGallery = async () => {
   const query = qs.stringify(
     {
       populate: ["photo", "photo.image"],
@@ -22,4 +21,4 @@ export const getGallery = cache(async () => {
 
   const gallery = galleryReducer(rawGallery);
   return gallery;
-});
+};

@@ -1,10 +1,9 @@
-import { HeaderProps } from "./Header";
-import Image from "next/image";
-import { Title } from "@lib/components/Title/Title";
-import { Review } from "types/types";
 import { ReviewsSectionImage } from "@lib/assets/svg/ReviewsSectionImage";
 import { Star } from "@lib/assets/svg/Star";
-export const revalidate = 10;
+import { Title } from "@lib/components/Title/Title";
+import Image from "next/image";
+import { Review } from "types/types";
+import { HeaderProps } from "./Header";
 
 export const ReviewsSection = ({ homepage }: HeaderProps) => {
   return (

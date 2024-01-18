@@ -1,14 +1,13 @@
+import CookieConsent from "@lib/components/Cookies/Cookies";
 import { Footer } from "@lib/components/Footer/Footer";
-import "./../styles/globals.css";
-import { getNavbar } from "@lib/data/navbar";
+import Navigation from "@lib/components/Navigation/Navigation";
 import { AOSInit } from "@lib/components/aos";
 import { getCategories } from "@lib/data/categories";
 import { getContact } from "@lib/data/contact";
-import Navigation from "@lib/components/Navigation/Navigation";
+import { getNavbar } from "@lib/data/navbar";
 import type { Metadata } from "next";
 import { Roboto_Serif } from "next/font/google";
-import CookieConsent from "@lib/components/Cookies/Cookies";
-import { Logo } from "@lib/assets/svg/Logo";
+import "./../styles/globals.css";
 
 const roboto = Roboto_Serif({
   weight: ["100", "200", "300", "400", "500", "600", "700"],

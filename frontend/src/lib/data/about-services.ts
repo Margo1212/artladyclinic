@@ -1,9 +1,8 @@
 import { aboutServices } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { request } from "./index";
 
-export const getAboutServices = cache(async () => {
+export const getAboutServices = async () => {
   const query = qs.stringify(
     {
       populate: ["image", "ourService", "ourService.image"],
@@ -18,4 +17,4 @@ export const getAboutServices = cache(async () => {
 
   const aboutService = aboutServices(rawAboutServices);
   return aboutService;
-});
+};

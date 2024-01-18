@@ -1,11 +1,9 @@
-import { getAboutUs } from "@lib/data/about-us";
+import { AboutUsPageImage } from "@lib/assets/svg/AboutUs";
 import { Title } from "@lib/components/Title/Title";
+import { getAboutUs } from "@lib/data/about-us";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Employee } from "types/types";
-import { AboutUsPageImage } from "@lib/assets/svg/AboutUs";
-
-export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Nas",
@@ -14,11 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const aboutUsData = getAboutUs();
+  const aboutUs = await getAboutUs().catch((err) => console.error(err));
 
-  const aboutUs = await Promise.resolve(aboutUsData).catch((err) =>
-    console.error(err)
-  );
+  if (!aboutUs) return <h2>No about us founded...</h2>;
 
   return (
     <section className="relative w-full bg-white px-5 py-6 laptop:px-20 laptop:py-14 mb-10 overflow-clip">

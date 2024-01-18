@@ -1,9 +1,8 @@
 import { serviceReducer } from "@lib/utils";
-import { request } from "./index";
 import qs from "qs";
-import { cache } from "react";
+import { request } from "./index";
 
-export const getServices = cache(async () => {
+export const getServices = async () => {
   const query = qs.stringify(
     {
       populate: ["category", "category.name", "category.description"],
@@ -22,7 +21,7 @@ export const getServices = cache(async () => {
 
   const services = rawServices?.map((service: any) => serviceReducer(service));
   return services;
-});
+};
 
 export const getServicesSlugs = async () => {
   const query = qs.stringify(
@@ -42,7 +41,7 @@ export const getServicesSlugs = async () => {
   return slugs;
 };
 
-export const getServiceBySlug = cache(async ({ slug }: any) => {
+export const getServiceBySlug = async ({ slug }: any) => {
   const query = qs.stringify(
     {
       filters: {
@@ -59,7 +58,7 @@ export const getServiceBySlug = cache(async ({ slug }: any) => {
   const res = await request(`services?${query}`);
   const rawService = res?.data[0];
   return serviceReducer(rawService);
-});
+};
 
 export const getServicesByCategoryId = async ({ id }: any) => {
   const query = qs.stringify(

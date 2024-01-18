@@ -13,8 +13,6 @@ import { NewsSection } from "@lib/views/NewsSection";
 import { ReviewsSection } from "@lib/views/ReviewsSection";
 import { Suspense } from "react";
 
-export const revalidate = 10;
-
 export default async function Home() {
   const [categories, services, homepage, news] = await Promise.all([
     getCategories(),

@@ -1,11 +1,10 @@
 import { homepageReducer } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { request } from "./index";
 
 const url = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
-export const getHomepage = cache(async () => {
+export const getHomepage = async () => {
   const query = qs.stringify(
     {
       populate: [
@@ -35,4 +34,4 @@ export const getHomepage = cache(async () => {
 
   const homepage = homepageReducer(rawHomepage);
   return homepage;
-});
+};

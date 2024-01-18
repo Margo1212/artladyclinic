@@ -1,10 +1,9 @@
-import { getNews } from "@lib/data/news";
 import { Title } from "@components/Title/Title";
-import type { Metadata } from "next";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { NewsSectionImage } from "@lib/assets/svg/NewsSectionImage";
+import { getNews } from "@lib/data/news";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import type { Metadata } from "next";
 import { New } from "types/types";
-export const revalidate = 10;
 export const metadata: Metadata = {
   title: "Art Lady Clinic |  Nowośći",
   description:
@@ -12,11 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const newsData = getNews();
+  const news = await getNews().catch((err) => console.error(err));
 
-  const news = await Promise.resolve(newsData).catch((err) =>
-    console.error(err)
-  );
   return (
     <section className="relative px-3 py-6 mb-10 tablet:px-20 desktop:px-32 laptop:px-0 laptop:py-14">
       <NewsSectionImage position="up" />

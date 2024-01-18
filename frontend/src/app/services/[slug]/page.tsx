@@ -4,12 +4,9 @@ import { getServiceBySlug } from "@lib/data/services";
 import Image from "next/image";
 import { Service } from "types/types";
 
-export const revalidate = 3600;
-
 export default async function Page({ params }: { params: { slug: string } }) {
-  const serviceData = getServiceBySlug({ slug: params.slug });
-  const service: Service = await Promise.resolve(serviceData).catch((err) =>
-    console.error(err)
+  const service: Service = await getServiceBySlug({ slug: params.slug }).catch(
+    (err) => console.error(err)
   );
 
   return (

@@ -1,11 +1,9 @@
+import { ListProducts } from "@components/ListProducts/ListProducts";
+import { ProductsImage } from "@lib/assets/svg/ProductsImage";
+import { Title } from "@lib/components/Title/Title";
 import { getProductCategories } from "@lib/data/product-categories";
 import { getProducts } from "@lib/data/products";
 import type { Metadata } from "next";
-import { ListProducts } from "@components/ListProducts/ListProducts";
-import { Title } from "@lib/components/Title/Title";
-import { ProductsImage } from "@lib/assets/svg/ProductsImage";
-
-export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Produkty",
@@ -14,14 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const productsData = getProducts();
-  const productsCategoriesData = getProductCategories();
-
-  const [products, productsCategories] = await Promise.all([
-    productsData,
-    productsCategoriesData,
-  ]);
-
+  const products = await getProducts().catch((err) => console.error(err));
+  const productsCategories = await getProductCategories().catch((err) =>
+    console.error(err)
+  );
   return (
     <div className="relative w-full h-full bg-white px-5 py-6 desktop:px-32 laptop:py-14 mb-10 overflow-clip">
       <ProductsImage position="up" />

@@ -1,6 +1,5 @@
 import { categoryReducer } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { Category } from "types/types";
 import { request } from "./index";
 
@@ -21,7 +20,7 @@ export const getCategoriesSlugs = async () => {
   return slugs;
 };
 
-export const getCategories = cache(async () => {
+export const getCategories = async () => {
   const query = qs.stringify(
     {
       populate: ["name", "description", "services", "icon"],
@@ -36,7 +35,7 @@ export const getCategories = cache(async () => {
     categoryReducer(category)
   );
   return categories;
-});
+};
 
 export const getCategoryBySlug = async ({ slug }: any) => {
   const query = qs.stringify(

@@ -1,9 +1,8 @@
 import { productsReducer } from "@lib/utils";
-import { request } from "./index";
 import qs from "qs";
-import { cache } from "react";
+import { request } from "./index";
 
-export const getProducts = cache(async () => {
+export const getProducts = async () => {
   const query = qs.stringify(
     {
       populate: ["product_category", "product_category.name", "image"],
@@ -21,9 +20,9 @@ export const getProducts = cache(async () => {
 
   const products = rawProducts?.map((product: any) => productsReducer(product));
   return products;
-});
+};
 
-export const getProductBySlug = cache(async ({ slug }: any) => {
+export const getProductBySlug = async ({ slug }: any) => {
   const query = qs.stringify(
     {
       filters: {
@@ -41,4 +40,4 @@ export const getProductBySlug = cache(async ({ slug }: any) => {
 
   const rawProducts = res?.data[0];
   return productsReducer(rawProducts);
-});
+};

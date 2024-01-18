@@ -1,9 +1,8 @@
 import { contactReducer } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { request } from "./index";
 
-export const getContact = cache(async () => {
+export const getContact = async () => {
   const query = qs.stringify(
     {
       populate: ["openingHours", "openingHours.hours", "contactInfo"],
@@ -18,4 +17,4 @@ export const getContact = cache(async () => {
 
   const contact = contactReducer(rawContact);
   return contact;
-});
+};

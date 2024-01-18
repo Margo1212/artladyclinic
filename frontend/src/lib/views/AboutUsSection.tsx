@@ -1,10 +1,7 @@
+import { Button } from "@lib/components/Button/Button";
+import { Title } from "@lib/components/Title/Title";
 import Image from "next/image";
 import { HeaderProps } from "./Header";
-import { Card } from "@lib/components/Card/Card";
-import { Title } from "@lib/components/Title/Title";
-import Link from "next/link";
-import { Button } from "@lib/components/Button/Button";
-export const revalidate = 10;
 
 export const AboutUsSection = ({ homepage }: HeaderProps) => {
   const imageAbout = homepage.aboutSection.imageAboutSection.data.attributes;

@@ -3,12 +3,10 @@ import { Price } from "@lib/components/Price/Price";
 import { getProductBySlug } from "@lib/data/products";
 import Image from "next/image";
 import { Product } from "types/types";
-export const revalidate = 3600;
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const productData = getProductBySlug({ slug: params.slug });
-  const product: Product = await Promise.resolve(productData).catch((err) =>
-    console.error(err)
+  const product: Product = await getProductBySlug({ slug: params.slug }).catch(
+    (err) => console.error(err)
   );
 
   return (

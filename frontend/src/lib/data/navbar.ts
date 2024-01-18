@@ -1,9 +1,8 @@
 import { navBarReducer } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { request } from "./index";
 
-export const getNavbar = cache(async () => {
+export const getNavbar = async () => {
   const query = qs.stringify(
     {
       populate: ["logo"],
@@ -18,4 +17,4 @@ export const getNavbar = cache(async () => {
 
   const nav = navBarReducer(rawNavbar);
   return nav;
-});
+};

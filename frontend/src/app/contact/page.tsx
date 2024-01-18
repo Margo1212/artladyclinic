@@ -1,13 +1,12 @@
+import { ContactPageImage } from "@lib/assets/svg/ContactPageImg";
+import { Email } from "@lib/assets/svg/Email";
+import { Local } from "@lib/assets/svg/Local";
+import { Phone } from "@lib/assets/svg/Phone";
 import { ContactForm } from "@lib/components/ContactForm/ContactForm";
+import { OpeningHours } from "@lib/components/OpeningHours/OpeningHours";
 import { Title } from "@lib/components/Title/Title";
 import { getContact } from "@lib/data/contact";
 import type { Metadata } from "next";
-import { Email } from "@lib/assets/svg/Email";
-import { Phone } from "@lib/assets/svg/Phone";
-import { Local } from "@lib/assets/svg/Local";
-import { ContactPageImage } from "@lib/assets/svg/ContactPageImg";
-import { OpeningHours } from "@lib/components/OpeningHours/OpeningHours";
-export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | Kontakt",
@@ -16,12 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const contactData = getContact();
-
-  const contact = await Promise.resolve(contactData).catch((err) =>
-    console.error(err)
-  );
-
+  const contact = await getContact().catch((err) => console.error(err));
   return (
     <section className="relative overflow-clip w-full h-full py-4 px-10 desktop:px-20 bg-white laptop:py-14">
       <ContactPageImage position="up" />

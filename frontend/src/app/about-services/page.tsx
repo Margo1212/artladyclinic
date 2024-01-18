@@ -3,7 +3,6 @@ import { Title } from "@lib/components/Title/Title";
 import { getAboutServices } from "@lib/data/about-services";
 import type { Metadata } from "next";
 import Image from "next/image";
-export const revalidate = 10;
 
 export const metadata: Metadata = {
   title: "Art Lady Clinic | O Usługach",
@@ -12,9 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const aboutServicesData = getAboutServices();
-
-  const aboutServices = await Promise.resolve(aboutServicesData).catch((err) =>
+  const aboutServices = await getAboutServices().catch((err) =>
     console.error(err)
   );
 

@@ -3,8 +3,6 @@ import { Button } from "@lib/components/Button/Button";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 import { Img } from "types/types";
-
-export const revalidate = 10;
 export type HeaderProps = {
   homepage: any;
 };

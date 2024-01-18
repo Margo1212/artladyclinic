@@ -1,9 +1,8 @@
 import { newsReducer } from "@lib/utils";
 import qs from "qs";
-import { cache } from "react";
 import { request } from "./index";
 
-export const getNews = cache(async () => {
+export const getNews = async () => {
   const query = qs.stringify(
     {
       populate: ["image"],
@@ -17,4 +16,4 @@ export const getNews = cache(async () => {
   const news = rawNews?.map((news: any) => newsReducer(news));
 
   return news;
-});
+};
