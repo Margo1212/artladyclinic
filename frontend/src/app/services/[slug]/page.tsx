@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Service } from "types/types";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const service: Service = await getServiceBySlug({ slug: params.slug });
+  const service: Service = await getServiceBySlug(params.slug as string);
 
   return (
     <div className="relative flex flex-col-reverse gap-4 laptop:flex-row px-6 py-4 laptop:py-16 laptop:px-20 bg-white overflow-clip">

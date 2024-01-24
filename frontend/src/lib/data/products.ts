@@ -1,5 +1,7 @@
 import { productsReducer } from "@lib/utils";
 import qs from "qs";
+import { cache } from "react";
+import "server-only";
 import { request } from "./index";
 
 export const getProducts = async () => {
@@ -22,7 +24,11 @@ export const getProducts = async () => {
   return products;
 };
 
-export const getProductBySlug = async ({ slug }: any) => {
+export const preload = (slug: string) => {
+  void getProductBySlug(slug);
+};
+
+export const getProductBySlug = cache(async (slug: string) => {
   const query = qs.stringify(
     {
       filters: {
@@ -40,4 +46,4 @@ export const getProductBySlug = async ({ slug }: any) => {
 
   const rawProducts = res?.data[0];
   return productsReducer(rawProducts);
-};
+});

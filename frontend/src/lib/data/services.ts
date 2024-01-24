@@ -1,5 +1,6 @@
 import { serviceReducer } from "@lib/utils";
 import qs from "qs";
+import "server-only";
 import { request } from "./index";
 
 export const getServices = async () => {
@@ -41,7 +42,11 @@ export const getServicesSlugs = async () => {
   return slugs;
 };
 
-export const getServiceBySlug = async ({ slug }: any) => {
+export const preload = (slug: string) => {
+  void getServiceBySlug(slug);
+};
+
+export const getServiceBySlug = async (slug: string) => {
   const query = qs.stringify(
     {
       filters: {

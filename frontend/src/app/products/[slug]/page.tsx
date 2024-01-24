@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Product } from "types/types";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const product: Product = await getProductBySlug({ slug: params.slug });
+  const product: Product = await getProductBySlug(params.slug as string);
 
   return (
     <div className="relative flex flex-col-reverse gap-4 laptop:flex-row px-6 py-4 laptop:py-16 laptop:px-20 bg-white overflow-clip">
