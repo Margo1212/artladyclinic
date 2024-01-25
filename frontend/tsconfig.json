@@ -19,13 +19,13 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./src",
+
     "paths": {
-      "@lib/*": ["lib/*"],
-      "@components/*": ["lib/components/*"],
-      "@pages/*": ["app/pages/*"],
-      "@svg/*": ["lib/assets/svg/*"],
-      "@views": ["lib/views/*"]
+      "@/*": ["./app/*"],
+      "@components/*": ["./app/ui/components/*"],
+      "@lib/*": ["./app/lib/*"],
+      "@ui/*": ["./app/ui/*"],
+      "@views/*": ["./app/ui/views/*"]
     }
   },
   "include": [
