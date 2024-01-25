@@ -1,8 +1,30 @@
-import { getProductBySlug } from "@lib/data/products";
+import { request } from "@/lib/data";
+import { productsReducer } from "@/lib/utils";
 import { Product } from "@lib/types/types";
 import { ServiceDetailsImage } from "@ui/assets/svg/ServiceDetailsImage";
 import { Price } from "@ui/components/Price/Price";
 import Image from "next/image";
+import qs from "qs";
+
+export const getProductBySlug = async (slug: string) => {
+  const query = qs.stringify(
+    {
+      filters: {
+        slug: {
+          $eq: slug,
+        },
+      },
+      populate: ["product_category", "image"],
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+  const res = await request(`products?${query}`);
+
+  const rawProducts = res?.data[0];
+  return productsReducer(rawProducts);
+};
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const product: Product = await getProductBySlug(params.slug as string);
