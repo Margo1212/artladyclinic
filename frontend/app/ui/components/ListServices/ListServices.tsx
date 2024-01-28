@@ -4,7 +4,7 @@ import { Tab } from "@headlessui/react";
 import { Category, Service } from "@lib/types/types";
 import Image from "next/image";
 import Link from "next/link";
-import { ComponentPropsWithRef, Fragment } from "react";
+import { ComponentPropsWithRef, Fragment, useMemo } from "react";
 
 export type CategoryList = Category[];
 
@@ -16,14 +16,20 @@ type ListServicesProps = ComponentPropsWithRef<"div"> & {
 export function ListServices(props: ListServicesProps) {
   const { categories, services } = props;
 
-  if (!categories) return <p>No profile data</p>;
+  if (!categories || !services) return <p>No profile data</p>;
+
+  const filteredServices = useMemo(() => {
+    return categories.map((category) =>
+      services.filter((service) => category.name === service.category?.name)
+    );
+  }, [categories, services]);
 
   return (
     <div className="w-full tablet:h-[33.438rem] bg-white shadow-lg">
       <Tab.Group vertical>
         <div className="grid grid-cols-4 h-full w-full">
           <Tab.List className="flex col-span-1 flex-col laptop:w-full tablet:h-full tablet:space-y-1 rounded-sm text-dark-blue p-2 overflow-auto scrollbar scrollbar-w-2 scrollbar-thumb-rounded-md scrollbar-track-white scrollbar-thumb-dark-blue">
-            {categories.map((category) => (
+            {categories.map((category, idx) => (
               <Tab as={Fragment} key={category.id}>
                 <button
                   className={`
@@ -47,7 +53,7 @@ export function ListServices(props: ListServicesProps) {
             ))}
           </Tab.List>
           <Tab.Panels className="h-full w-full py-2  col-span-3 overflow-auto scrollbar scrollbar-w-2 scrollbar-thumb-rounded-md scrollbar-track-white scrollbar-thumb-dark-blue">
-            {categories.map((category) => (
+            {categories.map((category, idx) => (
               <Tab.Panel
                 key={category.id}
                 className="rounded-sm bg-white ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2py-6 px-7 h-full w-full"
@@ -61,28 +67,24 @@ export function ListServices(props: ListServicesProps) {
                   </p>
                 </div>
                 <div className="flex flex-col w-full ">
-                  {services
-                    .filter(
-                      (service) => category.name === service.category?.name
-                    )
-                    .map((service) => (
-                      <Link
-                        key={service.id}
-                        className="outline-none px-4 py-2 my-3 border-[0.5px] group shadow-sm hover:shadow-md hover:scale-[1] border-dark-gray/10  h-auto w-full rounded-sm"
-                        href={`/services/${service.slug}`}
-                      >
-                        <div className="">
-                          <h3 className="text-xs font-medium leading-5 text-[#565656]">
-                            {service.name}
-                          </h3>
-                          <p className="text-[10px] font-light leading-5 text-[#565656]">
-                            {service.description?.length >= 250
-                              ? service.description.substring(0, 250) + "..."
-                              : service.description}
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
+                  {filteredServices[idx].map((service) => (
+                    <Link
+                      key={service.id}
+                      className="outline-none px-4 py-2 my-3 border-[0.5px] group shadow-sm hover:shadow-md hover:scale-[1] border-dark-gray/10  h-auto w-full rounded-sm"
+                      href={`/services/${service.slug}`}
+                    >
+                      <div className="">
+                        <h3 className="text-xs font-medium leading-5 text-[#565656]">
+                          {service.name}
+                        </h3>
+                        <p className="text-[10px] font-light leading-5 text-[#565656]">
+                          {service.description?.length >= 250
+                            ? service.description.substring(0, 250) + "..."
+                            : service.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </Tab.Panel>
             ))}

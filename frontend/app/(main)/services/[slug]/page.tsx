@@ -1,8 +1,34 @@
+import { request } from "@/lib/data";
+import { serviceReducer } from "@/lib/utils";
 import { getServiceBySlug } from "@lib/data/services";
 import { Service } from "@lib/types/types";
 import { ServiceDetailsImage } from "@ui/assets/svg/ServiceDetailsImage";
 import { Price } from "@ui/components/Price/Price";
 import Image from "next/image";
+import qs from "qs";
+
+export async function generateStaticParams() {
+  const query = qs.stringify(
+    {
+      populate: ["category", "category.name", "category.description"],
+
+      pagination: {
+        start: 0,
+        limit: 500,
+      },
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+  const res = await request(`services?${query}`);
+  const rawServices = res?.data;
+
+  const services = rawServices?.map((service: any) => serviceReducer(service));
+  return services.map((service: Service) => ({
+    slug: service.slug,
+  }));
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const service: Service = await getServiceBySlug(params.slug as string);

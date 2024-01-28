@@ -11,7 +11,6 @@ import { FaqSection } from "@ui/views/FaqSection";
 import { Header } from "@ui/views/Header";
 import { NewsSection } from "@ui/views/NewsSection";
 import { ReviewsSection } from "@ui/views/ReviewsSection";
-import { Suspense } from "react";
 
 export default async function Home() {
   const [categories, services, homepage, news] = await Promise.all([
@@ -23,29 +22,28 @@ export default async function Home() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Header homepage={homepage} />
-        <AboutUsSection homepage={homepage} />
-        <section className="relative w-full px-3 py-4 mb-10 space-y-5 laptop:py-14 desktop:px-36 gap-y-5 flex flex-col justify-between items-center">
-          <ServiceImage position="up" />
-          <ServiceImage position="down" />
-          <div className="flex flex-col gap-y-5 ">
-            <Title>Nasze usługi</Title>
-            <p className="text-center italic font-light text-[13px]">
-              {homepage?.services?.description}
-            </p>
-          </div>
-          <div className="laptop:block hidden z-10 ">
-            <ListServices categories={categories} services={services} />
-          </div>
-          <div className="laptop:hidden block">
-            <ListServicesMobile categories={categories} services={services} />
-          </div>
-        </section>
-        <NewsSection news={news} />
-        <ReviewsSection homepage={homepage} />
-        <FaqSection homepage={homepage} />
-      </Suspense>
+      <Header homepage={homepage} />
+      <AboutUsSection homepage={homepage} />
+      <section className="relative w-full px-3 py-4 mb-10 space-y-5 laptop:py-14 desktop:px-36 gap-y-5 flex flex-col justify-between items-center">
+        <ServiceImage position="up" />
+        <ServiceImage position="down" />
+        <div className="flex flex-col gap-y-5 ">
+          <Title>Nasze usługi</Title>
+          <p className="text-center italic font-light text-[13px]">
+            {homepage?.services?.description}
+          </p>
+        </div>
+
+        <div className="laptop:block hidden z-10 ">
+          <ListServices categories={categories} services={services} />
+        </div>
+        <div className="laptop:hidden block">
+          <ListServicesMobile categories={categories} services={services} />
+        </div>
+      </section>
+      <NewsSection news={news} />
+      <ReviewsSection homepage={homepage} />
+      <FaqSection homepage={homepage} />
     </>
   );
 }
