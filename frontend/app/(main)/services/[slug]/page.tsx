@@ -34,7 +34,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const service: Service = await getServiceBySlug(params.slug as string);
 
   return (
-    <div className="relative min-h-screen flex flex-col-reverse gap-4 laptop:flex-row px-6 py-4 laptop:py-16 laptop:px-20 bg-white overflow-clip">
+    <div
+      className={`relative min-h-screen flex ${
+        !service.image.data ? "flex-col" : "flex-col-reverse"
+      } gap-4 laptop:flex-row px-6 py-4 laptop:py-16 laptop:px-20 bg-white overflow-clip`}
+    >
       <ServiceDetailsImage position="up" />
       <ServiceDetailsImage position="down" />
       <div className="laptop:w-1/2 space-y-8">
