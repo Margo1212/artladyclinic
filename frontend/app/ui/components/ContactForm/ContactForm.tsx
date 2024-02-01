@@ -1,12 +1,12 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
-import { FormikHelpers, useFormik } from "formik";
-import * as Yup from "yup";
 import { Input } from "@components/Input/Input";
 import { TextArea } from "@components/TextArea/TextArea";
+import emailjs from "@emailjs/browser";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { indigo, pink } from "@mui/material/colors";
+import { indigo } from "@mui/material/colors";
+import { FormikHelpers, useFormik } from "formik";
+import * as Yup from "yup";
 
 type UserSubmitForm = {
   name: string;
@@ -52,7 +52,7 @@ export const ContactForm = () => {
             "mdpB1suhzwQ6cJX0U"
           )
           .then(() => {
-            setSubmitting(false);
+            setSubmitting(true);
             alert("Message sended");
             window.location.reload();
           });
