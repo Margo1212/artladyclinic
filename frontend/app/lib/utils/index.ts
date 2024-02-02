@@ -72,7 +72,7 @@ export const serviceReducer = (rawService: any) => {
   let service = { ...rawService?.attributes };
   service.id = rawService?.id;
 
-  service.category = categoryReducer(service.category.data);
+  service.category = categoryReducer(service.category?.data);
 
   return service;
 };
@@ -82,7 +82,7 @@ export const productsReducer = (rawProducts: any) => {
   products.id = rawProducts?.id;
 
   products.product_category = productsCategoryReducer(
-    products.product_category.data
+    products.product_category?.data
   );
 
   return products;
