@@ -1,4 +1,4 @@
-import { aboutServices } from "@lib/utils";
+import { aboutServicesReducer } from "@lib/utils";
 import qs from "qs";
 import { request } from "./index";
 
@@ -15,6 +15,6 @@ export const getAboutServices = async () => {
 
   const rawAboutServices = res?.data;
 
-  const aboutService = aboutServices(rawAboutServices);
+  const aboutService = aboutServicesReducer(rawAboutServices);
   return aboutService;
 };
