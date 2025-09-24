@@ -30,6 +30,11 @@ export const contactReducer = (rawContact: any) => {
   let contact = { ...rawContact?.attributes };
   contact.id = rawContact?.id;
 
+  // Ensure contactInfo is always an array
+  if (contact.contactInfo && !Array.isArray(contact.contactInfo)) {
+    contact.contactInfo = [contact.contactInfo];
+  }
+
   return contact;
 };
 

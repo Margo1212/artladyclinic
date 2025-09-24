@@ -21,7 +21,7 @@ export const OpeningHours = ({
           <span
             className={`${daysColor} mr-2 text-xs font-medium`}
           >{`${hour.day}: `}</span>
-          {!hour.from && !hour.to
+          {hour.day === "niedziela"
             ? " zamknięte"
             : ` ${hour.from.slice(0, 5)} - ${hour.to.slice(0, 5)}`}
         </p>

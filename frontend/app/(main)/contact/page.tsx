@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const contact = await getContact().catch((err) => console.error(err));
+  console.log(contact)
   return (
     <section className="relative overflow-clip w-full h-full py-4 px-10 desktop:px-20 bg-white laptop:py-14">
       <ContactPageImage position="up" />
@@ -23,37 +24,44 @@ export default async function Page() {
       <Title>Skontaktuj się z nami</Title>
       <div className="grid grid-cols-1 laptop:grid-cols-2 mt-10 laptop:grid-rows-6 gap-y-4">
         <div className="laptop:row-span-3 w-full h-full flex flex-col tablet:flex-row gap-x-9 gap-y-3 pb-20">
+          
           <div
             data-aos="zoom-in"
-            className="bg-white shadow-md px-2  laptop:px-3 py-6 desktop:px-10 w-full laptop:w-1/2 items-center tablet:items-start  h-full flex flex-col justify-center gap-y-7"
+            className="bg-white shadow-md px-2 laptop:px-3 py-6 desktop:px-10 w-full laptop:w-1/2 items-center tablet:items-start h-full flex flex-col justify-center gap-y-7 gap-y-6"
           >
-            <div className="flex items-center gap-x-6">
-              <span>
-                <Email />
-              </span>
-              <p className="text-xs">
-                {contact.contactInfo.email ? contact.contactInfo.email : ""}
-              </p>
-            </div>
-            <div className="flex items-center gap-x-6">
-              <span>
-                <Phone />
-              </span>
-              <p className="text-xs">
-                {contact.contactInfo.phone ? contact.contactInfo.phone : ""}
-              </p>
-            </div>
-            <div className="flex items-center gap-x-6">
-              <span>
-                <Local />
-              </span>
-              <p className="text-xs">
-                {contact.contactInfo.address
-                  ? contact.contactInfo.address
-                  : null}
-              </p>
-            </div>
+            {Array.isArray(contact.contactInfo) && contact.contactInfo.length > 0 &&
+              contact.contactInfo.map((info: any, idx: any) => (
+                <div key={info.id || idx} className="mb-4 w-full flex flex-col space-y-3">
+                  
+                  <div className="flex items-center gap-x-6">
+                    <span>
+                      <Email />
+                    </span>
+                    <p className="text-xs">
+                      {info.email || ""}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-x-6">
+                    <span>
+                      <Phone />
+                    </span>
+                    <p className="text-xs">
+                      {info.phone || ""}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-x-6">
+                    <span>
+                      <Local />
+                    </span>
+                    <p className="text-xs">
+                      {info.address || ""}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
           </div>
+
           {contact.openingHours.hours ? (
             <div
               data-aos="zoom-in"
