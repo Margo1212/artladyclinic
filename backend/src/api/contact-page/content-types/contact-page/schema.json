@@ -21,7 +21,7 @@
     "contactInfo": {
       "displayName": "contact-info",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "page.contact-info"
     }
   }
