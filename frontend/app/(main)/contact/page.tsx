@@ -27,36 +27,41 @@ export default async function Page() {
           
           <div
             data-aos="zoom-in"
-            className="bg-white shadow-md px-2 laptop:px-3 py-6 desktop:px-10 w-full laptop:w-1/2 items-center tablet:items-start h-full flex flex-col justify-center gap-y-7 gap-y-6"
+            className="bg-white shadow-md px-2 laptop:px-3 py-6 desktop:px-10 w-full laptop:w-1/2 items-center tablet:items-start h-full flex flex-col justify-center gap-y-7"
           >
             {Array.isArray(contact.contactInfo) && contact.contactInfo.length > 0 &&
               contact.contactInfo.map((info: any, idx: any) => (
                 <div key={info.id || idx} className="mb-4 w-full flex flex-col space-y-3">
-                  
-                  <div className="flex items-center gap-x-6">
-                    <span>
-                      <Email />
-                    </span>
-                    <p className="text-xs">
-                      {info.email || ""}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-x-6">
-                    <span>
-                      <Phone />
-                    </span>
-                    <p className="text-xs">
-                      {info.phone || ""}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-x-6">
-                    <span>
-                      <Local />
-                    </span>
-                    <p className="text-xs">
-                      {info.address || ""}
-                    </p>
-                  </div>
+                  {info.email && (
+                    <div className="flex items-center gap-x-6">
+                      <span>
+                        <Email />
+                      </span>
+                      <p className="text-xs">
+                        {info.email}
+                      </p>
+                    </div>
+                  )}
+                  {info.phone && (
+                    <div className="flex items-center gap-x-6">
+                      <span>
+                        <Phone />
+                      </span>
+                      <p className="text-xs">
+                        {info.phone}
+                      </p>
+                    </div>
+                  )}
+                  {info.address && (
+                    <div className="flex items-center gap-x-6">
+                      <span>
+                        <Local />
+                      </span>
+                      <p className="text-xs">
+                        {info.address}
+                      </p>
+                    </div>
+                  )}
                 </div>
               ))
             }
