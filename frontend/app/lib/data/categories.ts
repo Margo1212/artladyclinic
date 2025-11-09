@@ -21,9 +21,21 @@ export const getCategoriesSlugs = async () => {
 };
 
 export const getCategories = async () => {
+  // Populate category fields and ask Strapi to return up to 500 related
+  // services for each category to avoid missing items due to pagination.
   const query = qs.stringify(
     {
-      populate: ["name", "description", "services", "icon"],
+      populate: {
+        name: true,
+        description: true,
+        icon: true,
+        services: {
+          pagination: {
+            start: 0,
+            limit: 500,
+          },
+        },
+      },
     },
     {
       encodeValuesOnly: true,
