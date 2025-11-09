@@ -19,6 +19,16 @@ export default async function Home() {
     getHomepage(),
     getNews(),
   ]);
+  // Debug: log services slugs on the server to help verify newly added
+  // Strapi entries are returned at build/render time. Remove this in prod
+  // or once the issue is resolved.
+  // eslint-disable-next-line no-console
+  console.log("[debug] services count:", services?.length);
+  // eslint-disable-next-line no-console
+  console.log(
+    "[debug] services slugs:",
+    services?.map((s: any) => s.slug).slice(0, 50)
+  );
 
   return (
     <>

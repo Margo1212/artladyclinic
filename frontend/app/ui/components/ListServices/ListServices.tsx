@@ -23,6 +23,8 @@ export function ListServices(props: ListServicesProps) {
       services.filter((service) => category.name === service.category?.name)
     );
   }, [categories, services]);
+  console.log(filteredServices);
+  console.log(categories)
 
   return (
     <div className="w-full tablet:h-[33.438rem] bg-white shadow-lg">

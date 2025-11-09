@@ -17,7 +17,10 @@ export async function request(url: string): Promise<any> {
 
   const response = fetch(`${await getStrapiURL("/api")}/${url}`, {
     headers,
-    cache: "force-cache",
+    // Use Next.js ISR revalidation so the app can pick up newly published
+    // Strapi content without a full Vercel redeploy. Set to 60 seconds.
+    // If you prefer always-fresh data, change to: cache: 'no-store'
+    next: { revalidate: 60 },
   })
     .then((response) => response.json())
     .catch((error) => console.log(error));
