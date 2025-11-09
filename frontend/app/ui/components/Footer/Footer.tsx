@@ -22,26 +22,40 @@ export const Footer = ({ categories, contact }: FooterProps) => {
         </h3>
         <SocialMedia isVisibleOnTablet={true} color="light" />
       </div>
-      <div className="laptop:hidden py-6 space-y-2 w-full h-full tablet:flex flex-col justify-center gap-y-2 gap-x-7">
-        <div className="flex items-center gap-x-6">
-          <span className="invert brightness-0">
-            <Email />
-          </span>
-          <p className="text-xs text-white">{contact.contactInfo?.email}</p>
-        </div>
-        <div className="flex items-center gap-x-6">
-          <span className="invert brightness-0">
-            <Phone />
-          </span>
-          <p className="text-xs text-white">{contact.contactInfo?.phone}</p>
-        </div>
-        <div className="flex items-center gap-x-6">
-          <span className="invert brightness-0">
-            <Local />
-          </span>
-          <p className="text-xs text-white">{contact.contactInfo?.address}</p>
-        </div>
+      {contact.contactInfo.map((info: any, idx: any) => (
+      <div key={idx} className="laptop:hidden py-6 space-y-2 w-full h-full tablet:flex flex-col justify-center gap-y-2 gap-x-7">
+          {info.email && (
+                    <div className="flex items-center gap-x-6 text-white">
+                      <span>
+                        <Email />
+                      </span>
+                      <p className="text-xs">
+                        {info.email}
+                      </p>
+                    </div>
+                  )}
+                  {info.phone && (
+                    <div className="flex items-center gap-x-6 text-white">
+                      <span>
+                        <Phone />
+                      </span>
+                      <p className="text-xs">
+                        {info.phone}
+                      </p>
+                    </div>
+                  )}
+                  {info.address && (
+                    <div className="flex items-center gap-x-6 text-white">
+                      <span>
+                        <Local />
+                      </span>
+                      <p className="text-xs">
+                        {info.address}
+                      </p>
+                    </div>
+                  )}
       </div>
+      ))}
       <div className="hidden py-6 px-10 w-full laptop:flex flex-col gap-y-2">
         <p className="text-base font-medium text-white">Usługi</p>
         {categories?.map((category: Category) => (

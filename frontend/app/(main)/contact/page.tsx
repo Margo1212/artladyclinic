@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const contact = await getContact().catch((err) => console.error(err));
-  console.log(contact)
   return (
     <section className="relative overflow-clip w-full h-full py-4 px-10 desktop:px-20 bg-white laptop:py-14">
       <ContactPageImage position="up" />
