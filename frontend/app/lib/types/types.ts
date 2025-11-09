@@ -2,10 +2,14 @@ export type Category = {
   id: string;
   description?: string;
   name: string;
-  services: Service[];
+  services: ServiceData[];
   slug: string;
   icon: Icon;
 };
+
+export type ServiceData = {
+  data: Service[]
+}
 export type ProductCategory = {
   id: string;
   description?: string;

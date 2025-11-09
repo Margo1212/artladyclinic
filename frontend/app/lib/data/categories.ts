@@ -58,6 +58,10 @@ export const getCategoryBySlug = async ({ slug }: any) => {
         },
       },
       populate: ["name", "description"],
+      pagination: {
+            start: 0,
+            limit: 500,
+          },
     },
     {
       encodeValuesOnly: true,

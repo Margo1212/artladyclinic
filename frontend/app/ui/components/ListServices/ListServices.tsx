@@ -9,7 +9,7 @@ import { ComponentPropsWithRef, Fragment, useMemo } from "react";
 export type CategoryList = Category[];
 
 type ListServicesProps = ComponentPropsWithRef<"div"> & {
-  categories: Category[];
+  categories:any[];
   services: Service[];
 };
 
@@ -18,13 +18,9 @@ export function ListServices(props: ListServicesProps) {
 
   if (!categories || !services) return <p>No profile data</p>;
 
-  const filteredServices = useMemo(() => {
-    return categories.map((category) =>
-      services.filter((service) => category.name === service.category?.name)
-    );
-  }, [categories, services]);
-  console.log(filteredServices);
-  console.log(categories)
+
+
+
 
   return (
     <div className="w-full tablet:h-[33.438rem] bg-white shadow-lg">
@@ -69,25 +65,25 @@ export function ListServices(props: ListServicesProps) {
                   </p>
                 </div>
                 <div className="flex flex-col w-full ">
-                  {filteredServices[idx].map((service) => (
-                    <Link
-                      key={service.id}
-                      className="outline-none px-4 py-2 my-3 border-[0.5px] group shadow-sm hover:shadow-md hover:scale-[1] border-dark-gray/10  h-auto w-full rounded-sm"
-                      href={`/services/${service.slug}`}
-                    >
-                      <div className="">
-                        <h3 className="text-xs font-medium leading-5 text-[#565656]">
-                          {service.name}
-                        </h3>
-                        <p className="text-[10px] font-light leading-5 text-[#565656]">
-                          {service.description?.length >= 250
-                            ? service.description.substring(0, 250) + "..."
-                            : service.description}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+  {category.services?.data?.map((service: any) => (
+    <Link
+      key={service.id}
+      className="outline-none px-4 py-2 my-3 border-[0.5px] group shadow-sm hover:shadow-md hover:scale-[1] border-dark-gray/10  h-auto w-full rounded-sm"
+      href={`/services/${service.attributes.slug}`}
+    >
+      <div>
+        <h3 className="text-xs font-medium leading-5 text-[#565656]">
+          {service.attributes.name}
+        </h3>
+        <p className="text-[10px] font-light leading-5 text-[#565656]">
+          {service.attributes.description?.length >= 250
+            ? service.attributes.description.substring(0, 250) + "..."
+            : service.attributes.description}
+        </p>
+      </div>
+    </Link>
+  ))}
+</div>
               </Tab.Panel>
             ))}
           </Tab.Panels>
