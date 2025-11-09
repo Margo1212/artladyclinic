@@ -27,6 +27,10 @@ export const AccordionComponent = ({
       )
     );
   }, [categories, services]);
+
+  const getCategoryServices = (category: any) => {
+    return category.services?.data || [];
+  };
   return (
     <div className="w-full mt-14">
       {categories.map((category: Category, idx: any) => (
@@ -53,9 +57,9 @@ export const AccordionComponent = ({
             <p className="font-medium text-lg text-blue">{category.name}</p>
           </AccordionSummary>
           <ul className="flex flex-col">
-            {filteredServices[idx].map((service: any) => (
+            {getCategoryServices(category).map((service: any) => (
               <AccordionDetails
-                aria-controls={service.slug}
+                aria-controls={service.attributes.slug}
                 key={service.id}
                 sx={{
                   background: "transparent",
@@ -66,9 +70,9 @@ export const AccordionComponent = ({
                 }}
               >
                 {withPrice ? (
-                  <ServicesLinksWithPrice service={service} />
+                  <ServicesLinksWithPrice service={service.attributes} />
                 ) : (
-                  <ServicesLinksWithoutPrice service={service} />
+                  <ServicesLinksWithoutPrice service={service.attributes} />
                 )}
               </AccordionDetails>
             ))}
